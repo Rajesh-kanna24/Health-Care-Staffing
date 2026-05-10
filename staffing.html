@@ -1,0 +1,676 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <title>Healthcare Staffing - Trinity Life Care</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Healthcare staffing solutions across Pennsylvania with reliable healthcare professionals.">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/vendors.min.css"/>
+    <link rel="stylesheet" href="css/icon.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+    <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css"/>
+
+<style>
+    body {
+        overflow-x: hidden;
+        background-color: #fcfaf7;
+        color: #1f1f1f;
+    }
+
+    header .navbar-brand {
+        padding: 14px 0;
+    }
+
+    header .navbar-brand img {
+        max-height: 80px;
+    }
+
+    header .navbar-nav .nav-item .nav-link {
+        white-space: nowrap;
+        color: #1f1f1f;
+        transition: color .3s ease;
+    }
+
+    header .navbar-nav .nav-item .nav-link:hover {
+        color: #be9256;
+    }
+
+    section {
+        background-image: none !important;
+    }
+
+    /* ───────── HERO ───────── */
+    .staffing-hero {
+        padding: 120px 0 90px;
+        background: linear-gradient(135deg, #faf7f2 0%, #f4ede3 50%, #efe4d5 100%);
+    }
+
+    .staffing-hero > .container-fluid > .row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 80px;
+        line-height: 0.95em;
+        letter-spacing: -4px;
+        color: #1f1f1f;
+        margin-bottom: 30px;
+    }
+
+    .hero-text {
+        font-size: 20px;
+        line-height: 1.7;
+        color: #4b4b4b;
+        max-width: 560px;
+        margin-bottom: 40px;
+    }
+
+    .hero-btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero-btn-wrap .btn {
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .hero-btn-wrap .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(190,146,86,.25);
+    }
+
+    /* ───────── SECTION TITLE ───────── */
+    .section-subtitle {
+        color: #be9256;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .section-title {
+        font-size: 56px;
+        line-height: 1.1em;
+        letter-spacing: -2px;
+        color: #1d1d1d;
+    }
+
+    /* ───────── STAFF CARDS ───────── */
+    .staff-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid rgba(190,146,86,.08);
+        box-shadow: 0 10px 35px rgba(0,0,0,.05);
+        height: 100%;
+        transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .staff-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 45px rgba(190,146,86,.12);
+    }
+
+    .staff-icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #c89b4f, #b88949);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -36px auto 20px;
+        position: relative;
+        z-index: 2;
+        transition: transform .3s ease;
+    }
+
+    .staff-card:hover .staff-icon {
+        transform: scale(1.08);
+    }
+
+    .staff-icon i {
+        color: #ffffff;
+        font-size: 28px;
+    }
+
+    .staff-card h5 {
+        font-size: 26px;
+        line-height: 1.3em;
+        color: #1f1f1f;
+    }
+
+    /* ───────── WHY SECTION ───────── */
+    .why-section {
+        background: linear-gradient(135deg, #faf7f2 0%, #f7f1e8 100%);
+    }
+
+    .why-box {
+        text-align: center;
+        padding: 20px;
+        transition: transform .3s ease;
+    }
+
+    .why-box:hover {
+        transform: translateY(-6px);
+    }
+
+    .why-icon {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, #c89b4f, #b88949);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .why-box:hover .why-icon {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(190,146,86,.25);
+    }
+
+    .why-icon i {
+        color: #ffffff;
+        font-size: 34px;
+    }
+
+    .why-box h6 {
+        font-size: 26px;
+        line-height: 1.3em;
+        margin-bottom: 15px;
+        color: #1f1f1f;
+    }
+
+    .why-box p {
+        font-size: 17px;
+        line-height: 1.7em;
+        color: #5b5b5b;
+    }
+
+    /* ───────── CTA SECTION ───────── */
+    .cta-section {
+        background: linear-gradient(135deg, #b88949 0%, #d7b47a 50%, #ecd5ad 100%);
+        border-radius: 24px;
+        padding: 70px;
+        box-shadow: 0 15px 40px rgba(190,146,86,.18);
+    }
+
+    .cta-section h2,
+    .cta-section h3,
+    .cta-section p {
+        color: #ffffff;
+    }
+
+    /* ───────── PEDIATRIC ───────── */
+    .pediatric-card {
+        background: #ffffff;
+        padding: 50px;
+        border-radius: 18px;
+        border: 1px solid rgba(190,146,86,.08);
+        box-shadow: 0 10px 35px rgba(0,0,0,.05);
+        height: 100%;
+        transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .pediatric-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 44px rgba(190,146,86,.12);
+    }
+
+    .pediatric-card ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .pediatric-card li {
+        margin-bottom: 18px;
+        font-size: 18px;
+        line-height: 1.7em;
+        color: #4d4d4d;
+    }
+
+    .pediatric-card i {
+        color: #be9256;
+        margin-right: 12px;
+    }
+
+    /* ───────── BUTTONS ───────── */
+    .btn-base-color {
+        background: linear-gradient(135deg, #c89b4f, #b88949);
+        border: none;
+        color: #ffffff;
+    }
+
+    .btn-base-color:hover {
+        background: linear-gradient(135deg, #b88949, #a87738);
+        color: #ffffff;
+    }
+
+    .btn-white {
+        background: #ffffff;
+        color: #1f1f1f;
+    }
+
+    .btn-white:hover {
+        background: #f5f1ea;
+        color: #1f1f1f;
+    }
+
+    /* ───────── SCROLL ANIMATION ───────── */
+    .reveal {
+        opacity: 0;
+        transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.fade-up {
+        transform: translateY(50px);
+    }
+
+    .reveal.fade-right {
+        transform: translateX(-50px);
+    }
+
+    .reveal.zoom-in {
+        transform: scale(.92);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    /* ───────── RESPONSIVE ───────── */
+    @media (max-width:991px) {
+
+        header .navbar-brand img {
+            max-height: 60px;
+        }
+
+        .staffing-hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #faf7f2 0%, #f3ebe0 100%);
+        }
+
+        .staffing-hero > .container-fluid > .row {
+            flex-wrap: wrap;
+        }
+
+        .hero-title {
+            font-size: 56px;
+        }
+
+        .section-title {
+            font-size: 44px;
+        }
+
+        .cta-section {
+            padding: 45px;
+        }
+    }
+
+    @media (max-width:767px) {
+
+        .staffing-hero {
+            padding: 60px 0 40px;
+        }
+
+        .hero-title {
+            font-size: 40px;
+            letter-spacing: -2px;
+        }
+
+        .section-title {
+            font-size: 34px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text,
+        .why-box p,
+        .pediatric-card li {
+            font-size: 16px;
+        }
+
+        .hero-btn-wrap .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .pediatric-card {
+            padding: 30px;
+        }
+
+        .cta-section {
+            padding: 30px 20px;
+            border-radius: 16px;
+        }
+
+        .why-box h6 {
+            font-size: 22px;
+        }
+
+        .staff-card h5 {
+            font-size: 22px;
+        }
+    }
+</style>
+</head>
+
+<body data-mobile-nav-style="classic">
+
+    <header>
+        <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
+            <div class="container-fluid">
+
+                <div class="col-auto col-xl-2 col-lg-1 menu-logo">
+                    <div class="d-none d-xl-block">
+                        <div class="widget-text fw-600">
+                            <i class="bi bi-telephone-outbound text-base-color me-10px"></i>
+                            <a href="tel:1800222000">1 800 222 000</a>
+                        </div>
+                    </div>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
+                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
+                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
+                    </a>
+                </div>
+
+                <div class="col-auto col-xl-8 col-lg-10 menu-order">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                        <ul class="navbar-nav navbar-left justify-content-end">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        </ul>
+                        <ul class="navbar-nav navbar-right justify-content-start">
+                            <li class="nav-item"><a href="why-trinity.html" class="nav-link">Why Trinity</a></li>
+                            <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-auto col-xl-2 col-lg-1 text-end">
+                    <div class="d-none d-xl-flex align-items-center widget-text fw-600">
+                        <i class="bi bi-calendar-check text-base-color me-10px"></i>
+                        <a href="request-care.html">Request care</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="staffing-hero top-space-margin">
+        <div class="container-fluid px-0">
+            <div class="row g-0 align-items-center">
+
+                <div class="col-lg-6">
+                    <div class="ps-10 pe-10 lg-ps-8 lg-pe-8 md-ps-5 md-pe-5">
+                        <h1 class="hero-title alt-font fw-500 reveal fade-up">
+                            Healthcare<br>
+                            Staffing Solutions<br>
+                            in Pennsylvania
+                        </h1>
+                        <p class="hero-text reveal fade-up" style="transition-delay:.15s">
+                            We provide reliable clinical and non-clinical staffing solutions to healthcare facilities across the region.
+                        </p>
+                        <div class="hero-btn-wrap reveal fade-up" style="transition-delay:.3s">
+                            <a href="#" class="btn btn-extra-large btn-base-color btn-rounded">
+                                Request Staffing
+                                <i class="fa-solid fa-arrow-right ms-10px"></i>
+                            </a>
+                            <a href="#" class="btn btn-extra-large btn-transparent-light-gray border-color-extra-medium-gray btn-rounded">
+                                Schedule Partnership Call
+                                <i class="bi bi-calendar-check ms-10px"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hero-placeholder reveal fade-right" style="transition-delay:.2s">
+                        <img src="images/staff/image.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STAFF CARDS -->
+    <section class="pt-5 pb-5">
+        <div class="container">
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <span class="section-subtitle reveal fade-up">WE STAFF</span>
+                    <h2 class="section-title alt-font fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
+                        Healthcare Professionals We Provide
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-4 mb-4">
+                <div class="col-lg-4 col-md-6 reveal zoom-in">
+                    <div class="staff-card">
+                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="p-35px">
+                            <div class="staff-icon"><i class="bi bi-heart-pulse"></i></div>
+                            <h5 class="alt-font fw-500 mb-0">Registered Nurses (RNs)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.1s">
+                    <div class="staff-card">
+                        <div class="staff-placeholder"><img src="images/staff/lpns.png" alt=""></div>
+                        <div class="p-35px">
+                            <div class="staff-icon"><i class="bi bi-building"></i></div>
+                            <h5 class="alt-font fw-500 mb-0">Licensed Practical Nurses (LPNs)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.2s">
+                    <div class="staff-card">
+                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="p-35px">
+                            <div class="staff-icon"><i class="bi bi-person-heart"></i></div>
+                            <h5 class="alt-font fw-500 mb-0">Certified Nursing Assistants (CNAs)</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.1s">
+                    <div class="staff-card">
+                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="p-35px">
+                            <div class="staff-icon"><i class="bi bi-house-heart"></i></div>
+                            <h5 class="alt-font fw-500 mb-0">Home Health Aides (HHAs)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.2s">
+                    <div class="staff-card">
+                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="p-35px">
+                            <div class="staff-icon"><i class="bi bi-people"></i></div>
+                            <h5 class="alt-font fw-500 mb-0">Support &amp; Administrative Staff</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="why-section pt-5 pb-5">
+        <div class="container">
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <span class="section-subtitle reveal fade-up">WHY FACILITIES CHOOSE US</span>
+                    <h2 class="section-title alt-font fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
+                        Reliable staffing. Better outcomes.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg col-md-6 reveal fade-up">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="bi bi-stopwatch"></i></div>
+                        <h6 class="alt-font fw-500">Rapid staffing deployment</h6>
+                        <p class="mb-0">Quick turnaround staffing support for urgent needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.08s">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+                        <h6 class="alt-font fw-500">Fully vetted professionals</h6>
+                        <p class="mb-0">Credentialed, background-checked professionals.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.16s">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+                        <h6 class="alt-font fw-500">Compliance-ready workforce</h6>
+                        <p class="mb-0">Professionals trained for healthcare compliance.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.24s">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="bi bi-people"></i></div>
+                        <h6 class="alt-font fw-500">Strong candidate matching</h6>
+                        <p class="mb-0">Right match for the right role and facility culture.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.32s">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h6 class="alt-font fw-500">Reduced staffing shortages</h6>
+                        <p class="mb-0">Consistent workforce support for better patient care.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="cta-section reveal fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 md-mb-30px">
+                        <h2 class="alt-font text-white fw-500 mb-20px">
+                            Let's build a stronger care team together.
+                        </h2>
+                        <p class="text-white fs-20 opacity-8 mb-0">
+                            Reliable staffing. Better outcomes. Happier patients.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#" class="btn btn-extra-large btn-white btn-rounded" style="transition: transform .3s ease, box-shadow .3s ease;">
+                            Schedule Partnership Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PEDIATRIC SECTION -->
+    <section class="pt-5 pb-5 bg-very-light-gray">
+        <div class="container">
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 md-mb-40px">
+                    <span class="section-subtitle reveal fade-up">PEDIATRIC CARE</span>
+                    <h2 class="section-title alt-font fw-500 mb-25px reveal fade-up" style="transition-delay:.1s">
+                        Pediatric Skilled &amp; Non-Skilled Care
+                    </h2>
+                    <p class="hero-text mb-0 reveal fade-up" style="transition-delay:.2s">
+                        Trinity Life Care provides compassionate in-home care for children with medical and developmental needs.
+                    </p>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="pediatric-placeholder reveal fade-right" style="transition-delay:.15s">
+                        <img src="images/staff/pedi.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6 reveal fade-up">
+                    <div class="pediatric-card">
+                        <h4 class="alt-font fw-500 mb-30px text-dark-gray">Skilled Pediatric Services:</h4>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i>Pediatric skilled nursing</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Medication administration</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Chronic condition management (asthma, diabetes, congenital conditions)</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Post-hospital pediatric recovery care</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Respiratory support monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal fade-up" style="transition-delay:.15s">
+                    <div class="pediatric-card">
+                        <h4 class="alt-font fw-500 mb-30px text-dark-gray">Non-Skilled Pediatric Care:</h4>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i>Personal care assistance</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Feeding and mobility support</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Developmental support assistance</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Family respite care</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Behavioral and routine support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var reveals = document.querySelectorAll('.reveal');
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            reveals.forEach(function (el) { observer.observe(el); });
+        });
+    </script>
+
+</body>
+</html>
