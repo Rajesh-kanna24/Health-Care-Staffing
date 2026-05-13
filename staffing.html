@@ -274,6 +274,275 @@
         transform: translateY(0) translateX(0) scale(1);
     }
 
+    /* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    background:var(--cream)!important;
+}
+
+footer h3{
+    color:var(--text)!important;
+}
+
+footer p{
+    color:var(--text-light)!important;
+}
+
+footer a{
+    color:var(--slate)!important;
+    transition:.3s ease;
+}
+
+footer a:hover{
+    color:var(--taupe)!important;
+}
+
+.footer-navbar .nav-link{
+    color:var(--slate)!important;
+}
+
+.footer-navbar .nav-link:hover,
+.footer-navbar .active .nav-link{
+    color:var(--taupe)!important;
+}
+
+/* =========================================================
+   TRINITY FOOTER — HOME PAGE STYLE
+   ========================================================= */
+
+.trinity-footer{
+    background:linear-gradient(
+        180deg,
+        var(--slate) 0%,
+    var(--slate-dark)100%
+    );
+    padding:90px 0 0;
+    position:relative;
+    overflow:hidden;
+    border-top:1px solid rgba(154,133,106,.12);
+}
+
+/* subtle top glow */
+.trinity-footer::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    left:-120px;
+    width:320px;
+    height:320px;
+    background:rgba(154,133,106,.08);
+    border-radius:50%;
+    filter:blur(30px);
+}
+
+.trinity-footer::after{
+    content:"";
+    position:absolute;
+    bottom:-150px;
+    right:-120px;
+    width:340px;
+    height:340px;
+    background:rgba(70,86,99,.06);
+    border-radius:50%;
+    filter:blur(40px);
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.footer-grid{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 60px 70px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:70px;
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.footer-logo{
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:-1px;
+    color:var(--slate-dark);
+    margin-bottom:22px;
+    line-height:1;
+}
+
+.footer-logo span{
+    color:var(--taupe);
+    font-weight:500;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.footer-desc{
+    color:var(--text-light);
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:28px;
+    max-width:430px;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.footer-contact a{
+    display:flex;
+    align-items:center;
+    color:var(--slate);
+    font-size:15px;
+    font-weight:500;
+    transition:.3s ease;
+    text-decoration:none;
+}
+
+.footer-contact a:hover{
+    color:var(--taupe);
+    transform:translateX(4px);
+}
+
+/* =========================================================
+   COLUMN TITLES
+   ========================================================= */
+
+.footer-col-title{
+    font-size:20px;
+    font-weight:600;
+    color:var(--slate-dark);
+    margin-bottom:28px;
+    position:relative;
+    padding-bottom:14px;
+}
+
+.footer-col-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:38px;
+    height:2px;
+    background:var(--taupe);
+    border-radius:20px;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    color:var(--text-light);
+    text-decoration:none;
+    transition:.3s ease;
+    position:relative;
+    padding-left:0;
+    font-size:15px;
+    font-weight:500;
+}
+
+.footer-links a:hover{
+    color:var(--taupe);
+    padding-left:8px;
+}
+
+/* =========================================================
+   BOTTOM BAR
+   ========================================================= */
+
+.footer-bottom{
+    border-top:1px solid rgba(154,133,106,.12);
+    padding:24px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,.45);
+    backdrop-filter:blur(10px);
+}
+
+.footer-bottom span{
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.footer-bottom a{
+    color:var(--slate);
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.footer-bottom a:hover{
+    color:var(--taupe);
+}
+
+.footer-bottom ul li a{
+    font-size:14px;
+    font-weight:500;
+}
+
+/* =========================================================
+   SOCIAL ICONS (OPTIONAL)
+   ========================================================= */
+
+.footer-social{
+    display:flex;
+    gap:12px;
+    margin-top:28px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:var(--slate);
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.3s ease;
+    text-decoration:none;
+}
+
+.footer-social a:hover{
+    background:var(--taupe);
+    color:#fff;
+    transform:translateY(-4px);
+}
+
+
+
     /* ───────── RESPONSIVE ───────── */
     @media (max-width:991px) {
 
@@ -343,6 +612,63 @@
             font-size: 22px;
         }
     }
+
+    /* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:991px){
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:50px;
+        padding:0 40px 60px;
+    }
+
+    .footer-bottom{
+        padding:22px 40px;
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:767px){
+
+    .trinity-footer{
+        padding-top:70px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding:0 24px 50px;
+    }
+
+    .footer-logo{
+        font-size:28px;
+    }
+
+    .footer-desc{
+        font-size:15px;
+    }
+
+    .footer-col-title{
+        margin-bottom:22px;
+    }
+
+    .footer-bottom{
+        padding:20px 24px;
+    }
+
+    .footer-bottom ul{
+        justify-content:center;
+    }
+}
+
 </style>
 </head>
 
@@ -473,7 +799,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.2s">
                     <div class="staff-card">
-                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="staff-placeholder"><img src="images/staff/cnas.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-person-heart"></i></div>
                             <h5 class="alt-font fw-500 mb-0">Certified Nursing Assistants (CNAs)</h5>
@@ -485,7 +811,7 @@
             <div class="row justify-content-center g-4">
                 <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.1s">
                     <div class="staff-card">
-                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="staff-placeholder"><img src="images/staff/homeaided.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-house-heart"></i></div>
                             <h5 class="alt-font fw-500 mb-0">Home Health Aides (HHAs)</h5>
@@ -494,7 +820,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 reveal zoom-in" style="transition-delay:.2s">
                     <div class="staff-card">
-                        <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
+                        <div class="staff-placeholder"><img src="images/staff/admin.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-people"></i></div>
                             <h5 class="alt-font fw-500 mb-0">Support &amp; Administrative Staff</h5>
@@ -633,6 +959,58 @@
 
         </div>
     </section>
+ <!-- start footer -->
+        <footer class="trinity-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Trinity <span>Life Care</span></div>
+      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+      <div class="footer-contact">
+        <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>1 800 222 000</a>
+        <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>info@trinitylifecare.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
+        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
+        <li><a href="pediatric-care.html">Pediatric Care</a></li>
+        <li><a href="healthcare-staffing.html">Healthcare Staffing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="priorities.html">Our Priorities</a></li>
+        <li><a href="Staffing.html">Staffing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <ul class="footer-links">
+        <li><a href="#">Payment &amp; Coverage</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="request-care.html">Request Care</a></li>
+        <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="priorities.html">Our Priorities</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <span>Serving Southeastern Pennsylvania with compassion.</span>
+  </div>
+</footer>
+        <!-- end footer -->
 
     <!-- start footer -->
     <footer class="trinity-footer">
