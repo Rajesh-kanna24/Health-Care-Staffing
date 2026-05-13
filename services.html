@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/trinity/trinity-logo.png">
+    <link rel="icon" type="image/png" href="images/trinity/trinity-logo.png">
+    <link rel="apple-touch-icon" href="images/trinity/trinity-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,11 +29,11 @@
         }
 
         body { font-family: var(--sans); }
-         /* header logo — make Trinity logo larger than demo default (54px) */
-            header .navbar-brand { padding: 14px 0; }
-            header .navbar-brand img { max-height: 80px; }
+         /* header logo — square brand mark sized to fit nav row */
+            header .navbar-brand { padding: 8px 0; }
+            header .navbar-brand img { max-height: 56px; width: auto; }
             @media (max-width: 991.98px) {
-                header .navbar-brand img { max-height: 60px; }
+                header .navbar-brand img { max-height: 44px; }
             }
             /* keep multi-word nav links on a single line (e.g. "Why Trinity") */
             header .navbar-nav .nav-item .nav-link { white-space: nowrap; }
@@ -202,7 +205,7 @@
                                 </li>
                             </ul>
                             <ul class="navbar-nav navbar-right justify-content-start">
-                                <li class="nav-item"><a href="why-trinity.html" class="nav-link">Why Trinity</a></li>
+                                <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
                                 <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
                                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                             </ul>
