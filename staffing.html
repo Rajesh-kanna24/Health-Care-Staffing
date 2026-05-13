@@ -20,24 +20,6 @@
         color: #1f1f1f;
     }
 
-    header .navbar-brand {
-        padding: 14px 0;
-    }
-
-    header .navbar-brand img {
-        max-height: 80px;
-    }
-
-    header .navbar-nav .nav-item .nav-link {
-        white-space: nowrap;
-        color: #1f1f1f;
-        transition: color .3s ease;
-    }
-
-    header .navbar-nav .nav-item .nav-link:hover {
-        color: #be9256;
-    }
-
     section {
         background-image: none !important;
     }
@@ -295,10 +277,6 @@
     /* ───────── RESPONSIVE ───────── */
     @media (max-width:991px) {
 
-        header .navbar-brand img {
-            max-height: 60px;
-        }
-
         .staffing-hero {
             padding: 80px 0 60px;
             background: linear-gradient(135deg, #faf7f2 0%, #f3ebe0 100%);
@@ -393,7 +371,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav navbar-left justify-content-end">
-            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
             <li class="nav-item dropdown dropdown-with-icon">
               <a href="services.html" class="nav-link">Services</a>
@@ -408,7 +386,7 @@
           </ul>
           <ul class="navbar-nav navbar-right justify-content-start">
             <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
-            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link active">Staffing</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </div>
@@ -424,7 +402,7 @@
 </header>
 
     <!-- HERO SECTION -->
-    <section class="staffing-hero top-space-margin">
+    <section class="staffing-hero top-space-margin border-top border-4 border-color-base-color">
         <div class="container-fluid px-0">
             <div class="row g-0 align-items-center">
 
@@ -655,6 +633,59 @@
 
         </div>
     </section>
+
+    <!-- start footer -->
+    <footer class="trinity-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Trinity <span>Life Care</span></div>
+          <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+          <div class="footer-contact">
+            <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px"></i>1 800 222 000</a>
+            <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px"></i>info@trinitylifecare.com</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
+            <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
+            <li><a href="pediatric-care.html">Pediatric Care</a></li>
+            <li><a href="healthcare-staffing.html">Healthcare Staffing</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="priorities.html">Our Priorities</a></li>
+            <li><a href="Staffing.html">Staffing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Information</div>
+          <ul class="footer-links">
+            <li><a href="#">Payment &amp; Coverage</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="request-care.html">Request Care</a></li>
+            <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="priorities.html">Our Priorities</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <span>Serving Southeastern Pennsylvania with compassion.</span>
+      </div>
+    </footer>
+    <!-- end footer -->
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
