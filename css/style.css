@@ -19603,3 +19603,229 @@ footer .footer-navbar .nav-item:last-child a {
 .footer-demo img {
   max-height: 55px !important;
 }
+
+/* Trinity header — shared brand logo sizing + nav spacing (matches priorities page) */
+header .navbar-brand { padding: 8px 0; }
+header .navbar-brand img { max-height: 56px; width: auto; transition: max-height .3s ease; }
+@media (max-width: 991.98px) {
+  header .navbar-brand img { max-height: 44px; }
+}
+header .navbar-nav .nav-item .nav-link { white-space: nowrap; }
+
+/* Trinity header nav — active page in base-color, others black */
+.header-light .navbar-nav .nav-link,
+.header-light .navbar-nav .nav-item .nav-link {
+  color: #000;
+  opacity: 1;
+  font-family: var(--primary-font);
+  font-weight: 500;
+}
+/* Trinity header widget text (phone, request care) — match nav weight/font */
+header .widget-text,
+header .widget-text a {
+  font-family: var(--primary-font);
+  font-weight: 500;
+}
+/* Trinity header dropdown submenu — normalize font weight across pages */
+header .navbar .navbar-nav .dropdown .dropdown-menu li a,
+header .navbar .navbar-nav .dropdown .dropdown-menu li a span,
+header .navbar .navbar-nav .dropdown .dropdown-menu li a p {
+  font-family: var(--primary-font);
+}
+header .navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a span {
+  font-weight: 500 !important;
+}
+header .navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
+  font-weight: 400 !important;
+}
+.header-light .navbar-nav .nav-item:hover .nav-link,
+.header-light .navbar-nav .nav-item:hover > .nav-link {
+  color: var(--base-color);
+  opacity: 1;
+}
+.header-light .navbar-nav .nav-item .nav-link.active,
+.header-light .navbar-nav .nav-item.active .nav-link {
+  color: var(--base-color) !important;
+  opacity: 1 !important;
+}
+.header-light .navbar-nav .nav-item .dropdown-toggle {
+  color: #000;
+}
+.header-light .navbar-nav .nav-item:hover .dropdown-toggle,
+.header-light .navbar-nav .nav-item.active .dropdown-toggle {
+  color: var(--base-color);
+}
+
+/* =========================================================
+   TRINITY FOOTER — shared across all pages
+   ========================================================= */
+.trinity-footer {
+  --tf-taupe: #ac8d56;
+  --tf-cream: #F0E7DE;
+  --tf-cream-soft: #d9cdbf;
+  --tf-text-light: rgba(240,231,222,.72);
+  --tf-text-muted: rgba(240,231,222,.55);
+  --tf-divider: rgba(240,231,222,.10);
+  background: linear-gradient(180deg, #2e3a42 0%, #1f2830 100%) !important;
+  padding: 90px 0 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-top: 1px solid rgba(172,141,86,.25) !important;
+  font-family: var(--primary-font) !important;
+  color: var(--tf-text-light) !important;
+}
+.trinity-footer::before,
+.trinity-footer::after { content: none; }
+.trinity-footer .footer-grid {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 60px 70px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 70px;
+  position: relative;
+  z-index: 2;
+}
+.trinity-footer .footer-logo {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--tf-cream) !important;
+  margin-bottom: 22px;
+  line-height: 1;
+}
+.trinity-footer .footer-logo span {
+  color: var(--tf-taupe) !important;
+  font-weight: 500;
+}
+.trinity-footer .footer-desc {
+  color: var(--tf-text-light) !important;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+  max-width: 430px;
+}
+.trinity-footer .footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.trinity-footer .footer-contact a {
+  display: flex;
+  align-items: center;
+  color: var(--tf-cream-soft) !important;
+  font-size: 15px;
+  font-weight: 500;
+  transition: .3s ease;
+  text-decoration: none;
+}
+.trinity-footer .footer-contact a:hover {
+  color: var(--tf-taupe) !important;
+  transform: translateX(4px);
+}
+.trinity-footer .footer-contact a i {
+  color: var(--tf-taupe) !important;
+}
+.trinity-footer .footer-col-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--tf-cream) !important;
+  margin-bottom: 28px;
+  position: relative;
+  padding-bottom: 14px;
+}
+.trinity-footer .footer-col-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38px;
+  height: 2px;
+  background: var(--tf-taupe);
+  border-radius: 20px;
+}
+.trinity-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.trinity-footer .footer-links li {
+  margin-bottom: 15px;
+}
+.trinity-footer .footer-links a {
+  color: rgba(240,231,222,.78) !important;
+  text-decoration: none;
+  transition: .3s ease;
+  font-size: 15px;
+  font-weight: 500;
+}
+.trinity-footer .footer-links a:hover {
+  color: var(--tf-taupe) !important;
+  padding-left: 8px;
+}
+.trinity-footer .footer-bottom {
+  border-top: 1px solid var(--tf-divider);
+  padding: 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,.18);
+}
+.trinity-footer .footer-bottom span {
+  color: rgba(240,231,222,.72) !important;
+  font-size: 14px;
+}
+.trinity-footer .footer-bottom a {
+  color: var(--tf-cream-soft) !important;
+  text-decoration: none;
+  transition: .3s ease;
+}
+.trinity-footer .footer-bottom a:hover {
+  color: var(--tf-taupe) !important;
+}
+.trinity-footer .footer-bottom ul li a {
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (max-width: 991px) {
+  .trinity-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 0 40px 60px;
+  }
+  .trinity-footer .footer-bottom {
+    padding: 22px 40px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .trinity-footer {
+    padding-top: 70px;
+  }
+  .trinity-footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px 50px;
+  }
+  .trinity-footer .footer-logo {
+    font-size: 28px;
+  }
+  .trinity-footer .footer-desc {
+    font-size: 15px;
+  }
+  .trinity-footer .footer-col-title {
+    margin-bottom: 22px;
+  }
+  .trinity-footer .footer-bottom {
+    padding: 20px 24px;
+  }
+  .trinity-footer .footer-bottom ul {
+    justify-content: center;
+  }
+}

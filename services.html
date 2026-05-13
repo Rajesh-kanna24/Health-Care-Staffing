@@ -24,7 +24,7 @@
 
 :root{
     /* HOME PAGE COLORS */
-    --taupe:#9A856A;
+    --taupe:#ac8d56;
     --taupe-d:#7d6b55;
     --cream-d:#EFDDC5;
     --cream-l:#F0E7DE;
@@ -68,58 +68,7 @@ body{
    NAVBAR
    ========================================================= */
 
-header .navbar{
-    padding:18px 0;
-    transition:padding .3s ease,box-shadow .3s ease;
-    box-shadow:0 18px 45px rgba(15,23,42,.08);
-    background:var(--white)!important;
-}
-
-header .navbar-brand{
-    padding:8px 0;
-}
-
-header .navbar-brand img{
-    max-height:56px;
-    width:auto;
-    transition:max-height .3s ease;
-}
-
-@media(max-width:991.98px){
-    header .navbar-brand img{
-        max-height:44px;
-    }
-}
-
-header .navbar-nav .nav-item .nav-link{
-    white-space:nowrap;
-    color:var(--slate);
-    font-weight:500;
-    padding:.8rem .95rem;
-    transition:color .25s;
-}
-
-header .navbar-nav .nav-item .nav-link:hover,
-header .navbar-nav .nav-item .nav-link.active{
-    color:var(--taupe);
-}
-
-header .navbar-toggler{
-    border-color:rgba(74,78,82,.14);
-}
-
-header .navbar-toggler-line{
-    background:var(--taupe);
-    height:2px;
-}
-
-.widget-text a{
-    color:var(--slate)!important;
-}
-
-.widget-text a:hover{
-    color:var(--taupe)!important;
-}
+/* navbar styles come from global style.css for parity with priorities page */
 
 /* =========================================================
    HERO SECTION
@@ -127,15 +76,6 @@ header .navbar-toggler-line{
 
 .tlc-hero{
     position:relative;
-}
-
-.tlc-hero .opacity-full{
-    background:linear-gradient(
-        115deg,
-        rgba(46,58,66,.92) 0%,
-        rgba(46,58,66,.6) 42%,
-        rgba(46,58,66,.88) 100%
-    )!important;
 }
 
 .tlc-hero-eyebrow{
@@ -798,10 +738,10 @@ header .navbar-toggler-line{
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav navbar-left justify-content-end">
-            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
             <li class="nav-item dropdown dropdown-with-icon">
-              <a href="services.html" class="nav-link">Services</a>
+              <a href="services.html" class="nav-link active">Services</a>
               <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
@@ -830,7 +770,7 @@ header .navbar-toggler-line{
 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section class="tlc-hero page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin" style="background-image:url(images/Trinity/services-header.png)">
-    <div class="opacity-full bg-gradient-dark-transparent"></div>
+    <div class="opacity-full-dark bg-gradient-dark-transparent"></div>
     <div class="container position-relative">
         <div class="row align-items-end justify-content-end flex-column flex-lg-row extra-small-screen"
              data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":500,"delay":0,"staggervalue":180,"easing":"easeOutQuad"}'>
@@ -1519,53 +1459,58 @@ header .navbar-toggler-line{
     </div>
 </section>
 
-<!-- ═══════════ FOOTER (footer style) ═══════════ -->
-<footer class="bg-very-light-gray pb-50px sm-pt-20px xs-pb-30px background-repeat background-position-center sm-background-image-none" style="background-image:url('images/vertical-center-line-bg-dark.svg')">
-    <div class="container">
-        <div class="row overlap-section">
-            <div class="col-12 text-center">
-                <img class="rounded-circle" src="images/trinity/about-footer-brand.png" alt="Trinity Life Care" style="width:140px; height:140px; object-fit:cover;">
-            </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-            <div class="col-xl-6 col-lg-8 col-md-10 text-center">
-                <h3 class="text-dark-gray alt-font ls-minus-2px fw-400 mb-40px xs-mb-30px w-80 xs-w-100 mx-auto">Stay informed about home care, staffing, and Trinity updates.</h3>
-                <div class="d-inline-block w-100 newsletter-style-03 position-relative mb-20px">
-                    <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100">
-                        <input class="input-large bg-white border-color-transparent w-100 border-radius-100px box-shadow-extra-large form-control required" type="email" name="email" placeholder="Enter your email address">
-                        <input type="hidden" name="redirect" value="">
-                        <button class="btn btn-large text-dark-gray ls-0px left-icon submit text-uppercase fw-700" aria-label="submit"><i class="icon feather icon-feather-mail icon-small text-base-color"></i><span>Subscribe</span></button>
-                        <div class="form-results border-radius-100px pt-10px pb-10px ps-15px pe-15px fs-16 mt-10px w-100 text-center position-absolute d-none"></div>
-                    </form>
-                </div>
-                <p class="fs-16">We are committed to protecting your <a href="#" class="text-decoration-line-bottom text-dark-gray">privacy policy.</a></p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-xl-3 col-sm-6 text-center text-sm-start last-paragraph-no-margin fs-15 order-3 order-md-1">
-                <p>&copy; Copyright 2026 <a href="https://adsofttechnologies.com/" class="text-decoration-line-bottom text-dark-gray fw-500">AD Soft Techlogies</a></p>
-            </div>
-            <div class="col-xl-6 text-center lg-mt-10px sm-mt-0 sm-mb-10px order-1 order-xl-2 order-md-3">
-                <ul class="footer-navbar fs-17 fw-600">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-                    <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#why" class="nav-link">Why Trinity</a></li>
-                    <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-xl-3 col-sm-6 text-center text-sm-end order-2 order-md-2">
-                <ul class="social-icon-style-01 d-inline-flex  gap-3">
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
+<!-- start footer -->
+<footer class="trinity-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Trinity <span>Life Care</span></div>
+      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+      <div class="footer-contact">
+        <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px"></i>1 800 222 000</a>
+        <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px"></i>info@trinitylifecare.com</a>
+      </div>
     </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
+        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
+        <li><a href="pediatric-care.html">Pediatric Care</a></li>
+        <li><a href="healthcare-staffing.html">Healthcare Staffing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="priorities.html">Our Priorities</a></li>
+        <li><a href="Staffing.html">Staffing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <ul class="footer-links">
+        <li><a href="#">Payment &amp; Coverage</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="request-care.html">Request Care</a></li>
+        <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="priorities.html">Our Priorities</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <span>Serving Southeastern Pennsylvania with compassion.</span>
+  </div>
 </footer>
+<!-- end footer -->
  
 <div class="scroll-progress d-none d-xxl-block">
     <a href="#" class="scroll-top" aria-label="scroll">
