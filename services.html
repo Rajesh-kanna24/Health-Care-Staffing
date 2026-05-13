@@ -18,15 +18,13 @@
     <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css"/>
     <style>
         :root {
-            --tn: #0a2540;
-            --tg: #1a7f6e;
-            --tg2: #e8f5f2;
-            --tb: #185FA5;
-            --tb2: #E6F1FB;
-            --tw: #f9f7f4;
-            --serif: 'Cormorant Garamond', Georgia, serif;
-            --sans: 'DM Sans', sans-serif;
-        }
+    --tn: #1f2a26;        /* priorities dark green → navy-ஐ replace */
+    --tg: #b89968;        /* priorities base gold → teal-ஐ replace */
+    --tg2: #f5efe0;       /* priorities light gold bg */
+    --tb: #b89968;        /* blue sections → gold-ஆக */
+    --tb2: #f5efe0;       /* blue light bg → gold light */
+    --tw: #f9f7f4;        /* same — ok */
+}
 
         body { font-family: var(--sans); }
          /* header logo — square brand mark sized to fit nav row */
@@ -45,7 +43,7 @@
         .tlc-phone i { color: var(--tg); margin-right: 6px; }
 
         /* ── HERO ── */
-        .tlc-hero-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9FE1CB; font-weight: 500; display: block; margin-bottom: 16px; }
+        .tlc-hero-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--base-color); font-weight: 500; display: block; margin-bottom: 16px; }
         .tlc-hero h1 { font-family: var(--serif); font-size: 58px; font-weight: 500; line-height: 1.1; letter-spacing: -1.5px; }
         .tlc-hero p { font-size: 17px; font-weight: 300; opacity: 0.8; line-height: 1.7; }
 
@@ -55,7 +53,7 @@
         .strip-item span { font-size: 13px; font-weight: 500; color: #333; }
 
         /* ── SECTION HEADINGS ── */
-        .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color:  rgb(172, 141, 86); font-weight: 500; display: block; margin-bottom: 10px; }
+        .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color:  #b89968; font-weight: 500; display: block; margin-bottom: 10px; }
         .section-h2 { font-family: var(--serif); font-size: 40px; font-weight: 500; color: var(--tn); line-height: 1.15; letter-spacing: -1px; margin-bottom: 8px; }
         .section-sub { font-style: italic; color: #999; font-size: 16px; margin-bottom: 24px; }
 
@@ -115,21 +113,21 @@
 
         /* Badges */
         .tag { display: inline-block; font-size: 12px; font-weight: 400; padding: 5px 13px; border-radius: 100px; margin: 3px; }
-        .tag-green { background: #e8f5f2; color: #085041; }
-        .tag-navy { background: #e8edf5; color: #0a2540; }
-        .tag-pink { background: #fde8ef; color: #72243E; }
-        .tag-blue { background: #E6F1FB; color: rgb(172, 141, 86) }
-        .tag-warm { background: #fef3e8; color: #7a4200; }
+       .tag-green { background:#f5efe0; color:#6b4c1e; }
+.tag-navy  { background:#e8ece8; color:#1f2a26; }
+.tag-pink  { background:#f5efe0; color:#6b4c1e; }
+.tag-blue  { background:#f5efe0; color:#6b4c1e; }
+.tag-warm  { background:#f5efe0; color:#6b4c1e; }
 
         /* CTA button row */
         .svc-cta { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-        .btn-teal { background: var(--tg); color: #fff; border: none; border-radius: 100px; padding: 13px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--sans); text-decoration: none; display: inline-block; transition: background 0.2s; }
-        .btn-teal:hover { background: #0F6E56; color: #fff; }
+        .btn-teal { background: #b89968; color: #fff; border: none; border-radius: 100px; padding: 13px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--sans); text-decoration: none; display: inline-block; transition: background 0.2s; }
+        .btn-teal:hover { background: #a07d45;  color: #fff; }
         .btn-ghost { background: transparent; color: var(--tn); border: 1.5px solid #ccc; border-radius: 100px; padding: 13px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--sans); text-decoration: none; display: inline-block; transition: all 0.2s; }
         .btn-ghost:hover { border-color: var(--tn); color: var(--tn); }
 
         /* ── WHY SECTION ── */
-        .why-section { padding: 96px 0; background:var(--dark-gray); }
+        .why-section { padding: 96px 0; background: #1f2a26; }
         .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 28px 24px; height: 100%; }
         .why-card .w-icon { font-size: 28px; margin-bottom: 14px; display: block; }
         .why-card h5 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 8px; }
@@ -148,7 +146,7 @@
         /* ── COMPLIANCE ── */
         .comp-section { padding: 80px 0; }
         .comp-card { background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 24px 20px; display: flex; gap: 16px; align-items: flex-start; height: 100%; }
-        .comp-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--tg2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: var(--tg); }
+        .comp-icon { width: 44px; height: 44px; border-radius: 12px; background: #f5efe0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: #b89968; }
         .comp-card h6 { font-size: 14px; font-weight: 500; color: var(--tn); margin-bottom: 4px; }
         .comp-card p { font-size: 13px; color: #777; margin: 0; line-height: 1.55; }
 
@@ -246,17 +244,17 @@
              data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":800,"delay":0,"staggervalue":100,"easing":"easeOutQuad"}'>
             <div class="col" style="border-right:1px solid #f0f0f0;">
                 <div class="strip-item">
-                    <div class="strip-icon" style="background:#e8f5f2;">
-                        <i class="fa-solid fa-stethoscope" style="color:#1a7f6e; font-size:22px;"></i>
+                    <div class="strip-icon" style="background:#f5efe0;">
+                        <i class="fa-solid fa-stethoscope" style="color:#b89968; font-size:22px;"></i>
                     </div>
                     <span>Skilled nursing</span>
                 </div>
             </div>
             <div class="col" style="border-right:1px solid #f0f0f0;">
                 <div class="strip-item">
-                    <div class="strip-icon" style="background:#f0eeff;">
+                    <div class="strip-icon" style="background:#f5efe0;">
                         <!-- FIXED: SVG icon for personal care (fa-hands-holding-heart fallback) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b89968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
                             <path d="M12 20c-4-3-8-5.5-8-9a4 4 0 0 1 8 0 4 4 0 0 1 8 0c0 3.5-4 6-8 9z"/>
                             <path d="M6 12c0 0 1.5 1 3 1s3-1 3-1"/>
                         </svg>
@@ -266,16 +264,16 @@
             </div>
             <div class="col" style="border-right:1px solid #f0f0f0;">
                 <div class="strip-item">
-                    <div class="strip-icon" style="background:#fde8ef;">
-                        <i class="fa-solid fa-child-reaching" style="color:#c0316a; font-size:22px;"></i>
+                    <div class="strip-icon" style="background:#f5efe0;">
+                        <i class="fa-solid fa-child-reaching" style="color:#b89968; font-size:22px;"></i>
                     </div>
                     <span>Pediatric care</span>
                 </div>
             </div>
             <div class="col" style="border-right:1px solid #f0f0f0;">
                 <div class="strip-item">
-                    <div class="strip-icon" style="background:#e8edf5;">
-                        <i class="fa-solid fa-user-nurse" style="color:#0a2540; font-size:22px;"></i>
+                    <div class="strip-icon" style="background:#f5efe0;">
+                        <i class="fa-solid fa-user-nurse" style="color:#b89968; font-size:22px;"></i>
                     </div>
                     <span>Facility staffing</span>
                 </div>
@@ -283,7 +281,7 @@
             <div class="col">
                 <div class="strip-item">
                     <div class="strip-icon" style="background:#fff3e8;">
-                        <i class="fa-solid fa-shield-halved" style="color:#854F0B; font-size:22px;"></i>
+                        <i class="fa-solid fa-shield-halved" style="color:#b89968; font-size:22px;"></i>
                     </div>
                     <span>HIPAA compliant</span>
                 </div>
@@ -311,8 +309,8 @@
             <div class="col">
                 <!-- Explore click → showService('skilled') -->
                 <div class="gw-card" style="cursor:pointer;" onclick="showService('skilled')">
-                    <div class="gw-icon" style="background:#e8f5f2;">
-                        <i class="fa-solid fa-stethoscope" style="color:#1a7f6e;"></i>
+                    <div class="gw-icon" style="background:#f5efe0;">
+                        <i class="fa-solid fa-stethoscope" style="color:#b89968;"></i>
                     </div>
                     <h4>Skilled Home Care</h4>
                     <p>Physician-coordinated nursing and therapy. Advanced clinical programs to prevent readmissions and support recovery.</p>
@@ -323,9 +321,9 @@
             <div class="col">
                 <!-- FIXED: icon replaced with inline SVG; Explore click → showService -->
                 <div class="gw-card" style="border-color:#ebebeb; cursor:pointer;" onclick="showService('nonskilled')">
-                    <div class="gw-icon" style="background:#f0eeff;">
+                    <div class="gw-icon" style="background:#fff3e8;">
                         <!-- SVG replacement for fa-hands-holding-heart -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b89968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
                             <path d="M12 21C8 17.5 3 15 3 10a4 4 0 0 1 7-2.65A4 4 0 0 1 17 7.35C17 7.35 21 9.5 21 10c0 5-4.5 7.5-9 11z"/>
                             <path d="M7 17c0 0 1.5-1 2.5-2.5"/>
                             <path d="M17 17c0 0-1.5-1-2.5-2.5"/>
@@ -333,40 +331,40 @@
                     </div>
                     <h4>Non-Skilled Home Care</h4>
                     <p>Personal care, companionship and daily living support that preserves dignity and promotes independence.</p>
-                    <span class="gw-link" style="color:#534AB7;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
                 </div>
             </div>
 
             <div class="col">
                 <div class="gw-card" style="cursor:pointer;" onclick="showService('pediatric')">
-                    <div class="gw-icon" style="background:#fde8ef;">
-                        <i class="fa-solid fa-child-reaching" style="color:#c0316a;"></i>
+                    <div class="gw-icon" style="background:#f5efe0;">
+                        <i class="fa-solid fa-child-reaching" style="color:#b89968;"></i>
                     </div>
                     <h4>Pediatric Care</h4>
                     <p>Gentle, expert in-home care for children with medical complexities. Supporting the whole family, every step.</p>
-                    <span class="gw-link" style="color:#c0316a;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
                 </div>
             </div>
 
             <div class="col">
                 <div class="gw-card" style="cursor:pointer;" onclick="showService('staffing')">
                     <div class="gw-icon" style="background:#e8edf5;">
-                        <i class="fa-solid fa-user-nurse" style="color:#0a2540;"></i>
+                        <i class="fa-solid fa-user-nurse" style="color:#b89968;"></i>
                     </div>
                     <h4>Healthcare Staffing</h4>
                     <p>Fully vetted RNs, LPNs, CNAs, and HHAs for hospitals, SNFs, assisted living, and group homes.</p>
-                    <span class="gw-link" style="color:#0a2540;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
                 </div>
             </div>
 
             <div class="col">
                 <div class="gw-card" style="cursor:pointer;" onclick="showService('coverage')">
                     <div class="gw-icon" style="background:#fff3e8;">
-                        <i class="fa-solid fa-credit-card" style="color:#854F0B;"></i>
+                        <i class="fa-solid fa-credit-card" style="color:#b89968;"></i>
                     </div>
                     <h4>Payment &amp; Coverage</h4>
                     <p>Private pay, Medicare, Medicaid, insurance and more. We help you navigate all coverage options with ease.</p>
-                    <span class="gw-link" style="color:#854F0B;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">Explore <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
                 </div>
             </div>
 
@@ -395,7 +393,7 @@
             </div>
             <div class="col-lg-5 text-lg-end">
                 <div style="display:inline-flex; align-items:center; gap:12px; background:var(--tw); border-radius:100px; padding:10px 20px 10px 10px;">
-                    <div style="width:40px; height:40px; border-radius:50%; background:var(--tg2); display:flex; align-items:center; justify-content:center;">
+                    <div style="width:40px; height:40px; border-radius:50%; background:#f5efe0; display:flex; align-items:center; justify-content:center;">
                         <i class="fa-solid fa-check" style="color:var(--tg); font-size:14px;"></i>
                     </div>
                     <span style="font-size:13px; font-weight:500; color:#333;">Reduces hospital readmissions</span>
@@ -409,20 +407,20 @@
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Core services</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Skilled nursing</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Medication management</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Wound care</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Post-surgical monitoring</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>IV therapy</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Vital signs &amp; assessments</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Care plan development</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Skilled nursing</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Medication management</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Wound care</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Post-surgical monitoring</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>IV therapy</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Vital signs &amp; assessments</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Care plan development</div>
                 </div>
                 <div class="pillar mt-10px">
                     <div class="pillar-title">Therapy services</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Physical therapy (PT)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Occupational therapy (OT)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Speech therapy</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#e8f5f2;"><i class="fa-solid fa-check" style="color:var(--tg);"></i></span>Fall risk &amp; rehab</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Physical therapy (PT)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Occupational therapy (OT)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Speech therapy</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Fall risk &amp; rehab</div>
                 </div>
             </div>
 
@@ -454,7 +452,7 @@
             <div class="col-lg-4">
                 <div style="background:var(--tw); border-radius:16px; padding:32px; height:100%;">
                     <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">Our licensed professionals follow physician-directed care plans to help patients recover, manage chronic conditions, and avoid hospital readmissions.</p>
-                    <div class="hl-box" style="background:var(--tg2); border-left:3px solid var(--tg); border-radius:0 8px 8px 0;">
+                    <div class="hl-box" style="background:#f5efe0; border-left:3px solid #b89968; border-radius:0 8px 8px 0;">
                         <strong style="color:#085041;">Outcome focus</strong>
                         <p style="color:#0F6E56;">Designed to reduce readmissions, improve compliance, and ensure seamless continuity of care.</p>
                     </div>
@@ -480,14 +478,14 @@
 
         <div class="row align-items-end mb-60px">
             <div class="col-lg-7">
-                <span class="eyebrow" style="color:#534AB7;">Non-Skilled Home Care</span>
+                <span class="eyebrow" style="color:#b89968;">Non-Skilled Home Care</span>
                 <h2 class="section-h2">Helping Your Loved One<br>Live Fully at Home.</h2>
                 <p class="section-sub">Care that preserves dignity, safety, and the rhythm of daily life.</p>
             </div>
             <div class="col-lg-5 text-lg-end">
                 <div style="display:inline-flex; align-items:center; gap:12px; background:#fff; border-radius:100px; padding:10px 20px 10px 10px;">
-                    <div style="width:40px; height:40px; border-radius:50%; background:#f0eeff; display:flex; align-items:center; justify-content:center;">
-                        <i class="fa-solid fa-heart" style="color:#534AB7; font-size:14px;"></i>
+                    <div style="width:40px; height:40px; border-radius:50%; background:#f5efe0; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-heart" style="color:#b89968; font-size:14px;"></i>
                     </div>
                     <span style="font-size:13px; font-weight:500; color:#333;">Matched for skill &amp; heart</span>
                 </div>
@@ -498,22 +496,22 @@
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Personal care &amp; daily living</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Bathing &amp; dressing</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Toileting &amp; mobility</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Meal preparation</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Medication reminders</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Housekeeping &amp; shopping</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#f0eeff;"><i class="fa-solid fa-check" style="color:#534AB7;"></i></span>Transportation</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Bathing &amp; dressing</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Toileting &amp; mobility</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Meal preparation</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Medication reminders</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Housekeeping &amp; shopping</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Transportation</div>
                 </div>
             </div>
 
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Specialized support</div>
-                    <span class="tag" style="background:#f0eeff; color:#3C3489;">Dementia / Alzheimer's care</span>
-                    <span class="tag" style="background:#f0eeff; color:#3C3489;">Behavioral redirection</span>
-                    <span class="tag" style="background:#f0eeff; color:#3C3489;">Fall prevention</span>
-                    <span class="tag" style="background:#f0eeff; color:#3C3489;">Overnight &amp; live-in care</span>
+                    <span class="tag" style="background:#f5efe0; color:#b89968;">Dementia / Alzheimer's care</span>
+                    <span class="tag" style="background:#f5efe0; color:#b89968;">Behavioral redirection</span>
+                    <span class="tag" style="background:#f5efe0; color:#b89968;">Fall prevention</span>
+                    <span class="tag" style="background:#f5efe0; color:#b89968;">Overnight &amp; live-in care</span>
                 </div>
                 <div class="pillar mt-28px">
                     <div class="pillar-title">Lifestyle &amp; wellness</div>
@@ -537,7 +535,7 @@
                         <span class="tag tag-navy">End-of-life companionship</span>
                     </div>
                     <div class="svc-cta">
-                        <a href="#contact" class="btn-teal" style="background:#534AB7;">Request home care</a>
+                        <a href="#contact" class="btn-teal" style="background:#b89968;">Request home care</a>
                     </div>
                 </div>
             </div>
@@ -558,14 +556,14 @@
 
         <div class="row align-items-end mb-60px">
             <div class="col-lg-7">
-                <span class="eyebrow" style="color:#c0316a;">Pediatric Care</span>
+                <span class="eyebrow" style="color:#b89968;">Pediatric Care</span>
                 <h2 class="section-h2">Expert Pediatric Care,<br>Gentle and In-Home.</h2>
                 <p class="section-sub">Compassionate care for children with medical complexities, supporting the whole family.</p>
             </div>
             <div class="col-lg-5 text-lg-end">
                 <div style="display:inline-flex; align-items:center; gap:12px; background:var(--tw); border-radius:100px; padding:10px 20px 10px 10px;">
-                    <div style="width:40px; height:40px; border-radius:50%; background:#fde8ef; display:flex; align-items:center; justify-content:center;">
-                        <i class="fa-solid fa-child-reaching" style="color:#c0316a; font-size:14px;"></i>
+                    <div style="width:40px; height:40px; border-radius:50%; background:#f5efe0; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-child-reaching" style="color:#b89968; font-size:14px;"></i>
                     </div>
                     <span style="font-size:13px; font-weight:500; color:#333;">Family-centered approach</span>
                 </div>
@@ -576,11 +574,11 @@
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Skilled pediatric services</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Pediatric skilled nursing</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Medication administration</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Chronic condition management</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Post-hospital recovery care</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Respiratory support monitoring</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Pediatric skilled nursing</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Medication administration</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Chronic condition management</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Post-hospital recovery care</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Respiratory support monitoring</div>
                 </div>
                 <p style="font-size:12px; color:#bbb; margin-top:8px; padding-left:32px;">Includes: asthma, diabetes, congenital conditions</p>
             </div>
@@ -588,23 +586,23 @@
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Non-skilled pediatric care</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Personal care assistance</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Feeding &amp; mobility support</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Developmental support</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Family respite care</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:#fde8ef;"><i class="fa-solid fa-check" style="color:#c0316a;"></i></span>Behavioral &amp; routine support</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Personal care assistance</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Feeding &amp; mobility support</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Developmental support</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Family respite care</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Behavioral &amp; routine support</div>
                 </div>
             </div>
 
             <div class="col-lg-4">
                 <div style="background:var(--tw); border-radius:16px; padding:32px; height:100%;">
                     <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:24px;">We provide expert in-home care for children while supporting the whole family. Our care is built on warmth, expertise, and a deep respect for each child's unique needs.</p>
-                    <div class="hl-box" style="background:#fde8ef; border-left:3px solid #c0316a; border-radius:0 8px 8px 0;">
+                    <div class="hl-box" style="background:#f5efe0; border-left:3px solid #f5efe0; border-radius:0 8px 8px 0;">
                         <strong style="color:#72243E;">Family-centered care</strong>
                         <p style="color:#993556;">We collaborate closely with parents, pediatricians, and schools to build a consistent, loving care plan.</p>
                     </div>
                     <div class="svc-cta">
-                        <a href="#contact" class="btn-teal" style="background:#c0316a;">Request pediatric care</a>
+                        <a href="#contact" class="btn-teal" style="background:#f5efe0;">Request pediatric care</a>
                     </div>
                 </div>
             </div>
@@ -625,14 +623,14 @@
 
         <div class="row align-items-end mb-60px">
             <div class="col-lg-7">
-                <span class="eyebrow" style="color:var(--tb);">Healthcare Staffing Solutions</span>
+                <span class="eyebrow" style="color:#b89968;">Healthcare Staffing Solutions</span>
                 <h2 class="section-h2">Reliable Staffing for<br>Pennsylvania Facilities.</h2>
                 <p class="section-sub">A trusted workforce partner — when and where you need us most.</p>
             </div>
             <div class="col-lg-5 text-lg-end">
                 <div style="display:inline-flex; align-items:center; gap:12px; background:#fff; border-radius:100px; padding:10px 20px 10px 10px;">
-                    <div style="width:40px; height:40px; border-radius:50%; background:var(--tb2); display:flex; align-items:center; justify-content:center;">
-                        <i class="fa-solid fa-bolt" style="color:var(--tb); font-size:14px;"></i>
+                    <div style="width:40px; height:40px; border-radius:50%; background:#f5efe0; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-bolt" style="color:#b89968; font-size:14px;"></i>
                     </div>
                     <span style="font-size:13px; font-weight:500; color:#333;">Rapid deployment available</span>
                 </div>
@@ -643,22 +641,22 @@
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Professionals we staff</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Registered Nurses (RNs)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Licensed Practical Nurses (LPNs)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Certified Nursing Assistants (CNAs)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Home Health Aides (HHAs)</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Support &amp; administrative staff</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Registered Nurses (RNs)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Licensed Practical Nurses (LPNs)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Certified Nursing Assistants (CNAs)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Home Health Aides (HHAs)</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Support &amp; administrative staff</div>
                 </div>
             </div>
 
             <div class="col-lg-4">
                 <div class="pillar">
                     <div class="pillar-title">Why facilities choose us</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Rapid staffing deployment</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Fully vetted professionals</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Compliance-ready workforce</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Strong candidate matching</div>
-                    <div class="chk-row"><span class="chk-dot" style="background:var(--tb2);"><i class="fa-solid fa-check" style="color:var(--tb);"></i></span>Reduced call-off gaps</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Rapid staffing deployment</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Fully vetted professionals</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Compliance-ready workforce</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Strong candidate matching</div>
+                    <div class="chk-row"><span class="chk-dot" style="background:#f5efe0;"><i class="fa-solid fa-check" style="color:#b89968;"></i></span>Reduced call-off gaps</div>
                 </div>
             </div>
 
@@ -696,7 +694,7 @@
 
         <div class="row align-items-end mb-60px">
             <div class="col-lg-7">
-                <span class="eyebrow" style="color:#854F0B;">Payment &amp; Coverage</span>
+                <span class="eyebrow" style="color:#b89968;">Payment &amp; Coverage</span>
                 <h2 class="section-h2">Flexible Payment Options<br>for Every Family.</h2>
                 <p class="section-sub">We help you navigate coverage so care is never out of reach.</p>
             </div>
@@ -705,7 +703,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="col">
                 <div style="background:#fff; border:1px solid #eee; border-radius:14px; padding:24px 20px; height:100%;">
-                    <div style="width:44px;height:44px;background:#fff3e8;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#854F0B;">
+                    <div style="width:44px;height:44px;background:#fff3e8;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968;">
                         <i class="fa-solid fa-user"></i>
                     </div>
                     <h6 style="font-size:14px;font-weight:500;color:var(--tn);margin-bottom:6px;">Private Pay</h6>
@@ -714,7 +712,7 @@
             </div>
             <div class="col">
                 <div style="background:#fff; border:1px solid #eee; border-radius:14px; padding:24px 20px; height:100%;">
-                    <div style="width:44px;height:44px;background:#e8f5f2;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:rgb(172, 141, 86);">
+                    <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-hospital"></i>
                     </div>
                     <h6 style="font-size:14px;font-weight:500;color:var(--tn);margin-bottom:6px;">Medicare</h6>
@@ -723,7 +721,7 @@
             </div>
             <div class="col">
                 <div style="background:#fff; border:1px solid #eee; border-radius:14px; padding:24px 20px; height:100%;">
-                    <div style="width:44px;height:44px;background:#e8edf5;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:rgb(172, 141, 86);">
+                    <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h6 style="font-size:14px;font-weight:500;color:var(--tn);margin-bottom:6px;">Medicaid</h6>
@@ -732,7 +730,7 @@
             </div>
             <div class="col">
                 <div style="background:#fff; border:1px solid #eee; border-radius:14px; padding:24px 20px; height:100%;">
-                    <div style="width:44px;height:44px;background:var(--tb2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:var(--tb);">
+                    <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-credit-card"></i>
                     </div>
                     <h6 style="font-size:14px;font-weight:500;color:var(--tn);margin-bottom:6px;">Insurance</h6>
