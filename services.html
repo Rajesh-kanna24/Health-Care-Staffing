@@ -17,203 +17,815 @@
     <link rel="stylesheet" href="css/responsive.css"/>
     <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css"/>
     <style>
-        :root {
-    --tn: #1f2a26;        /* priorities dark green → navy-ஐ replace */
-    --tg: #b89968;        /* priorities base gold → teal-ஐ replace */
-    --tg2: #f5efe0;       /* priorities light gold bg */
-    --tb: #b89968;        /* blue sections → gold-ஆக */
-    --tb2: #f5efe0;       /* blue light bg → gold light */
-    --tw: #f9f7f4;        /* same — ok */
+        /* =========================================================
+   TRINITY LIFE CARE — SERVICES PAGE THEME MATCH
+   HOME PAGE COLOR SYSTEM APPLIED
+   ========================================================= */
+
+:root{
+    /* HOME PAGE COLORS */
+    --taupe:#9A856A;
+    --taupe-d:#7d6b55;
+    --cream-d:#EFDDC5;
+    --cream-l:#F0E7DE;
+    --slate:#465663;
+    --slate-d:#2e3a42;
+    --sage:#6E8C7A;
+    --white:#FDFAF7;
+    --txt:#2A2420;
+    --txtm:#5a4f47;
+    --txtlt:#8a7d74;
+
+    /* KEEP EXISTING VARIABLE REFERENCES */
+    --tn:var(--slate);
+    --tg:var(--taupe);
+    --tg2:rgba(154,133,106,.10);
+    --tb:var(--slate);
+    --tb2:rgba(70,86,99,.08);
+    --tw:var(--cream-l);
+
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'DM Sans', sans-serif;
+
+    --base-color:var(--taupe);
 }
 
-        body { font-family: var(--sans); }
-         /* header logo — square brand mark sized to fit nav row */
-            header .navbar-brand { padding: 8px 0; }
-            header .navbar-brand img { max-height: 56px; width: auto; }
-            @media (max-width: 991.98px) {
-                header .navbar-brand img { max-height: 44px; }
-            }
-            /* keep multi-word nav links on a single line (e.g. "Why Trinity") */
-            header .navbar-nav .nav-item .nav-link { white-space: nowrap; }
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
-        /* ── NAV ── */
-        .tlc-logo { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--tn); letter-spacing: -0.5px; text-decoration: none !important; }
-        .tlc-logo em { color: var(--tg); font-style: normal; }
-        .tlc-phone { font-size: 13px; font-weight: 500; color: var(--tn); }
-        .tlc-phone i { color: var(--tg); margin-right: 6px; }
+body{
+    font-family:var(--sans);
+    background:var(--white);
+    color:var(--txt);
+}
 
-        /* ── HERO ── */
-        .tlc-hero-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--base-color); font-weight: 500; display: block; margin-bottom: 16px; }
-        .tlc-hero h1 { font-family: var(--serif); font-size: 58px; font-weight: 500; line-height: 1.1; letter-spacing: -1.5px; }
-        .tlc-hero p { font-size: 17px; font-weight: 300; opacity: 0.8; line-height: 1.7; }
+.text-base-color{
+    color:var(--taupe)!important;
+}
 
-        /* ── STRIP ── */
-        .strip-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 16px; }
-        .strip-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
-        .strip-item span { font-size: 13px; font-weight: 500; color: #333; }
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-        /* ── SECTION HEADINGS ── */
-        .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color:  #b89968; font-weight: 500; display: block; margin-bottom: 10px; }
-        .section-h2 { font-family: var(--serif); font-size: 40px; font-weight: 500; color: var(--tn); line-height: 1.15; letter-spacing: -1px; margin-bottom: 8px; }
-        .section-sub { font-style: italic; color: #999; font-size: 16px; margin-bottom: 24px; }
+header .navbar{
+    padding:18px 0;
+    transition:padding .3s ease,box-shadow .3s ease;
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+    background:var(--white)!important;
+}
 
-        /* ── GATEWAY SECTION ── */
-        .gateway-wrap { padding: 90px 0 70px; }
-        .gw-card { background: #fff; border: 1px solid #ebebeb; border-radius: 16px; padding: 36px 30px 30px; height: 100%; transition: all 0.22s ease; position: relative; overflow: hidden; }
-        .gw-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--tg); transform: scaleX(0); transform-origin: left; transition: transform 0.22s ease; }
-        .gw-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.09); transform: translateY(-4px); border-color: #ddd; }
-        .gw-card:hover::before { transform: scaleX(1); }
-        .gw-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
-        .gw-card h4 { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--tn); margin-bottom: 10px; }
-        .gw-card p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; }
-        .gw-link { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tg); display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
-        .gw-card-dark { background: var(--tn); border-color: var(--tn); }
-        .gw-card-dark h4 { color: #fff; }
-        .gw-card-dark p { color: rgba(255,255,255,0.6); }
-        .gw-card-dark .gw-link { color: #9FE1CB; }
-        .gw-card-dark::before { background: #9FE1CB; }
+header .navbar-brand{
+    padding:8px 0;
+}
 
-        /* ── SERVICE DETAIL SECTIONS — hidden by default, shown on Explore click ── */
-        .svc-section { padding: 96px 0; display: none; }
-        .svc-section.svc-active { display: block; animation: svcReveal 0.4s ease; }
-        .svc-section.alt-bg { background: var(--tw); }
-        @keyframes svcReveal {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+header .navbar-brand img{
+    max-height:56px;
+    width:auto;
+    transition:max-height .3s ease;
+}
 
-        /* ── BACK BUTTON ── */
-        .svc-back-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-            color: #888; background: none; border: none; cursor: pointer;
-            font-family: var(--sans); padding: 0; margin-bottom: 36px;
-            transition: color 0.2s;
-        }
-        .svc-back-btn:hover { color: var(--tg); }
+@media(max-width:991.98px){
+    header .navbar-brand img{
+        max-height:44px;
+    }
+}
 
-        /* Left column sticky label */
-        .svc-label-col { position: relative; }
-        .svc-num { font-family: var(--serif); font-size: 120px; font-weight: 600; color: #f0f0f0; line-height: 1; margin-bottom: -30px; display: block; }
+header .navbar-nav .nav-item .nav-link{
+    white-space:nowrap;
+    color:var(--slate);
+    font-weight:500;
+    padding:.8rem .95rem;
+    transition:color .25s;
+}
 
-        /* Highlight box */
-        .hl-box { border-radius: 12px; padding: 20px 24px; margin-top: 28px; }
-        .hl-box strong { font-size: 13px; font-weight: 500; display: block; margin-bottom: 5px; }
-        .hl-box p { font-size: 13px; line-height: 1.65; margin: 0; }
+header .navbar-nav .nav-item .nav-link:hover,
+header .navbar-nav .nav-item .nav-link.active{
+    color:var(--taupe);
+}
 
-        /* Content pillars */
-        .pillar { margin-bottom: 36px; }
-        .pillar-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-        .pillar-title::after { content: ''; flex: 1; height: 1px; background: #eee; }
+header .navbar-toggler{
+    border-color:rgba(74,78,82,.14);
+}
 
-        /* Check items */
-        .chk-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f4f4f4; font-size: 14px; color: #333; }
-        .chk-row:last-child { border-bottom: none; }
-        .chk-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; }
+header .navbar-toggler-line{
+    background:var(--taupe);
+    height:2px;
+}
 
-        /* Badges */
-        .tag { display: inline-block; font-size: 12px; font-weight: 400; padding: 5px 13px; border-radius: 100px; margin: 3px; }
-       .tag-green { background:#f5efe0; color:#6b4c1e; }
-.tag-navy  { background:#e8ece8; color:#1f2a26; }
-.tag-pink  { background:#f5efe0; color:#6b4c1e; }
-.tag-blue  { background:#f5efe0; color:#6b4c1e; }
-.tag-warm  { background:#f5efe0; color:#6b4c1e; }
+.widget-text a{
+    color:var(--slate)!important;
+}
 
-        /* CTA button row */
-        .svc-cta { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-        .btn-teal { background: #b89968; color: #fff; border: none; border-radius: 100px; padding: 13px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--sans); text-decoration: none; display: inline-block; transition: background 0.2s; }
-        .btn-teal:hover { background: #a07d45;  color: #fff; }
-        .btn-ghost { background: transparent; color: var(--tn); border: 1.5px solid #ccc; border-radius: 100px; padding: 13px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--sans); text-decoration: none; display: inline-block; transition: all 0.2s; }
-        .btn-ghost:hover { border-color: var(--tn); color: var(--tn); }
+.widget-text a:hover{
+    color:var(--taupe)!important;
+}
 
-        /* ── WHY SECTION ── */
-        .why-section { padding: 96px 0; background: #1f2a26; }
-        .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 28px 24px; height: 100%; }
-        .why-card .w-icon { font-size: 28px; margin-bottom: 14px; display: block; }
-        .why-card h5 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 8px; }
-        .why-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; margin: 0; }
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
-        /* ── REVIEWS ── */
-        .review-section { padding: 80px 0; background: var(--tw); }
-        .rv-card { background: #fff; border-radius: 16px; border: 1px solid #eee; padding: 32px; height: 100%; }
-        .rv-stars { color: #f4a623; font-size: 14px; margin-bottom: 16px; }
-        .rv-text { font-family: var(--serif); font-size: 19px; line-height: 1.6; color: #222; margin-bottom: 24px; font-style: italic; }
-        .rv-author { display: flex; align-items: center; gap: 12px; }
-        .rv-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
-        .rv-name { font-size: 14px; font-weight: 500; color: var(--tn); }
-        .rv-role { font-size: 12px; color: #999; }
+.tlc-hero{
+    position:relative;
+}
 
-        /* ── COMPLIANCE ── */
-        .comp-section { padding: 80px 0; }
-        .comp-card { background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 24px 20px; display: flex; gap: 16px; align-items: flex-start; height: 100%; }
-        .comp-icon { width: 44px; height: 44px; border-radius: 12px; background: #f5efe0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: #b89968; }
-        .comp-card h6 { font-size: 14px; font-weight: 500; color: var(--tn); margin-bottom: 4px; }
-        .comp-card p { font-size: 13px; color: #777; margin: 0; line-height: 1.55; }
+.tlc-hero .opacity-full{
+    background:linear-gradient(
+        115deg,
+        rgba(46,58,66,.92) 0%,
+        rgba(46,58,66,.6) 42%,
+        rgba(46,58,66,.88) 100%
+    )!important;
+}
 
-        /* ── FOOTER ── */
-        .tlc-footer { background: #0a1f35; padding: 60px 0 36px; }
-        .tlc-footer .f-logo { font-family: var(--serif); font-size: 26px; color: #fff; font-weight: 500; }
-        .tlc-footer .f-logo em { color: #9FE1CB; font-style: normal; }
-        .tlc-footer p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-        .tlc-footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; }
-        .tlc-footer a:hover { color: #9FE1CB; }
-        .f-nav li { list-style: none; margin-bottom: 10px; }
-        .f-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 36px 0 28px; }
+.tlc-hero-eyebrow{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--cream-d);
+    font-weight:500;
+    display:block;
+    margin-bottom:16px;
+}
 
-        /* ── NON-SKILLED ICON FIX (SVG fallback) ── */
-        .icon-personal-care {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 24px; height: 24px;
-        }
-        .icon-personal-care svg { width: 24px; height: 24px; }
+.tlc-hero h1{
+    font-family:Georgia,serif;
+    font-size:58px;
+    font-weight:400;
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    color:#fff;
+}
+
+.tlc-hero p{
+    font-size:17px;
+    font-weight:300;
+    opacity:.9;
+    line-height:1.8;
+    color:rgba(240,231,222,.88)!important;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-teal{
+    background:var(--taupe);
+    color:#fff;
+    border:none;
+    border-radius:100px;
+    padding:13px 28px;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    font-family:var(--sans);
+    text-decoration:none;
+    display:inline-block;
+    transition:all .25s ease;
+}
+
+.btn-teal:hover{
+    background:var(--taupe-d);
+    color:#fff;
+}
+
+.btn-ghost{
+    background:transparent;
+    color:var(--slate);
+    border:1.5px solid rgba(70,86,99,.22);
+    border-radius:100px;
+    padding:13px 28px;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    font-family:var(--sans);
+    text-decoration:none;
+    display:inline-block;
+    transition:all .25s ease;
+}
+
+.btn-ghost:hover{
+    border-color:var(--taupe);
+    color:var(--taupe);
+}
+
+/* =========================================================
+   QUICK STRIP
+   ========================================================= */
+
+.strip-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:28px 16px;
+    background:var(--white);
+}
+
+.strip-item span{
+    font-size:13px;
+    font-weight:500;
+    color:var(--txt);
+}
+
+.strip-icon{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:12px;
+}
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--taupe);
+    font-weight:600;
+    display:block;
+    margin-bottom:10px;
+}
+
+.section-h2{
+    font-family:Georgia,serif;
+    font-size:40px;
+    font-weight:400;
+    color:var(--txt);
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:8px;
+}
+
+.section-sub{
+    font-style:italic;
+    color:var(--txtlt);
+    font-size:16px;
+    margin-bottom:24px;
+}
+
+/* =========================================================
+   GATEWAY SECTION
+   ========================================================= */
+
+.gateway-wrap{
+    padding:90px 0 70px;
+    background:var(--white);
+}
+
+.gw-card{
+    background:#fff;
+    border:1px solid rgba(154,133,106,.12);
+    border-radius:24px;
+    padding:36px 30px 30px;
+    height:100%;
+    transition:all .28s ease;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.gw-card::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:3px;
+    background:var(--taupe);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+}
+
+.gw-card:hover{
+    box-shadow:0 24px 60px rgba(0,0,0,.08);
+    transform:translateY(-4px);
+    border-color:rgba(154,133,106,.25);
+}
+
+.gw-card:hover::before{
+    transform:scaleX(1);
+}
+
+.gw-icon{
+    width:56px;
+    height:56px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.gw-card h4{
+    font-family:Georgia,serif;
+    font-size:24px;
+    font-weight:400;
+    color:var(--txt);
+    margin-bottom:12px;
+}
+
+.gw-card p{
+    font-size:14px;
+    color:var(--txtm);
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.gw-link{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--taupe)!important;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    text-decoration:none;
+}
+
+.gw-card-dark{
+    background:var(--slate);
+    border-color:var(--slate);
+}
+
+.gw-card-dark h4{
+    color:#fff;
+}
+
+.gw-card-dark p{
+    color:rgba(240,231,222,.72);
+}
+
+.gw-card-dark .gw-link{
+    color:var(--cream-d)!important;
+}
+
+/* =========================================================
+   SERVICE DETAIL SECTION
+   ========================================================= */
+
+.svc-section{
+    padding:96px 0;
+    display:none;
+    background:var(--white);
+}
+
+.svc-section.svc-active{
+    display:block;
+    animation:svcReveal .4s ease;
+}
+
+.svc-section.alt-bg{
+    background:var(--cream-l);
+}
+
+@keyframes svcReveal{
+    from{
+        opacity:0;
+        transform:translateY(24px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.svc-back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--txtlt);
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:var(--sans);
+    padding:0;
+    margin-bottom:36px;
+    transition:color .2s;
+}
+
+.svc-back-btn:hover{
+    color:var(--taupe);
+}
+
+/* =========================================================
+   SERVICE CONTENT
+   ========================================================= */
+
+.svc-num{
+    font-family:Georgia,serif;
+    font-size:120px;
+    font-weight:700;
+    color:rgba(154,133,106,.08);
+    line-height:1;
+    margin-bottom:-30px;
+    display:block;
+}
+
+.hl-box{
+    border-radius:14px;
+    padding:20px 24px;
+    margin-top:28px;
+    background:rgba(154,133,106,.08)!important;
+    border-left:3px solid var(--taupe)!important;
+}
+
+.hl-box strong{
+    font-size:13px;
+    font-weight:600;
+    display:block;
+    margin-bottom:5px;
+    color:var(--txt);
+}
+
+.hl-box p{
+    font-size:13px;
+    line-height:1.7;
+    margin:0;
+    color:var(--txtm);
+}
+
+.pillar{
+    margin-bottom:36px;
+}
+
+.pillar-title{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--taupe);
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.pillar-title::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:rgba(154,133,106,.18);
+}
+
+.chk-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid rgba(154,133,106,.10);
+    font-size:14px;
+    color:var(--txt);
+}
+
+.chk-row:last-child{
+    border-bottom:none;
+}
+
+.chk-dot{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:10px;
+    background:rgba(154,133,106,.12)!important;
+}
+
+.chk-dot i{
+    color:var(--taupe)!important;
+}
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.tag{
+    display:inline-block;
+    font-size:12px;
+    font-weight:500;
+    padding:6px 13px;
+    border-radius:100px;
+    margin:3px;
+}
+
+.tag-green,
+.tag-blue,
+.tag-navy,
+.tag-pink,
+.tag-warm{
+    background:rgba(154,133,106,.10)!important;
+    color:var(--taupe-d)!important;
+}
+
+/* =========================================================
+   WHY SECTION
+   ========================================================= */
+
+.why-section{
+    padding:96px 0;
+    background:var(--slate-d)!important;
+}
+
+.why-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:28px 24px;
+    height:100%;
+    backdrop-filter:blur(4px);
+}
+
+.why-card .w-icon{
+    font-size:28px;
+    margin-bottom:14px;
+    display:block;
+    color:var(--cream-d);
+}
+
+.why-card h5{
+    font-family:Georgia,serif;
+    font-size:20px;
+    font-weight:400;
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.why-card p{
+    font-size:13px;
+    color:rgba(240,231,222,.62);
+    line-height:1.75;
+    margin:0;
+}
+
+/* =========================================================
+   REVIEW SECTION
+   ========================================================= */
+
+.review-section{
+    padding:80px 0;
+    background:var(--cream-l);
+}
+
+.rv-card{
+    background:#fff;
+    border-radius:22px;
+    border:1px solid rgba(154,133,106,.10);
+    padding:32px;
+    height:100%;
+    box-shadow:0 18px 45px rgba(0,0,0,.05);
+}
+
+.rv-stars{
+    color:var(--taupe);
+    font-size:14px;
+    margin-bottom:16px;
+}
+
+.rv-text{
+    font-family:Georgia,serif;
+    font-size:19px;
+    line-height:1.7;
+    color:var(--txt);
+    margin-bottom:24px;
+    font-style:italic;
+}
+
+.rv-name{
+    font-size:14px;
+    font-weight:600;
+    color:var(--txt);
+}
+
+.rv-role{
+    font-size:12px;
+    color:var(--txtlt);
+}
+
+/* =========================================================
+   COMPLIANCE
+   ========================================================= */
+
+.comp-section{
+    padding:80px 0;
+    background:var(--white);
+}
+
+.comp-card{
+    background:#fff;
+    border:1px solid rgba(154,133,106,.10);
+    border-radius:18px;
+    padding:24px 20px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    height:100%;
+    box-shadow:0 12px 30px rgba(0,0,0,.04);
+}
+
+.comp-icon{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    background:rgba(154,133,106,.10);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:18px;
+    color:var(--taupe);
+}
+
+.comp-card h6{
+    font-size:14px;
+    font-weight:600;
+    color:var(--txt);
+    margin-bottom:4px;
+}
+
+.comp-card p{
+    font-size:13px;
+    color:var(--txtm);
+    margin:0;
+    line-height:1.65;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.tlc-footer{
+    background:var(--slate-d);
+    padding:60px 0 36px;
+}
+
+.tlc-footer .f-logo{
+    font-family:Georgia,serif;
+    font-size:26px;
+    color:#fff;
+    font-weight:400;
+}
+
+.tlc-footer .f-logo em{
+    color:var(--cream-d);
+    font-style:normal;
+}
+
+.tlc-footer p{
+    font-size:14px;
+    color:rgba(240,231,222,.52);
+    line-height:1.8;
+}
+
+.tlc-footer a{
+    color:rgba(240,231,222,.52);
+    text-decoration:none;
+    font-size:14px;
+    transition:color .25s ease;
+}
+
+.tlc-footer a:hover{
+    color:var(--cream-d);
+}
+
+.f-nav li{
+    list-style:none;
+    margin-bottom:10px;
+}
+
+.f-divider{
+    height:1px;
+    background:rgba(255,255,255,.08);
+    margin:36px 0 28px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:991px){
+
+    .tlc-hero h1{
+        font-size:46px;
+    }
+
+    .section-h2{
+        font-size:34px;
+    }
+}
+
+@media(max-width:768px){
+
+    .tlc-hero h1{
+        font-size:38px;
+    }
+
+    .section-h2{
+        font-size:30px;
+    }
+
+    .gw-card{
+        padding:30px 24px;
+    }
+
+    .rv-card,
+    .comp-card,
+    .why-card{
+        padding:24px;
+    }
+}
+
+@media(max-width:576px){
+
+    .tlc-hero h1{
+        font-size:32px;
+        line-height:1.15;
+    }
+
+    .section-h2{
+        font-size:26px;
+    }
+
+    .btn-teal,
+    .btn-ghost{
+        width:100%;
+        text-align:center;
+    }
+}
     </style>
 </head>
 <body class="overflow-x-hidden" data-mobile-nav-style="classic">
 
 <!-- ═══════════════════════ HEADER ═══════════════════════ -->
 <header>
-   <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
-                <div class="container-fluid">
-                    <div class="col-auto col-xl-2 col-lg-1 menu-logo">
-                        <div class="d-none d-xl-block">
-                            <div class="widget-text fw-600"><i class="bi bi-telephone-outbound text-base-color me-10px"></i><a href="tel:1800222000">1 800 222 000</a></div>
-                        </div>
-                        <a class="navbar-brand" href="index.html">
-                            <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
-                            <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
-                            <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
-                        </a>
-                    </div>
-                    <div class="col-auto col-xl-8 col-lg-10 menu-order">
-                        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                            <ul class="navbar-nav navbar-left justify-content-end">
-                                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-                                <li class="nav-item dropdown dropdown-with-icon"><a href="services.html" class="nav-link">Services</a>
-                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
-                                        <li><a href="non-skilled-home-care.html"><div class="submenu-icon-content"><span>Non-skilled home care</span><p>Personal care &amp; companionship</p></div></a></li>
-                                        <li><a href="pediatric-care.html"><div class="submenu-icon-content"><span>Pediatric care</span><p>Skilled &amp; non-skilled in-home</p></div></a></li>
-                                        <li><a href="healthcare-staffing.html"><div class="submenu-icon-content"><span>Healthcare staffing</span><p>For hospitals &amp; facilities</p></div></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="navbar-nav navbar-right justify-content-start">
-                                <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
-                                <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto col-xl-2 col-lg-1 text-end">
-                        <div class="d-none d-xl-flex align-items-center widget-text fw-600"><i class="bi bi-calendar-check text-base-color me-10px"></i><a href="request-care.html">Request care</a></div>
-                    </div>
-                </div>
-            </nav>
+  <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
+    <div class="container-fluid">
+      <div class="col-auto col-xl-2 col-lg-1 menu-logo">
+        <div class="d-none d-xl-block">
+          <div class="widget-text fw-600">
+            <i class="bi bi-telephone-outbound text-base-color me-10px"></i>
+            <a href="tel:1800222000">1 800 222 000</a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
+        </a>
+      </div>
+      <div class="col-auto col-xl-8 col-lg-10 menu-order">
+        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav navbar-left justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+            <li class="nav-item dropdown dropdown-with-icon">
+              <a href="services.html" class="nav-link">Services</a>
+              <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
+                <li><a href="non-skilled-home-care.html"><div class="submenu-icon-content"><span>Non-skilled home care</span><p>Personal care &amp; companionship</p></div></a></li>
+                <li><a href="pediatric-care.html"><div class="submenu-icon-content"><span>Pediatric care</span><p>Skilled &amp; non-skilled in-home</p></div></a></li>
+                <li><a href="healthcare-staffing.html"><div class="submenu-icon-content"><span>Healthcare staffing</span><p>For hospitals &amp; facilities</p></div></a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right justify-content-start">
+            <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto col-xl-2 col-lg-1 text-end">
+        <div class="d-none d-xl-flex align-items-center widget-text fw-600">
+          <i class="bi bi-calendar-check text-base-color me-10px"></i>
+          <a href="request-care.html">Request care</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
@@ -939,7 +1551,7 @@
                     <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
                     <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="#why" class="nav-link">Why Trinity</a></li>
-                    <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
