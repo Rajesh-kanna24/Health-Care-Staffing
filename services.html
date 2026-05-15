@@ -291,7 +291,7 @@ body{
 
 .svc-section{
     padding:96px 0;
-    display:block;
+    display:none;
     background:var(--white);
 }
 
@@ -1277,43 +1277,56 @@ body{
 <script>
 var SERVICE_IDS = ['skilled', 'nonskilled', 'pediatric', 'staffing', 'coverage', 'clinical', 'philosophy', 'diversity', 'community', 'partnerships'];
 
-(function(){
-  var svc = sessionStorage.getItem('openService');
-  if(svc){
-    sessionStorage.removeItem('openService');
-    setTimeout(function(){ scrollToService(svc); }, 400);
-  }
-})();
+var ALWAYS_VISIBLE = ['philosophy', 'diversity'];
 
 function showService(id) {
-    scrollToService(id);
-}
+    // Hide only service detail sections, NOT philosophy/diversity
+    SERVICE_IDS.forEach(function(sid) {
+        if (ALWAYS_VISIBLE.indexOf(sid) !== -1) return; // skip these
+        var el = document.getElementById(sid);
+        if (el) {
+            el.classList.remove('svc-active');
+            el.style.display = 'none';
+        }
+    });
 
-function scrollToService(id) {
     var target = document.getElementById(id);
     if (target) {
-        var headerOffset = 110;
-        var elementPosition = target.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-             top: offsetPosition,
-             behavior: "smooth"
-        });
+        target.style.display = 'block';
+        setTimeout(function() {
+            target.classList.add('svc-active');
+            var headerOffset = 110;
+            var elementPosition = target.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+                 top: offsetPosition,
+                 behavior: "smooth"
+            });
+        }, 10);
     }
 }
 
 function hideService(id) {
-    var gateway = document.getElementById('services');
-    if (gateway) {
-        var headerOffset = 110; 
-        var elementPosition = gateway.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-             top: offsetPosition,
-             behavior: "smooth"
-        });
+   
+    var el = document.getElementById(id);
+    if (el) {
+        el.classList.remove('svc-active');
+        el.style.display = 'none';
     }
+
+    
+    setTimeout(function() {
+        var gateway = document.getElementById('services');
+        if (gateway) {
+            var headerOffset = 110;
+            var elementPosition = gateway.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    }, 50);
 }
 </script>
 </body>
