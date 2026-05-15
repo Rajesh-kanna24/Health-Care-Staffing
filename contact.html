@@ -99,24 +99,46 @@
         </section>
         <!-- end page title --> 
         <!-- start section --> 
-        <section class="background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3" data-anime='{ "el": "childs", "translateX": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <div class="col last-paragraph-no-margin sm-mb-30px">
-                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-geo-alt-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
-                        <p class="w-100">2846 Knights Road,<br>Bensalem, PA - 19020</p>
+       <section class="background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg');padding:40px 0;">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-0" data-anime='{"el":"childs","translateX":[30,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":300,"easing":"easeOutQuad"}'>
+
+            <!-- Address -->
+            <div class="col sm-mb-20px" style="border-right:1px solid rgba(0,0,0,.08);">
+                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
+                    <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+                        <i class="bi bi-geo-alt-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
                     </div>
-                    <div class="col sm-mb-30px">
-                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-envelope-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
-                        <div><a href="mailto:Trinitylifehomecare@gmail.com">Trinitylifehomecare@gmail.com</a></div>
-                    </div>
-                    <div class="col">
-                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-telephone-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
-                        <span class="d-block">Phone: <a href="tel:2677520038">267-752-0038</a></span>
-                    </div>
+                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Address</span>
+                    <p style="margin:0;font-size:14px;color:#2A2420;line-height:1.6;"><a href="https://www.google.com/maps/dir/?api=1&destination=2846+Knights+Road,+Bensalem,+PA+19020" target="_blank">2846 Knights Road,<br>Bensalem, PA - 19020</a></p>
                 </div>
             </div>
-        </section>
+
+            <!-- Email -->
+            <div class="col sm-mb-20px" style="border-right:1px solid rgba(0,0,0,.08);">
+                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
+                    <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+                        <i class="bi bi-envelope-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
+                    </div>
+                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Email</span>
+                    <a href="mailto:Trinitylifehomecare@gmail.com" style="font-size:14px;color:#2A2420;text-decoration:none;word-break:break-all;">Trinitylifehomecare@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col">
+                <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
+                    <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+                        <i class="bi bi-telephone-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
+                    </div>
+                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Phone</span>
+                    <a href="tel:2677520038" style="font-size:14px;color:#2A2420;text-decoration:none;">267-752-0038</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
         <!-- end section --> 
         <!-- start section -->
         <section id="contact-form" class="background-position-center background-repeat position-relative p-0" style="background-image: url('images/vertical-center-line-bg.svg'); scroll-margin-top:120px;">
@@ -256,10 +278,10 @@
     <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
-        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
-        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
-        <li><a href="pediatric-care.html">Pediatric Care</a></li>
-        <li><a href="contact.html#contact-form">Healthcare Staffing</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" >Skilled Home Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" >Non-Skilled Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" >Pediatric Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" >Healthcare Staffing</a></li>
       </ul>
     </div>
     <div>
@@ -282,7 +304,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+    <span> Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
     <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>
