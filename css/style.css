@@ -19829,3 +19829,21 @@ header .navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
     justify-content: center;
   }
 }
+
+/* Nav dropdown — 10 services scrollable */
+.navbar .dropdown-menu{
+    max-height:360px;
+    overflow-y:auto;
+    scrollbar-width:thin;
+    scrollbar-color:#ac8d56 transparent;
+}
+.navbar .dropdown-menu::-webkit-scrollbar{
+    width:4px;
+}
+.navbar .dropdown-menu::-webkit-scrollbar-thumb{
+    background:#ac8d56;
+    border-radius:4px;
+}
+.navbar .dropdown-menu::-webkit-scrollbar-track{
+    background:transparent;
+}
