@@ -291,7 +291,7 @@ body{
 
 .svc-section{
     padding:96px 0;
-    display:none;
+    display:block;
     background:var(--white);
 }
 
@@ -1275,67 +1275,46 @@ body{
 <script type="text/javascript" src="js/main.js"></script>
 
 <script>
-    // IDs of all service sections
 var SERVICE_IDS = ['skilled', 'nonskilled', 'pediatric', 'staffing', 'coverage', 'clinical', 'philosophy', 'diversity', 'community', 'partnerships'];
-    /* Auto-open from index.html gallery/service card clicks */
+
 (function(){
   var svc = sessionStorage.getItem('openService');
   if(svc){
     sessionStorage.removeItem('openService');
-    setTimeout(function(){ showService(svc); }, 400);
+    setTimeout(function(){ scrollToService(svc); }, 400);
   }
 })();
 
-    function showService(id) {
-        // Hide all service sections first
-        SERVICE_IDS.forEach(function(sid) {
-            var el = document.getElementById(sid);
-            if (el) {
-                el.classList.remove('svc-active');
-                el.style.display = 'none';
-            }
+function showService(id) {
+    scrollToService(id);
+}
+
+function scrollToService(id) {
+    var target = document.getElementById(id);
+    if (target) {
+        var headerOffset = 110;
+        var elementPosition = target.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+             top: offsetPosition,
+             behavior: "smooth"
         });
-
-        // Show the target section
-        var target = document.getElementById(id);
-        if (target) {
-            target.style.display = 'block';
-            // Small timeout so display:block takes effect before animation class
-            setTimeout(function() {
-                target.classList.add('svc-active');
-                
-                // Calculate position considering sticky header if any
-                var headerOffset = 110; // offset to not hide the section title
-                var elementPosition = target.getBoundingClientRect().top;
-                var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                     top: offsetPosition,
-                     behavior: "smooth"
-                });
-            }, 10);
-        }
     }
+}
 
-    function hideService(id) {
-        var el = document.getElementById(id);
-        if (el) {
-            el.classList.remove('svc-active');
-            el.style.display = 'none';
-        }
-        // Scroll back up to services gateway
-        var gateway = document.getElementById('services');
-        if (gateway) {
-            var headerOffset = 110; 
-            var elementPosition = gateway.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-            window.scrollTo({
-                 top: offsetPosition,
-                 behavior: "smooth"
-            });
-        }
+function hideService(id) {
+    var gateway = document.getElementById('services');
+    if (gateway) {
+        var headerOffset = 110; 
+        var elementPosition = gateway.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+             top: offsetPosition,
+             behavior: "smooth"
+        });
     }
+}
 </script>
 </body>
 </html>
