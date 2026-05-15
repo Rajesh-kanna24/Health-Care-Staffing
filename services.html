@@ -1275,59 +1275,48 @@ body{
 <script type="text/javascript" src="js/main.js"></script>
 
 <script>
-var SERVICE_IDS = ['skilled', 'nonskilled', 'pediatric', 'staffing', 'coverage', 'clinical', 'philosophy', 'diversity', 'community', 'partnerships'];
-
-var ALWAYS_VISIBLE = ['philosophy', 'diversity'];
+// ✅ CORRECT ORDER
+var SERVICE_IDS = ['skilled','nonskilled','pediatric','staffing','coverage','clinical','philosophy','diversity'];
+var ALWAYS_VISIBLE = ['philosophy','diversity'];
 
 function showService(id) {
-    // Hide only service detail sections, NOT philosophy/diversity
-    SERVICE_IDS.forEach(function(sid) {
-        if (ALWAYS_VISIBLE.indexOf(sid) !== -1) return; // skip these
+    SERVICE_IDS.forEach(function(sid){
+        if(ALWAYS_VISIBLE.indexOf(sid) !== -1) return;
         var el = document.getElementById(sid);
-        if (el) {
-            el.classList.remove('svc-active');
-            el.style.display = 'none';
-        }
+        if(el){ el.classList.remove('svc-active'); el.style.display='none'; }
     });
-
     var target = document.getElementById(id);
-    if (target) {
-        target.style.display = 'block';
-        setTimeout(function() {
+    if(target){
+        target.style.display='block';
+        setTimeout(function(){
             target.classList.add('svc-active');
             var headerOffset = 110;
-            var elementPosition = target.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-                 top: offsetPosition,
-                 behavior: "smooth"
-            });
+            var offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior:'smooth' });
         }, 10);
     }
 }
 
 function hideService(id) {
-   
     var el = document.getElementById(id);
-    if (el) {
-        el.classList.remove('svc-active');
-        el.style.display = 'none';
-    }
-
-    
-    setTimeout(function() {
+    if(el){ el.classList.remove('svc-active'); el.style.display='none'; }
+    setTimeout(function(){
         var gateway = document.getElementById('services');
-        if (gateway) {
-            var headerOffset = 110;
-            var elementPosition = gateway.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+        if(gateway){
+            var offsetPosition = gateway.getBoundingClientRect().top + window.pageYOffset - 110;
+            window.scrollTo({ top: offsetPosition, behavior:'smooth' });
         }
     }, 50);
 }
+
+// ← இது LAST-ல வரணும், showService define ஆன பிறகு
+(function(){
+  var svc = sessionStorage.getItem('openService');
+  if(svc){
+    sessionStorage.removeItem('openService');
+    setTimeout(function(){ showService(svc); }, 400);
+  }
+})();
 </script>
 </body>
 </html>
