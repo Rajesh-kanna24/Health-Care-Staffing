@@ -422,6 +422,113 @@ body{
 }
 
 /* =========================================================
+   SERVICE INTRO BLOCKS & DETAILED ITEMS
+   ========================================================= */
+
+.svc-intro{
+    background:rgba(154,133,106,.06);
+    border-left:3px solid var(--taupe);
+    border-radius:0 14px 14px 0;
+    padding:24px 28px;
+    margin-bottom:48px;
+}
+
+.svc-intro p{
+    font-size:15px;
+    line-height:1.8;
+    color:var(--txtm);
+    margin:0;
+}
+
+.svc-intro p + p{
+    margin-top:14px;
+}
+
+.svc-subgroup{
+    margin-top:54px;
+}
+
+.svc-subgroup-title{
+    font-family:Georgia,serif;
+    font-size:26px;
+    font-weight:500;
+    color:var(--txt);
+    line-height:1.2;
+    margin-bottom:6px;
+    letter-spacing:-.3px;
+}
+
+.svc-subgroup-sub{
+    font-style:italic;
+    color:var(--txtlt);
+    font-size:15px;
+    margin-bottom:30px;
+}
+
+.svc-item-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+}
+
+@media(max-width:768px){
+    .svc-item-grid{ grid-template-columns:1fr; }
+}
+
+.svc-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid rgba(154,133,106,.10);
+    border-radius:14px;
+    padding:18px 20px;
+    transition:all .25s ease;
+    box-shadow:0 6px 20px rgba(0,0,0,.03);
+}
+
+.svc-item:hover{
+    border-color:rgba(154,133,106,.28);
+    box-shadow:0 14px 36px rgba(0,0,0,.06);
+    transform:translateY(-2px);
+}
+
+.svc-item-icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:rgba(154,133,106,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:var(--taupe);
+    font-size:14px;
+}
+
+.svc-item-body{ flex:1; }
+
+.svc-item-body h6{
+    font-family:Georgia,serif;
+    font-size:17px;
+    font-weight:500;
+    color:var(--txt);
+    margin:0 0 5px;
+    letter-spacing:-.2px;
+}
+
+.svc-item-body p{
+    font-size:13.5px;
+    line-height:1.65;
+    color:var(--txtm);
+    margin:0;
+}
+
+.alt-bg .svc-item{
+    background:#fff;
+}
+
+/* =========================================================
    TAGS
    ========================================================= */
 
@@ -776,79 +883,91 @@ body{
             <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
         </button>
 
-        <div class="row align-items-end mb-60px"
-             data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
-            <div class="col-lg-7">
+        <div class="row align-items-end mb-40px">
+            <div class="col-lg-8">
                 <span class="eyebrow">Skilled Home Care Services</span>
                 <h2 class="section-h2">Physician-Coordinated<br>Clinical Care at Home.</h2>
-                <p class="section-sub">Our licensed professionals provide advanced medical care in the home, supported by strong coordination and measurable outcomes.</p>
+                <p class="section-sub">Evidence-based care delivered in the comfort and safety of the patient's home — under physician supervision and coordinated clinical oversight.</p>
             </div>
         </div>
 
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="pillar">
-                    <div class="pillar-title">Core Skilled Services</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Skilled nursing care</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Medication administration & management</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Wound care and dressing changes</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Post-surgical monitoring</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>IV therapy (when applicable)</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Vital sign monitoring</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Health assessments</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Individualized care plan development</div>
-                </div>
-                <div class="pillar">
-                    <div class="pillar-title">Therapy Services (When Applicable)</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Physical therapy</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Occupational therapy</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Speech therapy</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Swallowing therapy</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Fall risk assessments</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Rehabilitation support</div>
-                </div>
+        <div class="svc-intro">
+            <p>Our skilled home care services are designed to deliver advanced medical care in the comfort and safety of the patient's home. Under physician supervision and coordinated clinical oversight, our licensed healthcare professionals provide evidence-based care that supports recovery, chronic disease management, and long-term wellness.</p>
+            <p>We focus on reducing unnecessary hospitalizations, improving treatment compliance, and ensuring continuity of care through individualized care planning and ongoing monitoring.</p>
+        </div>
+
+        <div class="svc-subgroup" style="margin-top:0;">
+            <h3 class="svc-subgroup-title">Core Skilled Services</h3>
+            <p class="svc-subgroup-sub">Direct clinical care tailored to each patient's medical condition.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-stethoscope"></i></div><div class="svc-item-body"><h6>Skilled Nursing Care</h6><p>Our skilled nursing professionals provide direct clinical care tailored to each patient's medical condition and treatment requirements — with precision, compassion, and continuous monitoring.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-pills"></i></div><div class="svc-item-body"><h6>Medication Administration & Management</h6><p>Medications are administered accurately and safely according to physician orders, with monitoring for effectiveness, potential concerns, and treatment adherence.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-bandage"></i></div><div class="svc-item-body"><h6>Wound Care & Dressing Changes</h6><p>Specialized wound care including dressing changes, infection prevention, and healing management for both acute and chronic wounds.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-user-doctor"></i></div><div class="svc-item-body"><h6>Post-Surgical Monitoring</h6><p>Close observation and professional support after surgery to ensure proper healing, minimize complications, manage pain, and promote a safe recovery at home.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-syringe"></i></div><div class="svc-item-body"><h6>IV Therapy (When Applicable)</h6><p>When prescribed, our team administers intravenous therapies safely within the home setting while monitoring patient response and maintaining clinical protocols.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="svc-item-body"><h6>Vital Sign Monitoring</h6><p>Routine monitoring of blood pressure, pulse, respiration, temperature, and oxygen levels — supporting stability and early identification of concerns.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-clipboard-list"></i></div><div class="svc-item-body"><h6>Health Assessments</h6><p>Comprehensive assessments conducted regularly to evaluate physical condition, progress, safety risks, and overall healthcare needs.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-file-medical"></i></div><div class="svc-item-body"><h6>Individualized Care Plan Development</h6><p>Personalized care plans developed in collaboration with physicians, caregivers, and family — ensuring coordinated and goal-oriented care.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Advanced Clinical Programs</h3>
+            <p class="svc-subgroup-sub">Specialized support for transitions, chronic conditions, and long-term stability.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div><div class="svc-item-body"><h6>Transitional Care Management</h6><p>Support during transitions from hospital to home — ensuring continuity of treatment, medication coordination, and proper follow-up care.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hospital-user"></i></div><div class="svc-item-body"><h6>Hospital Discharge Follow-Up</h6><p>Structured post-discharge support to help patients recover safely while following physician instructions and discharge plans effectively.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-shield-heart"></i></div><div class="svc-item-body"><h6>Readmission Prevention Initiatives</h6><p>Proactive monitoring, education, medication management, and coordinated communication to reduce avoidable hospital readmissions.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-lungs"></i></div><div class="svc-item-body"><h6>Chronic Disease Management (CHF, COPD, Diabetes)</h6><p>Ongoing clinical oversight for congestive heart failure, COPD, and diabetes — helping patients maintain stability and daily functioning.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div><div class="svc-item-body"><h6>Medication Reconciliation</h6><p>Careful review of medications after hospital stays or treatment changes to prevent errors, duplication, or harmful interactions.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hand-holding-medical"></i></div><div class="svc-item-body"><h6>Pain Management Support</h6><p>Safe and effective pain management through physician-directed care plans, symptom monitoring, and supportive interventions.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-droplet"></i></div><div class="svc-item-body"><h6>Blood Glucose Monitoring</h6><p>Regular glucose monitoring and education to help diabetic patients maintain healthy blood sugar levels and reduce complications.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-gauge-high"></i></div><div class="svc-item-body"><h6>Blood Pressure Management</h6><p>Ongoing blood pressure monitoring and education to support cardiovascular health and treatment compliance.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Therapy Services (When Applicable)</h3>
+            <p class="svc-subgroup-sub">Rehabilitation and recovery support delivered at home.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-person-walking"></i></div><div class="svc-item-body"><h6>Physical Therapy</h6><p>Improves mobility, strength, balance, endurance, and overall physical function following illness, injury, or surgery.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hands"></i></div><div class="svc-item-body"><h6>Occupational Therapy</h6><p>Supports patients in regaining independence with daily activities — dressing, bathing, meal preparation, and home management.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-comments"></i></div><div class="svc-item-body"><h6>Speech Therapy</h6><p>Assists individuals with communication difficulties, cognitive challenges, or speech impairments from medical or neurological conditions.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-utensils"></i></div><div class="svc-item-body"><h6>Swallowing Therapy</h6><p>Specialized therapy to safely manage swallowing disorders while reducing risk of aspiration and nutritional complications.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-person-falling"></i></div><div class="svc-item-body"><h6>Fall Risk Assessments</h6><p>Evaluation of environmental and physical risk factors to prevent falls and improve patient safety within the home.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-dumbbell"></i></div><div class="svc-item-body"><h6>Rehabilitation Support</h6><p>Recovery and functional improvement through structured therapeutic interventions and coordinated care planning.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Specialized Clinical Support</h3>
+            <p class="svc-subgroup-sub">Focused care for specific recovery journeys and complex conditions.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-heart"></i></div><div class="svc-item-body"><h6>Cardiac Recovery Monitoring</h6><p>Close monitoring and supportive care focused on cardiovascular stability and recovery after cardiac procedures or events.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-brain"></i></div><div class="svc-item-body"><h6>Stroke Recovery Support</h6><p>Coordinated rehabilitation support, mobility assistance, therapy coordination, and ongoing clinical monitoring for stroke survivors.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-bone"></i></div><div class="svc-item-body"><h6>Orthopedic Post-Operative Care</h6><p>Support after orthopedic surgery with pain management, mobility improvement, wound care, and rehabilitation coordination.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-ribbon"></i></div><div class="svc-item-body"><h6>Oncology Support Services</h6><p>Helps patients manage treatment-related challenges while maintaining comfort, safety, and continuity of care at home.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-person-cane"></i></div><div class="svc-item-body"><h6>Geriatric Care Coordination</h6><p>Coordinated care for older adults — chronic condition management, medication oversight, safety, and quality of life.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-dove"></i></div><div class="svc-item-body"><h6>Non-Hospice Palliative Support</h6><p>Comfort, symptom management, and overall well-being for patients with serious illnesses not enrolled in hospice care.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Coordinated Care Oversight</h3>
+            <p class="svc-subgroup-sub">Communication, technology, and structured oversight across settings.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-headset"></i></div><div class="svc-item-body"><h6>Physician Communication & Reporting</h6><p>Consistent communication with physicians to ensure treatment plans are properly implemented, monitored, and adjusted.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-wave-square"></i></div><div class="svc-item-body"><h6>Remote Patient Monitoring (Scalable)</h6><p>Technology-supported monitoring to track conditions, identify health concerns early, and support timely clinical intervention.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-video"></i></div><div class="svc-item-body"><h6>Telehealth Support Visits</h6><p>Virtual support for healthcare guidance, follow-up care, and clinical communication when in-person visits are not required.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-building-circle-check"></i></div><div class="svc-item-body"><h6>Assisted Living & Group Home Skilled Visits</h6><p>Clinical services within assisted living communities and group homes to ensure continuity of care for residents.</p></div></div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="pillar">
-                    <div class="pillar-title">Advanced Clinical Programs</div>
-                    <span class="tag tag-green">Transitional care management</span>
-                    <span class="tag tag-green">Hospital discharge follow-up</span>
-                    <span class="tag tag-green">Readmission prevention initiatives</span>
-                    <span class="tag tag-green">Chronic disease management (CHF, COPD, Diabetes)</span>
-                    <span class="tag tag-green">Medication reconciliation</span>
-                    <span class="tag tag-green">Pain management support</span>
-                    <span class="tag tag-green">Blood glucose monitoring</span>
-                    <span class="tag tag-green">Blood pressure management</span>
-                </div>
-                <div class="pillar mt-28px">
-                    <div class="pillar-title">Specialized Clinical Support</div>
-                    <span class="tag tag-navy">Cardiac recovery monitoring</span>
-                    <span class="tag tag-navy">Stroke recovery support</span>
-                    <span class="tag tag-navy">Orthopedic post-operative care</span>
-                    <span class="tag tag-navy">Oncology support services</span>
-                    <span class="tag tag-navy">Geriatric care coordination</span>
-                    <span class="tag tag-navy">Non-hospice palliative support</span>
-                </div>
+            <div class="hl-box" style="margin-top:32px;">
+                <strong>Outcome Focus</strong>
+                <p>Our skilled care division is structured to improve patient outcomes, reduce hospital readmissions, strengthen treatment compliance, and ensure seamless continuity of care across all healthcare environments.</p>
             </div>
-
-            <div class="col-lg-4">
-                <div style="background:var(--tw); border-radius:16px; padding:32px; height:100%;">
-                    <div class="pillar">
-                        <div class="pillar-title">Coordinated Care Oversight</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Physician communication & reporting</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Remote patient monitoring</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Telehealth support visits</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Assisted living & group home visits</div>
-                    </div>
-                    <div class="hl-box">
-                        <strong>Outcome Focus</strong>
-                        <p>Our skilled care division is designed to reduce hospital readmissions, improve compliance, and ensure continuity of care.</p>
-                    </div>
-                    <div class="svc-cta mt-4">
-                        <a href="contact.html#contact-form" class="btn-teal">Request Skilled Care</a>
-                    </div>
-                </div>
+            <div class="svc-cta mt-4">
+                <a href="contact.html#contact-form" class="btn-teal">Request Skilled Care</a>
             </div>
         </div>
     </div>
@@ -861,65 +980,74 @@ body{
             <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
         </button>
 
-        <div class="row align-items-end mb-60px">
-            <div class="col-lg-7">
+        <div class="row align-items-end mb-40px">
+            <div class="col-lg-8">
                 <span class="eyebrow" style="color:#b89968;">Non-Skilled Home Care Services</span>
                 <h2 class="section-h2">Compassionate Support<br>for Independent Living.</h2>
-                <p class="section-sub">Our non-skilled services are centered on dignity, safety, and personalized care. Caregivers are thoughtfully matched based on both skill and compatibility.</p>
+                <p class="section-sub">Supportive care centered on compassion, dignity, independence, and safety — with caregivers matched on both capability and compatibility.</p>
             </div>
         </div>
 
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="pillar">
-                    <div class="pillar-title">Personal Care & Daily Living Assistance</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Bathing and grooming</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Dressing assistance</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Toileting support</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Mobility and transfer assistance</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Meal preparation</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Medication reminders</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Light housekeeping</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Grocery shopping</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Transportation to appointments</div>
-                </div>
+        <div class="svc-intro">
+            <p>Our non-skilled home care services are centered on compassion, dignity, independence, and safety. We understand that many individuals require supportive assistance rather than medical treatment, and our caregivers are carefully matched based on both professional capability and personal compatibility.</p>
+            <p>These services are designed to help clients maintain comfort and independence while remaining safely in their own homes.</p>
+        </div>
+
+        <div class="svc-subgroup" style="margin-top:0;">
+            <h3 class="svc-subgroup-title">Personal Care & Daily Living Assistance</h3>
+            <p class="svc-subgroup-sub">Everyday support that preserves comfort, dignity, and independence.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-bath"></i></div><div class="svc-item-body"><h6>Bathing & Grooming</h6><p>Help with personal hygiene routines so clients can maintain cleanliness, confidence, comfort, and overall well-being.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-shirt"></i></div><div class="svc-item-body"><h6>Dressing Assistance</h6><p>Support with dressing and personal appearance while encouraging independence whenever possible.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-toilet"></i></div><div class="svc-item-body"><h6>Toileting Support</h6><p>Respectful and discreet assistance with toileting needs to maintain comfort, dignity, and safety.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-wheelchair"></i></div><div class="svc-item-body"><h6>Mobility & Transfer Assistance</h6><p>Safe movement around the home and help with transfers from beds, chairs, or wheelchairs — minimizing fall risk.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-utensils"></i></div><div class="svc-item-body"><h6>Meal Preparation</h6><p>Nutritious meals tailored to dietary needs, preferences, and physician recommendations.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-clock"></i></div><div class="svc-item-body"><h6>Medication Reminders</h6><p>Caregivers don't administer medications unless authorized, but provide timely reminders so clients stay on schedule.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-broom"></i></div><div class="svc-item-body"><h6>Light Housekeeping</h6><p>Assistance with laundry, dishwashing, tidying, and maintaining a clean, safe living environment.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-basket-shopping"></i></div><div class="svc-item-body"><h6>Grocery Shopping</h6><p>Help with grocery shopping and household errands to support daily living needs.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-car"></i></div><div class="svc-item-body"><h6>Transportation to Appointments</h6><p>Reliable transportation to medical appointments, therapy sessions, and community activities.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Specialized Support Services</h3>
+            <p class="svc-subgroup-sub">Compassionate care for memory loss, behavioral needs, and overnight support.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-brain"></i></div><div class="svc-item-body"><h6>Dementia & Alzheimer's Care</h6><p>Compassionate support for individuals living with memory-related conditions — promoting safety, routine, comfort, and reassurance.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-route"></i></div><div class="svc-item-body"><h6>Behavioral Redirection</h6><p>Supportive interventions that calmly guide individuals experiencing confusion, agitation, or cognitive challenges.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-shield"></i></div><div class="svc-item-body"><h6>Fall Prevention Supervision</h6><p>Continuous supervision and mobility support to reduce fall risks and maintain a safer living environment.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-eye"></i></div><div class="svc-item-body"><h6>Safety Monitoring</h6><p>Caregivers remain attentive to environmental and personal safety concerns and respond promptly to changing needs.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-moon"></i></div><div class="svc-item-body"><h6>Overnight Care</h6><p>Supervision, assistance, and reassurance during nighttime hours for clients requiring additional support.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-house-user"></i></div><div class="svc-item-body"><h6>Live-In Caregiver Services</h6><p>Around-the-clock assistance and companionship for individuals needing continuous support.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Family & Caregiver Support</h3>
+            <p class="svc-subgroup-sub">Relief, education, and emotional presence for families navigating care.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-mug-hot"></i></div><div class="svc-item-body"><h6>Respite Care Programs</h6><p>Temporary relief for family caregivers — time to rest and attend personal responsibilities while loved ones continue to receive care.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="svc-item-body"><h6>Caregiver Relief Services</h6><p>Support that reduces caregiver stress and burnout while maintaining consistent care quality.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-chalkboard-user"></i></div><div class="svc-item-body"><h6>Family Education</h6><p>Guidance for families on medical conditions, caregiving responsibilities, and available support resources.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-heart"></i></div><div class="svc-item-body"><h6>Emotional Support</h6><p>Compassionate emotional support for clients and family members during challenging healthcare situations.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-dove"></i></div><div class="svc-item-body"><h6>End-of-Life Companionship (Non-Clinical)</h6><p>Comforting companionship and emotional presence for individuals and families during end-of-life stages — with dignity and respect.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Lifestyle & Wellness Support</h3>
+            <p class="svc-subgroup-sub">Engagement, social connection, and routines that promote well-being.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-people-group"></i></div><div class="svc-item-body"><h6>Companionship Visits</h6><p>Regular visits that reduce isolation, encourage emotional well-being, and promote meaningful social interaction.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-comments"></i></div><div class="svc-item-body"><h6>Social Engagement</h6><p>Encouragement to participate in hobbies, conversations, activities, and community involvement.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-person-walking"></i></div><div class="svc-item-body"><h6>Light Exercise Supervision</h6><p>Support and encouragement with approved light physical activities that promote mobility and overall wellness.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-leaf"></i></div><div class="svc-item-body"><h6>Dietary Support for Chronic Conditions</h6><p>Meal support aligned with chronic condition management and physician recommendations.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-arrows-rotate"></i></div><div class="svc-item-body"><h6>Community Reintegration Assistance</h6><p>Help reconnecting with community activities, appointments, and social opportunities following illness or hospitalization.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-house"></i></div><div class="svc-item-body"><h6>Home Organization Assistance</h6><p>Helping maintain organized and safe living spaces that support comfort, accessibility, and independence.</p></div></div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="pillar">
-                    <div class="pillar-title">Specialized Support Services</div>
-                    <span class="tag tag-green">Dementia and Alzheimer's care</span>
-                    <span class="tag tag-green">Behavioral redirection</span>
-                    <span class="tag tag-green">Fall prevention supervision</span>
-                    <span class="tag tag-green">Safety monitoring</span>
-                    <span class="tag tag-green">Overnight care</span>
-                    <span class="tag tag-green">Live-in caregiver services</span>
-                </div>
-                <div class="pillar mt-28px">
-                    <div class="pillar-title">Lifestyle & Wellness Support</div>
-                    <span class="tag tag-navy">Companionship visits</span>
-                    <span class="tag tag-navy">Social engagement</span>
-                    <span class="tag tag-navy">Light exercise supervision</span>
-                    <span class="tag tag-navy">Dietary support for chronic conditions</span>
-                    <span class="tag tag-navy">Community reintegration assistance</span>
-                    <span class="tag tag-navy">Home organization assistance</span>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div style="background:#fff; border-radius:16px; padding:32px; height:100%;">
-                    <div class="pillar">
-                        <div class="pillar-title">Family & Caregiver Support</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Respite care programs</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Caregiver relief services</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Family education</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Emotional support</div>
-                        <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>End-of-life companionship (non-clinical)</div>
-                    </div>
-                    <div class="svc-cta mt-4">
-                        <a href="contact.html#contact-form" class="btn-teal">Request Non-Skilled Care</a>
-                    </div>
-                </div>
+            <div class="svc-cta mt-5">
+                <a href="contact.html#contact-form" class="btn-teal">Request Non-Skilled Care</a>
             </div>
         </div>
     </div>
@@ -932,38 +1060,43 @@ body{
             <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
         </button>
 
-        <div class="row align-items-end mb-60px">
-            <div class="col-lg-7">
+        <div class="row align-items-end mb-40px">
+            <div class="col-lg-8">
                 <span class="eyebrow" style="color:#b89968;">Pediatric Care</span>
                 <h2 class="section-h2">In-Home Care for Children<br>with Complex Needs.</h2>
-                <p class="section-sub">Trinity Life Care provides compassionate in-home care for children with medical and developmental needs.</p>
+                <p class="section-sub">Compassionate in-home pediatric care that emphasizes safety, comfort, family involvement, and personalized support for every developmental stage.</p>
             </div>
         </div>
 
-        <div class="row g-5">
-            <div class="col-lg-5">
-                <div class="pillar">
-                    <div class="pillar-title">Skilled Pediatric Services:</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Pediatric skilled nursing</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Medication administration</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Chronic condition management (asthma, diabetes, congenital conditions)</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Post-hospital pediatric recovery care</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Respiratory support monitoring</div>
-                </div>
+        <div class="svc-intro">
+            <p>Trinity Life Care provides compassionate in-home pediatric care services for children with medical, developmental, and supportive care needs. Our pediatric care approach emphasizes safety, comfort, family involvement, and personalized support tailored to each child's condition and developmental stage.</p>
+        </div>
+
+        <div class="svc-subgroup" style="margin-top:0;">
+            <h3 class="svc-subgroup-title">Skilled Pediatric Services</h3>
+            <p class="svc-subgroup-sub">Clinical care delivered by licensed pediatric professionals.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-user-nurse"></i></div><div class="svc-item-body"><h6>Pediatric Skilled Nursing</h6><p>Licensed pediatric nurses deliver specialized clinical care designed to meet the unique medical needs of children.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-pills"></i></div><div class="svc-item-body"><h6>Medication Administration</h6><p>Medications administered safely and accurately according to physician-directed pediatric treatment plans.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-stethoscope"></i></div><div class="svc-item-body"><h6>Chronic Condition Management</h6><p>Support for children managing chronic conditions such as asthma, diabetes, and congenital disorders through ongoing monitoring and coordinated care.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hospital-user"></i></div><div class="svc-item-body"><h6>Post-Hospital Pediatric Recovery Care</h6><p>Supportive clinical care after hospitalization, focused on healing, comfort, and safe recovery at home.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-lungs"></i></div><div class="svc-item-body"><h6>Respiratory Support Monitoring</h6><p>Monitoring of respiratory conditions and support for treatment plans designed to maintain respiratory stability and comfort.</p></div></div>
+            </div>
+        </div>
+
+        <div class="svc-subgroup">
+            <h3 class="svc-subgroup-title">Non-Skilled Pediatric Care</h3>
+            <p class="svc-subgroup-sub">Supportive, family-centered assistance for daily routines and development.</p>
+            <div class="svc-item-grid">
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-child"></i></div><div class="svc-item-body"><h6>Personal Care Assistance</h6><p>Age-appropriate help with daily living activities — promoting comfort, safety, and independence.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-bowl-food"></i></div><div class="svc-item-body"><h6>Feeding & Mobility Support</h6><p>Support for feeding routines, positioning, mobility assistance, and other physical care needs.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-puzzle-piece"></i></div><div class="svc-item-body"><h6>Developmental Support Assistance</h6><p>Caregivers encourage developmental engagement and structured routines tailored to each child's abilities.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-mug-hot"></i></div><div class="svc-item-body"><h6>Family Respite Care</h6><p>Temporary relief for families caring for children with ongoing healthcare or developmental needs.</p></div></div>
+                <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-list-check"></i></div><div class="svc-item-body"><h6>Behavioral & Routine Support</h6><p>Structured support that helps children maintain daily routines, behavioral consistency, and a stable care environment.</p></div></div>
             </div>
 
-            <div class="col-lg-5 offset-lg-1">
-                <div class="pillar">
-                    <div class="pillar-title">Non-Skilled Pediatric Care:</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Personal care assistance</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Feeding and mobility support</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Developmental support assistance</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Family respite care</div>
-                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Behavioral and routine support</div>
-                </div>
-                <div class="svc-cta mt-4">
-                    <a href="contact.html#contact-form" class="btn-teal">Request Pediatric Care</a>
-                </div>
+            <div class="svc-cta mt-5">
+                <a href="contact.html#contact-form" class="btn-teal">Request Pediatric Care</a>
             </div>
         </div>
     </div>
@@ -976,26 +1109,49 @@ body{
             <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
         </button>
 
-        <div class="row align-items-center mb-60px">
-            <div class="col-lg-7">
+        <div class="row align-items-end mb-40px">
+            <div class="col-lg-8">
                 <span class="eyebrow" style="color:#b89968;">Healthcare Staffing & Workforce Solutions</span>
                 <h2 class="section-h2">Qualified Professionals<br>for Your Facility.</h2>
-                <p style="font-size:18px; color:var(--txtm); line-height:1.7;">We provide healthcare facilities with highly qualified clinical and non-clinical professionals who are carefully selected for both competence and character.</p>
-                <p style="font-size:15px; color:var(--txtlt); line-height:1.7; margin-top:20px;">We understand that reliable staffing directly impacts patient care, operational efficiency, and organizational success.</p>
-                
-                <div class="mt-40px">
-                    <a href="healthcare-staffing.html" class="btn-teal">Request Staffing Assistance</a>
+                <p class="section-sub">Carefully selected clinical and non-clinical professionals — chosen for experience, professionalism, reliability, and character.</p>
+            </div>
+        </div>
+
+        <div class="svc-intro">
+            <p>Trinity Life Care provides healthcare facilities with qualified clinical and non-clinical professionals who are carefully selected based on experience, professionalism, reliability, and character.</p>
+            <p>We recognize that dependable staffing plays a critical role in patient safety, operational performance, workforce stability, and organizational success. Our staffing solutions are designed to support healthcare facilities with flexible, scalable, and high-quality workforce coverage.</p>
+            <p>Our staffing professionals are committed to maintaining clinical standards, professionalism, and compassionate care while supporting the goals and operations of healthcare organizations.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7">
+                <h3 class="svc-subgroup-title" style="margin-top:0;">Professionals We Provide</h3>
+                <p class="svc-subgroup-sub">Credentialed, vetted, and ready to support your facility.</p>
+                <div class="svc-item-grid">
+                    <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-user-nurse"></i></div><div class="svc-item-body"><h6>Registered Nurses (RNs)</h6><p>Experienced RNs available for short-term coverage, long-term assignments, and specialized care needs.</p></div></div>
+                    <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-stethoscope"></i></div><div class="svc-item-body"><h6>Licensed Practical Nurses (LPNs)</h6><p>Licensed nursing professionals for routine clinical care, monitoring, and direct patient support.</p></div></div>
+                    <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-hand-holding-medical"></i></div><div class="svc-item-body"><h6>Certified Nursing Assistants (CNAs)</h6><p>Reliable, certified caregivers for daily living support, mobility assistance, and patient safety.</p></div></div>
+                    <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-house-medical"></i></div><div class="svc-item-body"><h6>Home Health Aides (HHAs)</h6><p>Trained aides for in-home and community-based care environments.</p></div></div>
+                    <div class="svc-item"><div class="svc-item-icon"><i class="fa-solid fa-users-gear"></i></div><div class="svc-item-body"><h6>Support & Administrative Staff</h6><p>Operational and administrative support to keep healthcare facilities running smoothly.</p></div></div>
                 </div>
             </div>
+
             <div class="col-lg-5">
-                 <div style="background:#fff; border:1px solid rgba(154,133,106,.15); border-radius:20px; padding:40px; box-shadow:0 15px 40px rgba(0,0,0,0.05);">
-                      <h4 style="font-family:Georgia,serif; font-size:24px; color:var(--txt); margin-bottom:20px;">Ready to deploy</h4>
-                      <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Registered Nurses (RNs)</div>
-                      <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Licensed Practical Nurses (LPNs)</div>
-                      <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Certified Nursing Assistants (CNAs)</div>
-                      <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Home Health Aides (HHAs)</div>
-                      <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Support & Administrative Staff</div>
-                 </div>
+                <div style="background:#fff; border:1px solid rgba(154,133,106,.15); border-radius:20px; padding:36px; box-shadow:0 15px 40px rgba(0,0,0,0.05); height:100%; display:flex; flex-direction:column;">
+                    <h4 style="font-family:Georgia,serif; font-size:24px; color:var(--txt); margin-bottom:20px;">Why facilities choose us</h4>
+                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Rapid staffing deployment</div>
+                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Fully vetted, credentialed professionals</div>
+                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Compliance-ready workforce</div>
+                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Strong candidate-to-role matching</div>
+                    <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Scalable short & long-term coverage</div>
+                    <div class="hl-box" style="margin-top:24px;">
+                        <strong>Reliable. Scalable. Compliant.</strong>
+                        <p>Workforce solutions that flex with your facility's needs while protecting patient safety and care quality.</p>
+                    </div>
+                    <div class="mt-auto pt-4">
+                        <a href="contact.html#contact-form" class="btn-teal" style="width:100%; text-align:center;">Request Staffing Assistance</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1008,12 +1164,16 @@ body{
             <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
         </button>
 
-        <div class="row align-items-end mb-60px">
+        <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
                 <span class="eyebrow" style="color:#b89968;">Payment &amp; Coverage Options</span>
                 <h2 class="section-h2">Flexible Options Tailored<br>to Your Needs.</h2>
-                <p class="section-sub">Trinity Life Care offers flexible payment options tailored to individual needs, eligibility, and services provided.</p>
+                <p class="section-sub">Multiple pathways to access the care you need — based on eligibility, care requirements, and service type.</p>
             </div>
+        </div>
+
+        <div class="svc-intro">
+            <p>Trinity Life Care offers flexible payment and coverage options based on patient eligibility, care requirements, and service types provided. Our team helps families understand their options, verify benefits, and coordinate documentation wherever it applies.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -1248,7 +1408,7 @@ body{
         <li><a href="javascript:void(0);" onclick="showService('coverage')">Payment &amp; Coverage</a></li>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="contact.html#contact-form">Request Care</a></li>
-        <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+        <li><a href="contact.html#contact-form">Request Staffing</a></li>
       </ul>
     </div>
   </div>
