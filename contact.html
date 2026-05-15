@@ -103,15 +103,15 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3" data-anime='{ "el": "childs", "translateX": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="col last-paragraph-no-margin sm-mb-30px">
-                        <span class="d-block text-dark-gray fs-19 fw-600 border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100">Our office address</span>
+                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-geo-alt-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
                         <p class="w-100">2846 Knights Road,<br>Bensalem, PA - 19020</p>
                     </div>
                     <div class="col sm-mb-30px">
-                        <span class="d-block text-dark-gray fs-19 fw-600 border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100">Send a message</span>
+                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-envelope-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
                         <div><a href="mailto:Trinitylifehomecare@gmail.com">Trinitylifehomecare@gmail.com</a></div>
                     </div>
                     <div class="col">
-                        <span class="d-block text-dark-gray fs-19 fw-600 border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100">Call us on</span>
+                        <span class="d-block border-bottom border-2 border-color-dark-gray pb-10px mb-15px w-80 sm-w-100"><i class="bi bi-telephone-fill" style="font-size:38px;color:#ac8d56;line-height:1"></i></span>
                         <span class="d-block">Phone: <a href="tel:2677520038">267-752-0038</a></span>
                     </div>
                 </div>
@@ -126,31 +126,29 @@
                     <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         <span class="d-block text-base-color fw-500 mb-5px">We are here to help</span>
                         <h4 class="alt-font text-dark-gray ls-minus-2px mb-25px">Have a question about care or staffing?</h4>
-                        <form action="email-templates/contact-form.php" method="post" class="contact-form-style-03">
-                            <label for="exampleInputEmail1" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Enter your name*</label>
+                        <form id="trinity-contact-form" class="contact-form-style-03" onsubmit="return sendTrinityContact(event)" novalidate>
+                            <label for="trinityName" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Enter your name*</label>
                             <div class="position-relative form-group mb-20px">
                                 <span class="form-icon"><i class="bi bi-emoji-smile"></i></span>
-                                <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="exampleInputEmail1" type="text" name="name" placeholder="What's your good name" />
+                                <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="trinityName" type="text" name="name" placeholder="What's your good name" required />
                             </div>
-                            <label for="exampleInputEmail1" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Email address*</label>
+                            <label for="trinityEmail" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Email address*</label>
                             <div class="position-relative form-group mb-20px">
                                 <span class="form-icon"><i class="bi bi-envelope"></i></span>
-                                <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="exampleInputEmail2" type="email" name="email" placeholder="Enter your email address" />
+                                <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="trinityEmail" type="email" name="email" placeholder="Enter your email address" required />
                             </div>
-                            <label for="exampleInputEmail1" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Your message</label>
-                            <div class="position-relative form-group form-textarea mb-0"> 
-                                <textarea class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control" name="comment" placeholder="Tell us how we can help you" rows="3"></textarea>
+                            <label for="trinityMessage" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Your message</label>
+                            <div class="position-relative form-group form-textarea mb-0">
+                                <textarea class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control" id="trinityMessage" name="comment" placeholder="Tell us how we can help you" rows="3"></textarea>
                                 <span class="form-icon"><i class="bi bi-chat-square-dots"></i></span>
                             </div>
                             <div class="row mt-25px align-items-center">
                                 <div class="col-xl-7 col-lg-12 col-sm-7 lg-mb-30px md-mb-0">
-                                    <p class="mb-0 fs-14 lh-22 text-center text-sm-start">We will never collect information about you without your explicit consent.</p>
+                                    <p class="mb-0 fs-14 lh-22 text-center text-sm-start">Your message will open in your email app, addressed to our team.</p>
                                 </div>
                                 <div class="col-xl-5 col-lg-12 col-sm-5 text-center text-sm-end text-lg-start text-xl-end xs-mt-25px">
-                                    <input id="exampleInputEmail3" type="hidden" name="redirect" value="">
-                                    <button class="btn btn-dark-gray btn-small btn-round-edge btn-box-shadow text-uppercase submit" type="submit">send message</button> 
+                                    <button class="btn btn-dark-gray btn-small btn-round-edge btn-box-shadow text-uppercase" type="submit">send message</button>
                                 </div>
-                                <div class="col-12 form-results d-none mt-20px mb-0"></div>
                             </div>
                         </form>
                     </div>
@@ -307,5 +305,32 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/vendors.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script>
+            function sendTrinityContact(e) {
+                e.preventDefault();
+                var name = document.getElementById('trinityName').value.trim();
+                var email = document.getElementById('trinityEmail').value.trim();
+                var message = document.getElementById('trinityMessage').value.trim();
+                if (!name || !email) {
+                    alert('Please enter your name and email address.');
+                    return false;
+                }
+                var subject = encodeURIComponent('Contact inquiry from ' + name + ' — Trinity Life Care website');
+                var bodyLines = [
+                    'Name: ' + name,
+                    'Email: ' + email,
+                    '',
+                    'Message:',
+                    message || '(no message provided)'
+                ];
+                var body = encodeURIComponent(bodyLines.join('\n'));
+                var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+                    + '&to=Trinitylifehomecare@gmail.com'
+                    + '&su=' + subject
+                    + '&body=' + body;
+                window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+                return false;
+            }
+        </script>
     </body>
 </html>
