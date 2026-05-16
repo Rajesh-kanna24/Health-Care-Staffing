@@ -20,7 +20,7 @@
 
   <style>
     :root {
-      --taupe:   #ac8d56;
+      --taupe: #ac8d56;
       --taupe-d: #7d6b55;
       --cream-d: #EFDDC5;
       --cream-l: #F0E7DE;
@@ -80,17 +80,17 @@
     .hero-right{display:flex;align-items:flex-end}
     .hero-right .hero-sub{margin:0;font-size:1rem;line-height:1.9;color:rgba(255,255,255,.92);max-width:520px;font-weight:300}
     .hero-badge{display:none}
-    @media(max-width:1024px){
+    @media (max-width:1024px){
       .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 48px 56px}
       .hero-right{align-items:flex-start}
     }
-    @media(max-width:768px){
+    @media (max-width:768px){
       .hero{min-height:72vh}
       .hero-inner{padding:0 28px 48px}
       .hero-h1{font-size:2.5rem}
       .hero-btns{gap:14px}
     }
-    @media(max-width:576px){
+    @media (max-width:576px){
       .hero{min-height:65vh}
       .hero-inner{padding:0 20px 40px}
       .hero-h1{font-size:2.1rem}
@@ -108,7 +108,7 @@
     .hero-badge{position:absolute;bottom:28px;right:72px;z-index:3;border-left:3px solid var(--taupe);padding:12px 15px;background:rgba(46,58,66,.78);backdrop-filter:blur(6px);border-radius:0 2px 2px 0;opacity:0;animation:fu .85s ease .85s forwards}
     .hero-badge-lbl{font-size:.58rem;color:rgba(240,231,222,.42);text-transform:uppercase;letter-spacing:.15em;margin-bottom:4px}
     .hero-badge-text{font-size:.75rem;color:var(--cream-l);line-height:1.5}
-    @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes fu {from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
     /* INTRO STRIP */
     .intro-strip{background:var(--cream-d);padding:56px 72px 38px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;width:100%}
@@ -157,9 +157,9 @@
     .service-card h4{font-family:Georgia,serif;font-size:1.05rem;font-weight:400;color:var(--txt);margin:0 0 10px;line-height:1.25}
     .service-card p{margin:0;color:var(--txtm);line-height:1.8;font-weight:300;font-size:.95rem}
     .services-sec .eyebrow{justify-content:flex-start}
-    @media(max-width:1024px){.services-wrap{gap:32px}.services-cards{padding-right:28px}.services-cards::after{right:10px}}
-    @media(max-width:768px){.services-sec{padding:58px 28px}.services-wrap{gap:28px}.services-cards{padding-right:0}.services-cards::after{display:none}}
-    @media(max-width:576px){.services-sec{padding:44px 18px}.service-card{padding:26px 22px;gap:18px}}
+    @media (max-width:1024px){.services-wrap{gap:32px}.services-cards{padding-right:28px}.services-cards::after{right:10px}}
+    @media (max-width:768px){.services-sec{padding:58px 28px}.services-wrap{gap:28px}.services-cards{padding-right:0}.services-cards::after{display:none}}
+    @media (max-width:576px){.services-sec{padding:44px 18px}.service-card{padding:26px 22px;gap:18px}}
 
     /* ===== STATS GRID with + corners — fully responsive ===== */
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--slate-d);border-top:1px solid rgba(240,231,222,.08)}
@@ -202,7 +202,8 @@
 
     /* ===== THE TRINITY DIFFERENCE — refined cards ===== */
     .diff-sec{background:var(--white);padding:72px 72px 64px;max-width:1280px;margin:0 auto}
-    .diff-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    /* UPDATED: grid column ratio switched to put image on the left */
+    .diff-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
     .diff-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px}
     .diff-item{display:flex;gap:18px;align-items:flex-start;padding:20px;border-radius:18px;background:rgba(154,133,106,.06);transition:transform .25s}
     .diff-item:hover{transform:translateX(4px)}
@@ -236,7 +237,8 @@
     .cta-fac-bg::after{content:'';position:absolute;inset:0;background:rgba(46,58,66,.86)}
     .cta-p > *:not(.cta-fam-bg):not(.cta-fac-bg){position:relative;z-index:1}
     .cta-label{font-size:.63rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:9px}
-    .cta-fac .cta-label{color:rgba(240,231,222,.42)}
+    /* UPDATED: Changed from faded white to var(--taupe) for consistency */
+    .cta-fac .cta-label{color:var(--taupe)}
     .cta-p h3{font-family:Georgia,serif;font-size:clamp(1.15rem,1.6vw,1.6rem);font-weight:400;color:var(--txt);margin-bottom:9px;line-height:1.25}
     .cta-fac h3{color:var(--cream-l)}
     .cta-p > p{font-size:.82rem;color:var(--txtm);margin-bottom:20px;font-weight:300;line-height:1.7}
@@ -337,17 +339,19 @@
     /* FOOTER styled via global css/style.css .trinity-footer rules for parity with other pages */
 
     /* ===== RESPONSIVE ===== */
-    @media(max-width:1200px){
+    @media (max-width:1200px){
       .hero-inner{padding:48px 56px 60px}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:56px;padding-right:56px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding-left:56px;padding-right:56px}
       .comp-strip{padding-left:56px;padding-right:56px}
       .cta-p{padding:52px 56px}
       .gallery-head,.gallery-strip{padding-left:56px;padding-right:56px}
     }
-    @media(max-width:1024px){
+    @media (max-width:1024px){
       .svc-grid{grid-template-columns:1fr 1fr}
       .intro-strip{grid-template-columns:1fr;gap:24px;padding:48px 48px 24px}
       .who-sec{grid-template-columns:1fr;padding:52px 48px}
+      /* UPDATED: Added flex-direction to stack the float nicely underneath on mobile */
+      .who-visual{flex-direction:column}
       .who-card-img{height:300px}
       .who-float{position:static;transform:none;margin-top:18px;right:auto;bottom:auto;width:100%}
       .diff-grid{grid-template-columns:1fr;gap:36px}
@@ -356,12 +360,12 @@
       .cta-p{flex:1 1 100%;padding:52px 48px;min-height:auto}
       .hero-badge{right:48px}
       .gallery-strip,.gallery-head{padding-left:48px;padding-right:48px}
-      .comp-strip,.services-sec,.diff-sec,.testi-sec{padding-left:48px;padding-right:48px}
+      .comp-strip,.services-sec,.diff-sec,.testi-sec,.story-sec{padding-left:48px;padding-right:48px}
     }
-    @media(max-width:768px){
+    @media (max-width:768px){
       .hero-inner{padding:60px 28px 64px;max-width:100%}
       .hero-badge{display:none}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding:44px 28px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding:44px 28px}
       .intro-strip{gap:28px}
       .gallery-strip{padding-left:28px;padding-right:28px;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
       .gallery-head{padding-left:28px;padding-right:28px}
@@ -378,7 +382,7 @@
       .stat-block:nth-child(odd){border-right:1px solid rgba(240,231,222,.1)}
       .svc-grid{grid-template-columns:1fr}
     }
-    @media(max-width:576px){
+    @media (max-width:576px){
       .hero-h1{font-size:1.65rem}
       .hero-btns{flex-direction:column}
       .hero-stats{gap:18px}
@@ -386,16 +390,17 @@
       .g-img img{height:140px}
       .gallery-strip{gap:8px;padding-left:16px;padding-right:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
       .gallery-head{padding-left:16px;padding-right:16px}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:16px;padding-right:16px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding-left:16px;padding-right:16px}
       .cta-p{padding:40px 16px}
       .comp-strip{padding:12px 16px}
+      .story-stat-box { padding: 16px 0 !important; text-align: center; }
+      .story-stat-box.mid { border-top: 1px solid rgba(0,0,0,.08) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; border-left: none !important; border-right: none !important; }
     }
 
   </style>
 </head>
 <body data-mobile-nav-style="classic">
 
-<!-- HEADER -->
 <header>
   <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
     <div class="container-fluid">
@@ -455,7 +460,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
@@ -473,7 +477,6 @@
   </div>
 </section>
 
-<!-- INTRO STRIP -->
 <div class="intro-strip">
   <div class="reveal">
     <span class="intro-tag">Our philosophy</span>
@@ -484,7 +487,6 @@
   </div>
 </div>
 
-<!-- WHO WE ARE -->
 <section class="who-sec">
   <div class="reveal">
     <div class="eyebrow">Who We Are</div>
@@ -509,7 +511,6 @@
   </div>
 </section>
 
-<!-- OUR STORY -->
 <section class="story-sec background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg')">
   <div class="container">
     <div class="row align-items-center">
@@ -523,25 +524,24 @@
         <p class="mb-30px">We’re not just one thing—we’re a complete healthcare solutions provider, combining skilled home care, non-skilled support, pediatric services, and healthcare staffing across Philadelphia, Bucks, Montgomery, and Chester counties. <br> Every day, we prove that coordinated care delivered with compassion changes outcomes.
 </p>
        <div class="row mt-40px pt-30px border-top border-color-extra-medium-gray" style="gap:0;">
-          <div class="col-4" style="padding-right:12px;">
-    <div class="story-stat">4</div>
-    <div class="story-stat-label" style="white-space:nowrap;">Counties served</div>
-</div>
-<div class="col-4" style="padding-left:12px;padding-right:12px;border-left:1px solid rgba(0,0,0,.08);border-right:1px solid rgba(0,0,0,.08);">
-<div class="story-stat" style="font-size:clamp(1rem,2vw,2rem);white-space:nowrap;letter-spacing:-.02em;">24-48h</div>
-    <div class="story-stat-label" style="white-space:nowrap;font-size:clamp(.55rem,.7vw,.75rem);">Care start window</div>
-</div>
-<div class="col-4" style="padding-left:20px;">
-    <div class="story-stat">24/7</div>
-    <div class="story-stat-label" style="white-space:nowrap;">Intake &amp; support</div>
-</div>
+         <div class="col-12 col-sm-4 story-stat-box" style="padding-right:12px;">
+           <div class="story-stat">4</div>
+           <div class="story-stat-label">Counties served</div>
+         </div>
+         <div class="col-12 col-sm-4 story-stat-box mid" style="padding-left:12px;padding-right:12px;border-left:1px solid rgba(0,0,0,.08);border-right:1px solid rgba(0,0,0,.08);">
+           <div class="story-stat" style="letter-spacing:-.02em;">24-48h</div>
+           <div class="story-stat-label">Care start window</div>
+         </div>
+         <div class="col-12 col-sm-4 story-stat-box" style="padding-left:20px;">
+           <div class="story-stat">24/7</div>
+           <div class="story-stat-label">Intake &amp; support</div>
+         </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY + STATS -->
 <section class="gallery-sec">
   <div class="gallery-head reveal">
     <div class="eyebrow eyebrow-c eyebrow-light">Our Care Environment</div>
@@ -552,7 +552,6 @@
   <div class="gallery-carousel-wrap" style="width:100%;overflow:hidden;position:relative;max-width:1400px;margin:0 auto 44px;">
     <div class="gallery-track" id="galleryTrack" style="display:flex;gap:20px;will-change:transform;padding:8px 0;">
 
-      <!-- 1 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 300px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/home-care.png" alt="Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -564,7 +563,6 @@
         </div>
       </a>
 
-      <!-- 2 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" style="text-decoration:none;flex:0 0 260px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/senior-support.png" alt="Non-Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -576,7 +574,6 @@
         </div>
       </a>
 
-      <!-- 3 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" style="text-decoration:none;flex:0 0 260px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/pediatric-care.png" alt="Pediatric Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -588,7 +585,6 @@
         </div>
       </a>
 
-      <!-- 4 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" style="text-decoration:none;flex:0 0 300px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/clinical-staffing.png" alt="Healthcare Staffing" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -600,7 +596,6 @@
         </div>
       </a>
 
-      <!-- 5 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','coverage')" style="text-decoration:none;flex:0 0 260px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/whoweare.png" alt="Payment & Coverage" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -612,7 +607,6 @@
         </div>
       </a>
 
-      <!-- 6 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 260px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/about-story.png" alt="Clinical Care Solutions" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -624,7 +618,6 @@
         </div>
       </a>
 
-      <!-- 7 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/about-community.png" alt="Community Engagement" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -636,7 +629,6 @@
         </div>
       </a>
 
-      <!-- 8 -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/about-diversity.png" alt="Strategic Partnerships" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
@@ -648,7 +640,6 @@
         </div>
       </a>
 
-      <!-- === DUPLICATE SET for seamless infinite loop === -->
       <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 300px;">
         <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
           <img src="images/trinity/home-care.png" alt="Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -733,7 +724,6 @@
     </div>
   </div>
 
-  <!-- stats -->
   <div class="stats-grid reveal" style="width:100%;max-width:1280px;">
     <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">248+</div><div class="sbl">Active Patients</div><span class="pbl"></span><span class="pbr"></span></div>
     <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">146</div><div class="sbl">Trained Clinicians</div><span class="pbl"></span><span class="pbr"></span></div>
@@ -742,11 +732,9 @@
   </div>
 </section>
 
-<!-- SERVICES — 10 cards, 3 per row, centered -->
 <section class="background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg');background-color:#f7f2e8;padding:80px 0;">
   <div class="container">
 
-    <!-- Header -->
     <div class="row justify-content-center text-center mb-50px" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
       <div class="col-lg-7">
         <span class="mb-15px text-base-color fw-500 d-block" style="font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;">Our Services</span>
@@ -755,11 +743,9 @@
       </div>
     </div>
 
-    <!-- Row 1 — animate from LEFT -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mb-4"
          data-anime='{"el":"childs","translateX":[-40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
 
-      <!-- 1 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap"><i class="bi bi-clipboard2-pulse-fill svc-icon"></i></div>
@@ -769,7 +755,6 @@
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap"><i class="bi bi-heart-pulse-fill svc-icon"></i></div>
@@ -779,7 +764,6 @@
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap"><i class="bi bi-person-heart svc-icon"></i></div>
@@ -791,11 +775,9 @@
 
     </div>
 
-    <!-- Row 2 — animate from RIGHT -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mb-4"
          data-anime='{"el":"childs","translateX":[40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
 
-      <!-- 4 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap" style="background:rgba(70,86,99,.1);"><i class="bi bi-people-fill svc-icon" style="color:#465663;"></i></div>
@@ -805,7 +787,6 @@
         </div>
       </div>
 
-      <!-- 5 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap"><i class="bi bi-person-check-fill svc-icon"></i></div>
@@ -815,7 +796,6 @@
         </div>
       </div>
 
-      <!-- 6 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap"><i class="bi bi-balloon-heart-fill svc-icon"></i></div>
@@ -827,11 +807,9 @@
 
     </div>
 
-    <!-- Row 3 — animate from LEFT -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"
          data-anime='{"el":"childs","translateX":[-40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
 
-      <!-- 7 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap" style="background:rgba(110,140,122,.12);"><i class="bi bi-globe2 svc-icon" style="color:#6E8C7A;"></i></div>
@@ -841,7 +819,6 @@
         </div>
       </div>
 
-      <!-- 8 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap" style="background:rgba(110,140,122,.12);"><i class="bi bi-buildings-fill svc-icon" style="color:#6E8C7A;"></i></div>
@@ -851,7 +828,6 @@
         </div>
       </div>
 
-      <!-- 9 -->
       <div class="col">
         <div class="svc-card">
           <div class="svc-icon-wrap" style="background:rgba(70,86,99,.1);"><i class="bi bi-diagram-3-fill svc-icon" style="color:#465663;"></i></div>
@@ -863,7 +839,6 @@
 
     </div>
 
-    <!-- Row 4 — single card centered, animate from RIGHT -->
     <div class="row g-4 justify-content-center mt-0"
          data-anime='{"el":"childs","translateX":[40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
       <div class="col-12 col-md-6 col-lg-4">
@@ -879,7 +854,6 @@
   </div>
 </section>
 
-<!-- COMPLIANCE -->
 <div class="comp-strip reveal">
   <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Licensed &amp; Insured</span></div>
   <div class="ci-div"></div>
@@ -893,10 +867,12 @@
 </div>
 
 
-<!-- THE DIFFERENCE -->
 <section class="diff-sec">
   <div class="diff-grid">
-    <div class="reveal">
+    <div class="diff-img-wrap reveal border-radius-8px">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=580&q=80" alt="Compassionate healthcare" style="border-radius: 10px; height:400px; object-fit:cover; object-position:center; width: 100%;">
+    </div>
+    <div class="reveal rv2">
       <div class="eyebrow">The Trinity Difference</div>
       <h2 class="stitle">Why Families &amp; <em>Facilities</em> Trust Us</h2>
       <p class="sbody">We've built Trinity around a simple belief: that seamless, high-quality care shouldn't be hard to find. Our integrated model means everything works together — from first call to lasting relationship.</p>
@@ -917,16 +893,11 @@
           <div class="diff-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <div class="diff-ct"><h5>Family Trust &amp; Matching</h5><p>Caregivers matched for both skill and personality — the right fit makes every day better.</p></div>
         </li>
-       
       </ul>
-    </div>
-    <div class="diff-img-wrap reveal rv2 border-radius-8px">
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=580&q=80" alt="Compassionate healthcare" style="border-radius: 10px; height:400px; object-fit:cover; object-position:center;">
     </div>
   </div>
 </section>
 
-<!-- Staffing -->
 <section class="testi-sec">
   <div class="testi-head reveal">
     <div class="eyebrow eyebrow-c">What People Say</div>
@@ -950,7 +921,6 @@
   </div>
 </section>
 
-<!-- DUAL CTA — both panes with full cover BG images -->
 <div class="dual-cta">
   <div class="cta-p cta-fam reveal">
     <div class="cta-fam-bg"></div>
@@ -968,7 +938,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="trinity-footer">
   <div class="footer-grid">
     <div>
