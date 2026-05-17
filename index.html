@@ -84,12 +84,13 @@
       .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 48px 56px}
       .hero-right{align-items:flex-start}
     }
-    @media (max-width:768px){
-      .hero{min-height:72vh}
-      .hero-inner{padding:0 28px 48px}
-      .hero-h1{font-size:2.5rem}
-      .hero-btns{gap:14px}
-    }
+   @media (max-width: 768px) {
+  .hero-btns .btn-t {
+    width: auto;
+    align-self: flex-start;
+    padding: 11px 22px;
+  }
+}
     @media (max-width:576px){
       .hero{min-height:65vh}
       .hero-inner{padding:0 20px 40px}
@@ -944,7 +945,9 @@
 
 <footer class="trinity-footer">
   <div class="footer-grid">
-    <div>
+
+    <!-- Brand block -->
+    <div class="footer-brand">
       <div class="footer-logo">Trinity <span>Life Care</span></div>
       <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
       <div class="footer-contact">
@@ -952,16 +955,20 @@
         <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>Trinitylifehomecare@gmail.com</a>
       </div>
     </div>
-    <div>
+
+    <!-- Services -->
+    <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" >Skilled Home Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" >Non-Skilled Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" >Pediatric Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" >Healthcare Staffing</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')">Skilled Home Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')">Non-Skilled Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')">Pediatric Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')">Healthcare Staffing</a></li>
       </ul>
     </div>
-    <div class="footer-com">
+
+    <!-- Company -->
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
@@ -970,7 +977,9 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div>
+
+    <!-- Information -->
+    <div class="footer-col">
       <div class="footer-col-title">Information</div>
       <ul class="footer-links">
         <li><a href="#">Payment &amp; Coverage</a></li>
@@ -979,9 +988,10 @@
         <li><a href="contact.html#contact-form">Request Staffing</a></li>
       </ul>
     </div>
+
   </div>
   <div class="footer-bottom">
-    <span> Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
+    <span>Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank">AD Soft Technologies</a></span>
     <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>
