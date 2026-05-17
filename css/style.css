@@ -19792,38 +19792,80 @@ header .navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
   font-size: 14px;
   font-weight: 500;
 }
+
 @media (max-width: 991px) {
+  .trinity-footer {
+    padding-top: 60px !important;
+  }
+
+  /* Grid — brand full width top, then 2 columns */
   .trinity-footer .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding: 0 40px 60px;
+    gap: 32px;
+    padding: 0 24px 48px;
   }
-  .trinity-footer .footer-bottom {
-    padding: 22px 40px;
+
+  /* Brand block — full width, center align */
+  .trinity-footer .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+  .trinity-footer .footer-brand .footer-logo {
     text-align: center;
   }
-}
-@media (max-width: 767px) {
-  .trinity-footer {
-    padding-top: 70px;
+  .trinity-footer .footer-brand .footer-desc {
+    text-align: center;
+    max-width: 480px;
   }
-  .trinity-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 0 24px 50px;
+  .trinity-footer .footer-brand .footer-contact {
+    align-items: center;
   }
-  .trinity-footer .footer-logo {
-    font-size: 28px;
+
+  /* Services — LEFT */
+  .trinity-footer .footer-col:nth-child(2) {
+    text-align: left;
   }
-  .trinity-footer .footer-desc {
-    font-size: 15px;
+  .trinity-footer .footer-col:nth-child(2) .footer-col-title::after {
+    left: 0;
+    right: auto;
+    transform: none;
   }
+
+  /* Company — RIGHT */
+  .trinity-footer .footer-col:nth-child(3) {
+    display: none;
+  }
+  .trinity-footer .footer-col:nth-child(3) .footer-col-title::after {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+
+  /* Information — LEFT */
+  .trinity-footer .footer-col:nth-child(4) {
+    text-align: left;
+  }
+  .trinity-footer .footer-col:nth-child(4) .footer-col-title::after {
+    left: 0;
+    right: auto;
+    transform: none;
+  }
+
   .trinity-footer .footer-col-title {
-    margin-bottom: 22px;
+    font-size: 15px;
+    margin-bottom: 16px;
   }
+
+  /* Footer bottom — center */
   .trinity-footer .footer-bottom {
     padding: 20px 24px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
   .trinity-footer .footer-bottom ul {
     justify-content: center;
