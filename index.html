@@ -1,0 +1,758 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <title>Trinity Life Care — Healing Happens at Home</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="author" content="Trinity Life Care">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Trinity Life Care brings together expert clinical care, daily living assistance, and reliable healthcare staffing to keep patients safe and facilities fully supported across Southeastern PA.">
+  <link rel="shortcut icon" href="images/trinity/trinity-logo.png">
+  <link rel="icon" type="image/png" href="images/trinity/trinity-logo.png">
+  <link rel="apple-touch-icon" href="images/trinity/trinity-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/vendors.min.css"/>
+  <link rel="stylesheet" href="css/icon.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+  <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css"/>
+
+  <style>
+    :root {
+      --taupe:   #9A856A;
+      --taupe-d: #7d6b55;
+      --cream-d: #EFDDC5;
+      --cream-l: #F0E7DE;
+      --slate:   #465663;
+      --slate-d: #2e3a42;
+      --sage:    #6E8C7A;
+      --white:   #FDFAF7;
+      --txt:     #2A2420;
+      --txtm:    #5a4f47;
+      --txtlt:   #8a7d74;
+      --base-color: #9A856A;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{background:var(--white);color:var(--txt);overflow-x:hidden}
+    img{max-width:100%;display:block}
+    .text-base-color{color:var(--taupe)!important}
+
+    /* NAV */
+    header .navbar{padding:18px 0;transition:padding .3s ease,box-shadow .3s ease;box-shadow:0 18px 45px rgba(15,23,42,.08)}
+    header .navbar-brand{padding:8px 0}
+    header .navbar-brand img{max-height:56px;width:auto;transition:max-height .3s ease}
+    header .navbar-nav .nav-item .nav-link{white-space:nowrap;color:var(--slate);font-weight:500;padding:.8rem .95rem;transition:color .25s}
+    header .navbar-nav .nav-item .nav-link:hover,
+    header .navbar-nav .nav-item .nav-link.active{color:var(--taupe)}
+    header .navbar-toggler{border-color:rgba(74,78,82,.14)}
+    header .navbar-toggler-line{background:var(--taupe);height:2px}
+    @media(max-width:991.98px){header .navbar-brand img{max-height:44px}}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .rv1{transition-delay:.12s}.rv2{transition-delay:.24s}.rv3{transition-delay:.36s}.rv4{transition-delay:.48s}
+
+    /* SHARED */
+    .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .eyebrow::before{content:'';display:block;width:26px;height:1.5px;background:var(--taupe);flex-shrink:0}
+    .eyebrow-c{justify-content:center}
+    .eyebrow-c::before,.eyebrow-c::after{content:'';display:block;width:22px;height:1.5px;background:var(--taupe);flex-shrink:0}
+    .eyebrow-light{color:var(--cream-d)}
+    .eyebrow-light::before,.eyebrow-light::after{background:var(--cream-d)}
+
+    .stitle{font-family:Georgia,serif;font-size:clamp(1.4rem,2.2vw,2rem);font-weight:400;line-height:1.2;color:var(--txt);margin-bottom:14px;letter-spacing:-.01em}
+    .stitle em{font-style:italic;color:var(--taupe)}
+    .stitle.light{color:var(--cream-l)}
+    .stitle.light em{color:var(--cream-d)}
+    .sbody{font-size:.88rem;line-height:1.82;color:var(--txtm);font-weight:300}
+
+    .btn-t{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:pointer;border:1.5px solid transparent}
+    .bt-taupe{background:var(--taupe);color:#fff;border-color:var(--taupe)}
+    .bt-taupe:hover{background:var(--taupe-d);border-color:var(--taupe-d);color:#fff}
+    .bt-slate{background:var(--slate);color:#fff;border-color:var(--slate)}
+    .bt-slate:hover{background:var(--slate-d);border-color:var(--slate-d);color:#fff}
+    .bt-ow{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    .bt-ow:hover{background:rgba(255,255,255,.1);color:#fff}
+
+    /* ===== HERO (bottom-aligned header layout) ===== */
+    .hero{position:relative;min-height:75vh;display:grid;align-items:flex-end;overflow:hidden;padding:0}
+    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80') center/cover;z-index:0}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(46,58,66,.92) 0%,rgba(46,58,66,.6) 42%,rgba(46,58,66,.88) 100%);}
+    .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(280px,1.05fr) minmax(300px,0.95fr);gap:48px;align-items:end;max-width:1280px;margin:0 auto;padding:0 72px 72px;width:100%}
+    .hero-copy{display:flex;flex-direction:column;justify-content:flex-end;gap:24px}
+    .hero-eyebrow{color:rgba(240,231,222,.82);font-size:.85rem;letter-spacing:.24em;text-transform:uppercase;opacity:1;}
+    .hero-h1{font-family:Georgia,serif;font-size:clamp(3rem,4vw,4.8rem);font-weight:400;line-height:1.02;color:#fff;margin:0}
+    .hero-btns{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:0}
+    .hero-right{display:flex;align-items:flex-end}
+    .hero-right .hero-sub{margin:0;font-size:1rem;line-height:1.9;color:rgba(255,255,255,.92);max-width:520px;font-weight:300}
+    .hero-badge{display:none}
+    @media(max-width:1024px){
+      .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 48px 56px}
+      .hero-right{align-items:flex-start}
+    }
+    @media(max-width:768px){
+      .hero{min-height:72vh}
+      .hero-inner{padding:0 28px 48px}
+      .hero-h1{font-size:2.5rem}
+      .hero-btns{gap:14px}
+    }
+    @media(max-width:576px){
+      .hero{min-height:65vh}
+      .hero-inner{padding:0 20px 40px}
+      .hero-h1{font-size:2.1rem}
+      .hero-right .hero-sub{font-size:.95rem}
+    }
+    .hero-eyebrow::before{background:var(--cream-d)}
+    /* REDUCED hero h1 size */
+    .hero-h1{font-family:Georgia,serif;font-size:clamp(1.7rem,2.8vw,2.9rem);font-weight:400;line-height:1.12;color:#fff;margin-bottom:14px;letter-spacing:-.02em;opacity:0;animation:fu .85s ease .25s forwards}
+    .hero-h1 em{font-style:italic;color:var(--cream-d)}
+    .hero-sub{font-size:.86rem;line-height:1.8;color:rgba(240,231,222,.75);font-weight:300;max-width:460px;margin-bottom:24px;opacity:0;animation:fu .85s ease .4s forwards}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;opacity:0;animation:fu .85s ease .55s forwards}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(240,231,222,.18);opacity:0;animation:fu .85s ease .7s forwards}
+    .stat-num{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--cream-d);line-height:1;margin-bottom:3px}
+    .stat-lbl{font-size:.6rem;color:rgba(240,231,222,.48);letter-spacing:.07em;text-transform:uppercase}
+    .hero-badge{position:absolute;bottom:28px;right:72px;z-index:3;border-left:3px solid var(--taupe);padding:12px 15px;background:rgba(46,58,66,.78);backdrop-filter:blur(6px);border-radius:0 2px 2px 0;opacity:0;animation:fu .85s ease .85s forwards}
+    .hero-badge-lbl{font-size:.58rem;color:rgba(240,231,222,.42);text-transform:uppercase;letter-spacing:.15em;margin-bottom:4px}
+    .hero-badge-text{font-size:.75rem;color:var(--cream-l);line-height:1.5}
+    @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+    /* INTRO STRIP */
+    .intro-strip{background:var(--cream-d);padding:56px 72px 38px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;width:100%}
+    .intro-strip .reveal:last-child{max-width:560px;}
+    .intro-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);background:rgba(154,133,106,.12);padding:8px 14px;border-radius:999px;margin-bottom:16px;}
+    .intro-h2{font-family:Georgia,serif;font-size:clamp(1.4rem,2.3vw,2.1rem);font-weight:400;color:var(--txt);line-height:1.18;letter-spacing:-.03em;margin:0}
+    .intro-h2 em{font-style:italic;color:var(--taupe)}
+    .intro-strip .sbody{}
+    .services-sec,.story-sec,.mission-sec,.who-sec,.diff-sec,.testi-sec{max-width:1280px;margin:0 auto;width:100%}
+
+    /* ===== GALLERY (modern centered card layout) ===== */
+    .gallery-sec{background:var(--slate);padding:92px 24px 48px;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+    .gallery-head{padding:0;text-align:center;margin:0 auto 38px;max-width:640px;width:100%}
+    .gallery-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;justify-content:center;justify-items:center;align-items:start;max-width:1280px;width:100%;margin:0 auto 44px}
+    .gallery-strip::-webkit-scrollbar{display:none}
+    .g-img{width:100%;max-width:360px;border-radius:24px;overflow:hidden;position:relative;min-height:280px;box-shadow:0 28px 60px rgba(0,0,0,.12)}
+    .g-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+    .g-img:hover img{transform:scale(1.04)}
+    .g-img-w{max-width:360px}.g-img-m{max-width:320px}
+    .g-cap{position:absolute;bottom:0;left:0;right:0;padding:16px 18px 14px;background:linear-gradient(transparent,rgba(46,58,66,.75));color:rgba(240,231,222,.92);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
+    /* ===== STATS GRID with + corners — fully responsive ===== */
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--slate-d);border-top:1px solid rgba(240,231,222,.08);padding:8px 0}
+    .stat-block{padding:24px 16px;text-align:center;position:relative}
+    .stat-block::after{content:'';position:absolute;right:0;top:16%;height:68%;width:1px;background:rgba(240,231,222,.11)}
+    .stat-block:last-child::after{display:none}
+    .sbn{font-family:Georgia,serif;font-size:2rem;font-weight:700;color:var(--cream-d);line-height:1;margin-bottom:6px}
+    .sbl{font-size:.68rem;color:rgba(240,231,222,.52);letter-spacing:.12em;text-transform:uppercase}
+    .stat-block{position:relative}
+    .ptl,.ptr,.pbl,.pbr{position:absolute;font-size:1rem;font-weight:300;color:var(--taupe);opacity:.62;line-height:1;pointer-events:none}
+    .ptl{top:4px;left:6px}.ptr{top:4px;right:6px}.pbl{bottom:4px;left:6px}.pbr{bottom:4px;right:6px}
+    .stat-block:not(:first-child):not(:last-child) .ptl,
+    .stat-block:not(:first-child):not(:last-child) .ptr,
+    .stat-block:not(:first-child):not(:last-child) .pbl,
+    .stat-block:not(:first-child):not(:last-child) .pbr{display:none}
+
+    /* ===== SERVICES — redesigned ===== */
+    .services-sec{background:#f7f2e8;padding:76px 72px}
+    .services-head{text-align:left;max-width:540px;margin:0 0 42px}
+    .services-wrap{display:grid;grid-template-columns:1fr;gap:40px;position:relative}
+    .services-cards{position:relative;display:flex;flex-direction:column;gap:22px;padding-right:40px}
+    .services-cards::after{content:'';position:absolute;top:24px;right:12px;bottom:24px;width:2px;background:rgba(154,133,106,.18);border-radius:1px}
+    .service-card{display:flex;gap:22px;align-items:flex-start;background:#fff;border-radius:24px;padding:32px 30px;box-shadow:0 24px 60px rgba(0,0,0,.08);border:1px solid rgba(154,133,106,.14);min-height:150px}
+    .service-card:last-child{margin-bottom:0}
+    .service-icon{width:60px;height:60px;min-width:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+    .service-icon svg{width:22px;height:22px;stroke:var(--taupe);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .service-card h4{font-family:Georgia,serif;font-size:1.05rem;font-weight:400;color:var(--txt);margin:0 0 10px;line-height:1.25}
+    .service-card p{margin:0;color:var(--txtm);line-height:1.8;font-weight:300;font-size:.95rem}
+    .services-sec .eyebrow{justify-content:flex-start}
+    @media(max-width:1024px){.services-wrap{gap:32px}.services-cards{padding-right:28px}.services-cards::after{right:10px}}
+    @media(max-width:768px){.services-sec{padding:58px 28px}.services-wrap{gap:28px}.services-cards{padding-right:0}.services-cards::after{display:none}}
+    @media(max-width:576px){.services-sec{padding:44px 18px}.service-card{padding:26px 22px;gap:18px}}
+
+    /* ===== STATS GRID with + corners — fully responsive ===== */
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--slate-d);border-top:1px solid rgba(240,231,222,.08)}
+    .stat-block{padding:22px 16px;text-align:center;position:relative}
+    .stat-block::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(240,231,222,.1)}
+    .stat-block:last-child::after{display:none}
+    .sbn{font-family:Georgia,serif;font-size:1.75rem;font-weight:700;color:var(--cream-d);line-height:1;margin-bottom:4px}
+    .sbl{font-size:.58rem;color:rgba(240,231,222,.42);letter-spacing:.1em;text-transform:uppercase}
+    /* + corners — all four blocks get corners on outer edges */
+    .stat-block{position:relative}
+    .ptl,.ptr,.pbl,.pbr{position:absolute;font-size:.9rem;font-weight:300;color:var(--taupe);opacity:.65;line-height:1;pointer-events:none}
+    .ptl{top:3px;left:5px}.ptr{top:3px;right:5px}.pbl{bottom:3px;left:5px}.pbr{bottom:3px;right:5px}
+    /* Only show corners on outermost blocks (first & last) */
+    .stat-block:not(:first-child):not(:last-child) .ptl,
+    .stat-block:not(:first-child):not(:last-child) .ptr,
+    .stat-block:not(:first-child):not(:last-child) .pbl,
+    .stat-block:not(:first-child):not(:last-child) .pbr{display:none}
+
+    /* COMPLIANCE */
+    .comp-strip{background:var(--taupe);padding:18px 72px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .ci{display:flex;align-items:center;gap:7px;color:#fff}
+    .ci-ico{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ci-ico svg{width:9px;height:9px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .ci-txt{font-size:.63rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+    .ci-div{width:1px;height:20px;background:rgba(255,255,255,.22)}
+
+    /* ===== WHO WE ARE — refined modern layout ===== */
+    .who-sec{padding:72px 72px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1280px;margin:0 auto}
+    .who-sec .reveal{max-width:560px}
+    .who-visual{position:relative;display:flex;justify-content:center;align-items:center}
+    .who-card{width:100%;border-radius:24px;overflow:hidden;position:relative;box-shadow:0 28px 64px rgba(0,0,0,.08)}
+    .who-card-img{height:360px;background:url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80') center/cover;position:relative;border-radius:24px}
+    .who-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(46,58,66,.78) 100%);border-radius:24px}
+    .who-card-txt{position:absolute;bottom:0;left:0;right:0;padding:26px;z-index:2}
+    .who-card-num{font-family:Georgia,serif;font-size:3rem;font-weight:700;color:rgba(255,255,255,.18);line-height:1;margin-bottom:6px}
+    .who-card-lbl{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,231,222,.75)}
+    .who-float{position:absolute;bottom:-24px;right:24px;background:var(--slate);color:#fff;padding:22px 20px;border-radius:20px;width:190px;box-shadow:0 16px 42px rgba(46,58,66,.24)}
+    .who-float-num{font-family:Georgia,serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:6px;color:var(--cream-d)}
+    .who-float-lbl{font-size:.72rem;opacity:.75;letter-spacing:.1em;text-transform:uppercase}
+
+    /* ===== THE TRINITY DIFFERENCE — refined cards ===== */
+    .diff-sec{background:var(--white);padding:72px 72px 64px;max-width:1280px;margin:0 auto}
+    .diff-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    .diff-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px}
+    .diff-item{display:flex;gap:18px;align-items:flex-start;padding:20px;border-radius:18px;background:rgba(154,133,106,.06);transition:transform .25s}
+    .diff-item:hover{transform:translateX(4px)}
+    .diff-ico{width:44px;height:44px;border-radius:14px;background:rgba(154,133,106,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .diff-ico svg{width:16px;height:16px;stroke:var(--taupe);fill:none;stroke-width:2;}
+    .diff-ct h5{font-family:Georgia,serif;font-size:1rem;font-weight:400;color:var(--txt);margin-bottom:6px;line-height:1.25}
+    .diff-ct p{font-size:.8rem;color:var(--txtm);line-height:1.75;font-weight:300;margin:0}
+
+    /* ===== Staffing — centered cards ===== */
+    .testi-sec{background:var(--cream-d);padding:72px 72px 64px;display:flex;flex-direction:column;align-items:center;max-width:1220px;margin:0 auto}
+    .testi-head{text-align:center;max-width:680px;width:100%;margin:0 auto 36px}
+    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:980px;width:100%;margin:0 auto 28px}
+    .t-card{background:var(--white);border-radius:22px;padding:34px;position:relative;border-left:4px solid var(--taupe);text-align:left;box-shadow:0 22px 48px rgba(0,0,0,.08);min-height:260px}
+    .t-card.ft{border-left-color:var(--slate)}
+    .t-mark{font-family:Georgia,serif;font-size:2.7rem;color:var(--cream-l);line-height:0;position:absolute;top:24px;right:24px;font-weight:700}
+    .t-q{font-family:Georgia,serif;font-size:.92rem;font-style:italic;color:var(--txt);line-height:1.8;margin-bottom:18px;font-weight:400}
+    .t-au{font-size:.72rem;font-weight:700;color:var(--slate);letter-spacing:.08em;text-transform:uppercase}
+    .testi-cta{text-align:center;margin-top:16px;width:100%}
+    .testi-cta .btn-t{margin:0 auto}
+
+    /* ===== DUAL CTA — both panels BG images full cover ===== */
+    .dual-cta{display:flex;flex-wrap:wrap}
+    .cta-p{flex:1 1 50%;padding:60px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;min-height:400px}
+    .cta-fam{border-top:4px solid var(--taupe)}
+    /* Fixed: background-size:cover + background-position:center ensures full coverage */
+    .cta-fam-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=75');background-size:cover;background-position:center center;background-repeat:no-repeat;z-index:0}
+    .cta-fam-bg::after{content:'';position:absolute;inset:0;background:rgba(253,250,247,.88)}
+    .cta-fac{border-top:4px solid var(--sage)}
+    /* Fixed: same for dark panel */
+    .cta-fac-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&q=75');background-size:cover;background-position:center center;background-repeat:no-repeat;z-index:0}
+    .cta-fac-bg::after{content:'';position:absolute;inset:0;background:rgba(46,58,66,.86)}
+    .cta-p > *:not(.cta-fam-bg):not(.cta-fac-bg){position:relative;z-index:1}
+    .cta-label{font-size:.63rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:9px}
+    .cta-fac .cta-label{color:rgba(240,231,222,.42)}
+    .cta-p h3{font-family:Georgia,serif;font-size:clamp(1.15rem,1.6vw,1.6rem);font-weight:400;color:var(--txt);margin-bottom:9px;line-height:1.25}
+    .cta-fac h3{color:var(--cream-l)}
+    .cta-p > p{font-size:.82rem;color:var(--txtm);margin-bottom:20px;font-weight:300;line-height:1.7}
+    .cta-fac > p{color:rgba(240,231,222,.58)}
+
+    /* ABOUT-LIKE SECTION PATTERNS */
+    .story-sec{background-position:center;background-repeat:no-repeat;background-size:auto;position:relative;padding:60px 72px}
+    .story-img{border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.08)}
+    .story-card{background:#fff;border-radius:12px;padding:36px;border:1px solid rgba(74,78,82,.08);box-shadow:0 12px 34px rgba(0,0,0,.05)}
+    .story-stat{font-family:Georgia,serif;font-size:2.5rem;font-weight:700;color:var(--txt);line-height:1;margin-bottom:6px}
+    .story-stat-label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe)}
+    .mission-sec{background:var(--cream-l);background-position:center;background-repeat:no-repeat;background-size:auto;padding:60px 72px}
+    .mission-card{background:#fff;border-radius:12px;padding:40px;box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(154,133,106,.12)}
+    .mission-card.dark{background:var(--slate);color:rgba(240,231,222,.95);border-color:transparent}
+    .mission-card.dark .mission-icon{background:#fff;color:var(--slate)}
+    .mission-icon{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;background:rgba(154,133,106,.1);color:var(--taupe);font-size:24px}
+    .mission-card h5{font-family:Georgia,serif;font-size:1.05rem;font-weight:400;margin-bottom:14px;color:var(--txt)}
+    .mission-card.dark h5{color:#fff}
+    .mission-card p{font-size:.9rem;line-height:1.8;color:var(--txtm);margin:0;font-weight:300}
+    .mission-card.dark p{color:rgba(240,231,222,.72)}
+
+    /* FOOTER */
+    .trinity-footer{background:var(--slate-d);padding:48px 72px 28px;color:rgba(240,231,222,.43)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .footer-logo{font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--cream-l);margin-bottom:10px}
+    .footer-logo span{color:var(--taupe)}
+    .footer-desc{font-size:.78rem;line-height:1.72;margin-bottom:14px}
+    .footer-contact a{display:block;font-size:.76rem;color:var(--cream-d);text-decoration:none;margin-bottom:4px}
+    .footer-col-title{font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:12px}
+    .footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+    .footer-links a{text-decoration:none;font-size:.78rem;color:rgba(240,231,222,.43);transition:color .2s}
+    .footer-links a:hover{color:var(--cream-l)}
+    .footer-bottom{border-top:1px solid rgba(240,231,222,.08);padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:.7rem;flex-wrap:wrap;gap:9px}
+    .footer-bottom a{color:rgba(240,231,222,.43);text-decoration:none}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1200px){
+      .hero-inner{padding:48px 56px 60px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:56px;padding-right:56px}
+      .comp-strip{padding-left:56px;padding-right:56px}
+      .cta-p{padding:52px 56px}
+      .trinity-footer{padding:44px 56px 24px}
+      .gallery-head,.gallery-strip{padding-left:56px;padding-right:56px}
+    }
+    @media(max-width:1024px){
+      .svc-grid{grid-template-columns:1fr 1fr}
+      .intro-strip{grid-template-columns:1fr;gap:24px;padding:48px 48px 24px}
+      .who-sec{grid-template-columns:1fr;padding:52px 48px}
+      .who-card-img{height:300px}
+      .who-float{position:static;transform:none;margin-top:18px;right:auto;bottom:auto;width:100%}
+      .diff-grid{grid-template-columns:1fr;gap:36px}
+      .diff-img-wrap img{height:300px}
+      .testi-grid{grid-template-columns:1fr 1fr}
+      .cta-p{flex:1 1 100%;padding:52px 48px;min-height:auto}
+      .trinity-footer{padding:40px 48px 20px}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .hero-badge{right:48px}
+      .gallery-strip,.gallery-head{padding-left:48px;padding-right:48px}
+      .comp-strip,.services-sec,.diff-sec,.testi-sec{padding-left:48px;padding-right:48px}
+    }
+    @media(max-width:768px){
+      .hero-inner{padding:60px 28px 64px;max-width:100%}
+      .hero-badge{display:none}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding:44px 28px}
+      .intro-strip{gap:28px}
+      .gallery-strip{padding-left:28px;padding-right:28px;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+      .gallery-head{padding-left:28px;padding-right:28px}
+      .g-img img{height:180px}
+      .g-img-w{width:280px}.g-img-m{width:180px}
+      .testi-grid{grid-template-columns:1fr}
+      .cta-p{padding:44px 28px;min-height:320px}
+      .trinity-footer{padding:36px 28px 18px}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .who-card-img{height:260px}
+      .diff-img-wrap img{height:260px}
+      .comp-strip{padding:14px 28px;gap:8px}
+      .ci-div{display:none}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat-block::after{display:none}
+      .stat-block:nth-child(odd){border-right:1px solid rgba(240,231,222,.1)}
+      .svc-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:576px){
+      .hero-h1{font-size:1.65rem}
+      .hero-btns{flex-direction:column}
+      .hero-stats{gap:18px}
+      .footer-grid{grid-template-columns:1fr}
+      .g-img-w{width:200px}.g-img-m{width:155px}
+      .g-img img{height:140px}
+      .gallery-strip{gap:8px;padding-left:16px;padding-right:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+      .gallery-head{padding-left:16px;padding-right:16px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:16px;padding-right:16px}
+      .cta-p{padding:40px 16px}
+      .trinity-footer{padding:32px 16px 16px}
+      .comp-strip{padding:12px 16px}
+    }
+
+  </style>
+</head>
+<body data-mobile-nav-style="classic">
+
+<!-- HEADER -->
+<header>
+  <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
+    <div class="container-fluid">
+      <div class="col-auto col-xl-2 col-lg-1 menu-logo">
+        <div class="d-none d-xl-block">
+          <div class="widget-text fw-600">
+            <i class="bi bi-telephone-outbound text-base-color me-10px"></i>
+            <a href="tel:1800222000">1 800 222 000</a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
+        </a>
+      </div>
+      <div class="col-auto col-xl-8 col-lg-10 menu-order">
+        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav navbar-left justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+            <li class="nav-item dropdown dropdown-with-icon">
+              <a href="services.html" class="nav-link">Services</a>
+              <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
+                <li><a href="non-skilled-home-care.html"><div class="submenu-icon-content"><span>Non-skilled home care</span><p>Personal care &amp; companionship</p></div></a></li>
+                <li><a href="pediatric-care.html"><div class="submenu-icon-content"><span>Pediatric care</span><p>Skilled &amp; non-skilled in-home</p></div></a></li>
+                <li><a href="healthcare-staffing.html"><div class="submenu-icon-content"><span>Healthcare staffing</span><p>For hospitals &amp; facilities</p></div></a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right justify-content-start">
+            <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto col-xl-2 col-lg-1 text-end">
+        <div class="d-none d-xl-flex align-items-center widget-text fw-600">
+          <i class="bi bi-calendar-check text-base-color me-10px"></i>
+          <a href="request-care.html">Request care</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-copy reveal rv1">
+      <div class="eyebrow hero-eyebrow">Healing Happens at Home</div>
+      <h2 class="hero-h1">Skilled Care, Compassionate Support, and Workforce Solutions in Southeastern PA</h2>
+      <div class="hero-btns">
+        <a href="request-care.html" class="btn-t bt-taupe">Request care <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="healthcare-staffing.html" class="btn-t bt-ow">Request staffing <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-right reveal rv2">
+      <p class="hero-sub">Trinity Life Care brings together expert clinical care, daily living assistance, and reliable healthcare staffing to keep patients safe and facilities fully supported.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="reveal">
+    <span class="intro-tag">Our philosophy</span>
+    <h2 class="intro-h2">The best people to take care of our most <em>valuable asset</em> is you.</h2>
+  </div>
+  <div class="reveal rv2">
+    <p class="sbody">Trinity Life Care is a rapidly growing healthcare organization transforming how patients, families, and healthcare facilities experience care — combining skilled home care, non-skilled support, pediatric services, and healthcare staffing. Every day, coordinated care delivered with compassion changes outcomes.</p>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="who-sec">
+  <div class="reveal">
+    <div class="eyebrow">Who We Are</div>
+    <h2 class="stitle">A Complete <em>Healthcare</em><br>Solutions Provider</h2>
+    <p class="sbody" style="margin-bottom:10px">Trinity Life Care is a rapidly growing healthcare organization transforming how patients, families, and healthcare facilities experience care — combining skilled home care, non-skilled support, pediatric services, and healthcare staffing.</p>
+    <p class="sbody" style="margin-bottom:22px">Every day, we prove that coordinated care delivered with compassion changes outcomes.</p>
+    <a href="about.html" class="btn-t bt-taupe">Learn About Trinity</a>
+  </div>
+  <div class="who-visual reveal rv2">
+    <div class="who-card">
+      <div class="who-card-img">
+        <div class="who-card-txt">
+          <div class="who-card-num">1995</div>
+          <div class="who-card-lbl">Rooted in Community</div>
+        </div>
+      </div>
+    </div>
+    <div class="who-float">
+      <div class="who-float-num">4+</div>
+      <div class="who-float-lbl">Service lines under one roof</div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story-sec background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg')">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 md-mb-50px">
+        <img src="images/trinity/about-story.png" alt="Trinity Life Care nurse with patient at home" class="story-img w-100" />
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <span class="mb-15px text-base-color fw-500 d-block">Our Story</span>
+        <h3 class="alt-font text-dark-gray ls-minus-2px mb-25px">Two urgent needs. One unified solution.</h3>
+        <p class="mb-20px">Trinity Life Care is a rapidly growing healthcare organization transforming how patients, families, and healthcare facilities experience care.</p>
+        <p class="mb-30px">We’re not just one thing—we’re a complete healthcare solutions provider, combining skilled home care, non-skilled support, pediatric services, and healthcare staffing across Philadelphia, Bucks, Montgomery, and Chester counties. <br> Every day, we prove that coordinated care delivered with compassion changes outcomes.
+</p>
+        <div class="row mt-40px pt-30px border-top border-color-extra-medium-gray">
+          <div class="col-4">
+            <div class="story-stat">4</div>
+            <div class="story-stat-label">Counties served</div>
+          </div>
+          <div class="col-4">
+            <div class="story-stat">24-48h</div>
+            <div class="story-stat-label">Care start window</div>
+          </div>
+          <div class="col-4">
+            <div class="story-stat">24/7</div>
+            <div class="story-stat-label">Intake & support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY + STATS -->
+<section class="gallery-sec">
+  <div class="gallery-head reveal">
+    <div class="eyebrow eyebrow-c eyebrow-light">Our Care Environment</div>
+    <h2 class="stitle light" style="margin-top:8px;text-align:center">We Love What We <em>Do</em></h2>
+    <p style="text-align:center;color:rgba(240,231,222,.48);font-size:.8rem;font-weight:300;max-width:380px;margin:6px auto 0">Every visit, every placement, every family supported — this is Trinity.</p>
+  </div>
+
+  <div class="gallery-strip reveal rv1 justity-items-center align-items-center">
+    <div class="g-img g-img-w">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Home care nurse with patient">
+      <div class="g-cap">Home Care</div>
+    </div>
+    <div class="g-img g-img-m">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Senior care">
+      <div class="g-cap">Senior Support</div>
+    </div>
+    <div class="g-img g-img-m">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Pediatric care">
+      <div class="g-cap">Pediatric Care</div>
+    </div>
+    <div class="g-img g-img-w">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Healthcare staffing">
+      <div class="g-cap">Clinical Staffing</div>
+    </div>
+    
+  </div>
+
+  <!-- 4-block stats with + corners on all four blocks -->
+  <div class="stats-grid reveal">
+    <div class="stat-block">
+      <span class="ptl"></span><span class="ptr"></span>
+      <div class="sbn">248+</div><div class="sbl">Active Patients</div>
+      <span class="pbl"></span><span class="pbr"></span>
+    </div>
+    <div class="stat-block">
+      <span class="ptl"></span><span class="ptr"></span>
+      <div class="sbn">146</div><div class="sbl">Trained Clinicians</div>
+      <span class="pbl"></span><span class="pbr"></span>
+    </div>
+    <div class="stat-block">
+      <span class="ptl"></span><span class="ptr"></span>
+      <div class="sbn">89%</div><div class="sbl">Positive Outcomes</div>
+      <span class="pbl"></span><span class="pbr"></span>
+    </div>
+    <div class="stat-block">
+      <span class="ptl"></span><span class="ptr"></span>
+      <div class="sbn">4</div><div class="sbl">PA Counties</div>
+      <span class="pbl"></span><span class="pbr"></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — redesigned stacked cards -->
+  <section class="background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <span class="mb-15px text-base-color fw-500 d-block">Our Services</span>
+                        <h3 class="alt-font text-dark-gray ls-minus-2px mb-25px">What We Do</h3>
+                        <p class="mb-30px">Whether you need advanced clinical care at home, daily living support, pediatric services, or facility staffing — Trinity Life Care delivers compassionate, coordinated solutions designed around you.</p>
+                        <a href="request-care.html" class="btn btn-medium btn-base-color btn-rounded btn-box-shadow">Request care <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
+                                <i class="bi bi-person-heart text-base-color fs-22"></i>
+                            </div>
+                            <div class="last-paragraph-no-margin">
+                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Skilled Home Care</h6>
+                                <p class="fs-15">Physician-coordinated clinical care at home, from post-surgical recovery to chronic disease management. Faster, safer healing where patients feel most comfortable.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
+                                <i class="bi bi-heart-fill text-base-color fs-22"></i>
+                            </div>
+                            <div class="last-paragraph-no-margin">
+                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Non-Skilled Care & Companionship</h6>
+                                <p class="fs-15">Personal care, meal prep, mobility support, dementia care—everything needed to preserve dignity and independence.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
+                                <i class="bi bi-diagram-3-fill text-base-color fs-22"></i>
+                            </div>
+                            <div class="last-paragraph-no-margin">
+                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Healthcare Staffing Solutions</h6>
+                                <p class="fs-15">Fully vetted RNs, LPNs, CNAs, HHAs, and support staff deployed rapidly to hospitals, rehab centers, skilled nursing facilities, and more.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
+                                <i class="bi bi-diagram-3-fill text-base-color fs-22"></i>
+                            </div>
+                            <div class="last-paragraph-no-margin">
+                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Pediatric Care</h6>
+                                <p class="fs-15">Compassionate in-home skilled and non-skilled care for children with medical complexities or developmental needs. (Link to Pediatric page)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- COMPLIANCE -->
+<div class="comp-strip reveal">
+  <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Licensed &amp; Insured</span></div>
+  <div class="ci-div"></div>
+  <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">HIPAA-Compliant</span></div>
+  <div class="ci-div"></div>
+  <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Background-Checked Clinicians</span></div>
+  <div class="ci-div"></div>
+  <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Ongoing Training &amp; QA</span></div>
+  <div class="ci-div"></div>
+  <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Clinical Leadership Oversight</span></div>
+</div>
+
+
+<!-- THE DIFFERENCE -->
+<section class="diff-sec">
+  <div class="diff-grid">
+    <div class="reveal">
+      <div class="eyebrow">The Trinity Difference</div>
+      <h2 class="stitle">Why Families &amp; <em>Facilities</em> Trust Us</h2>
+      <p class="sbody">We've built Trinity around a simple belief: that seamless, high-quality care shouldn't be hard to find. Our integrated model means everything works together — from first call to lasting relationship.</p>
+      <ul class="diff-list">
+        <li class="diff-item">
+          <div class="diff-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="diff-ct"><h5>Integrated Model</h5><p>Care and staffing under one roof means seamless communication and coordinated outcomes.</p></div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="diff-ct"><h5>Fast Placement</h5><p>Most home care starts within 24–48 hours. Urgent staffing support exactly when needed most.</p></div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="diff-ct"><h5>Uncompromising Quality</h5><p>Every clinician is licensed, insured, and thoroughly vetted with ongoing QA monitoring.</p></div>
+        </li>
+        <li class="diff-item">
+          <div class="diff-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="diff-ct"><h5>Family Trust &amp; Matching</h5><p>Caregivers matched for both skill and personality — the right fit makes every day better.</p></div>
+        </li>
+       
+      </ul>
+    </div>
+    <div class="diff-img-wrap reveal rv2 border-radius-8px">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=580&q=80" alt="Compassionate healthcare" style="border-radius: 10px; height:400px; object-fit:cover; object-position:center;">
+    </div>
+  </div>
+</section>
+
+<!-- Staffing -->
+<section class="testi-sec">
+  <div class="testi-head reveal">
+    <div class="eyebrow eyebrow-c">What People Say</div>
+    <h2 class="stitle" style="text-align:center;margin-top:8px">Stories of <em>Care</em></h2>
+    <p class="sbody" style="text-align:center;margin-top:6px">Real words from real families and facility partners.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="t-card reveal">
+      <span class="t-mark">"</span>
+      <p class="t-q">After Mom's stroke, Trinity's team made her recovery possible at home. The nurse coordinated with her doctor, and the aide became family. We couldn't have done it without them.</p>
+      <div class="t-au">Michael D. — Philadelphia, PA</div>
+    </div>
+    <div class="t-card ft reveal rv2">
+      <span class="t-mark">"</span>
+      <p class="t-q">We rely on Trinity for last-minute staffing gaps. Their clinicians are always prepared and professional. It's the partnership our facility has always needed.</p>
+      <div class="t-au">Director of Nursing — Bucks County Facility</div>
+    </div>
+  </div>
+  <div class="testi-cta reveal">
+    <a href="Staffing.html" class="btn-t bt-taupe">Read All Reviews</a>
+  </div>
+</section>
+
+<!-- DUAL CTA — both panes with full cover BG images -->
+<div class="dual-cta">
+  <div class="cta-p cta-fam reveal">
+    <div class="cta-fam-bg"></div>
+    <div class="cta-label">For Families &amp; Patients</div>
+    <h3>Get Care at Home — Speed, Safety &amp; Heart</h3>
+    <p>Whether recovering from surgery, managing a chronic condition, or needing daily support — Trinity brings qualified care to your door, fast. A care coordinator will reach out within the hour.</p>
+    <a href="request-care.html" class="btn-t bt-taupe" style="align-self:flex-start">Request Care Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+  <div class="cta-p cta-fac reveal rv2">
+    <div class="cta-fac-bg"></div>
+    <div class="cta-label">For Healthcare Facilities</div>
+    <h3>Never Short-Staffed Again</h3>
+    <p>Fully vetted RNs, LPNs, CNAs, HHAs, and support staff — placed urgently, vetted completely. Partner with Trinity for reliable workforce solutions that match your facility's culture.</p>
+    <a href="healthcare-staffing.html" class="btn-t bt-taupe" style="align-self:flex-start">Explore Staffing Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="trinity-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Trinity <span>Life Care</span></div>
+      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+      <div class="footer-contact">
+        <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>1 800 222 000</a>
+        <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>info@trinitylifecare.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
+        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
+        <li><a href="pediatric-care.html">Pediatric Care</a></li>
+        <li><a href="healthcare-staffing.html">Healthcare Staffing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="priorities.html">Our Priorities</a></li>
+        <li><a href="Staffing.html">Staffing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <ul class="footer-links">
+        <li><a href="#">Payment &amp; Coverage</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="request-care.html">Request Care</a></li>
+        <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="priorities.html">Our Priorities</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <span>Serving Southeastern Pennsylvania with compassion.</span>
+  </div>
+</footer>
+
+<div class="scroll-progress d-none d-xxl-block">
+  <a href="#" class="scroll-top" aria-label="scroll">
+    <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+  </a>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/vendors.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
+  },{threshold:0.1});
+  els.forEach(function(e){io.observe(e)})
+})();
+</script>
+</body>
+</html>

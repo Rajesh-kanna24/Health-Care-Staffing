@@ -1,0 +1,511 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Our Priorities - Trinity Life Care</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Trinity Life Care">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="The eight priorities that shape every Trinity Life Care decision — from patient dignity and family communication to workforce excellence, compliance, and community partnership.">
+        <link rel="shortcut icon" href="images/trinity/trinity-logo.png">
+        <link rel="icon" type="image/png" href="images/trinity/trinity-logo.png">
+        <link rel="apple-touch-icon" href="images/trinity/trinity-logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="css/vendors.min.css"/>
+        <link rel="stylesheet" href="css/icon.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/responsive.css"/>
+        <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css" />
+        <style>
+            /* header logo — square brand mark sized to fit nav row */
+            header .navbar-brand { padding: 8px 0; }
+            header .navbar-brand img { max-height: 56px; width: auto; }
+            @media (max-width: 991.98px) {
+                header .navbar-brand img { max-height: 44px; }
+            }
+            header .navbar-nav .nav-item .nav-link { white-space: nowrap; }
+
+            /* priority card */
+            .priority-card {
+                background: #fff;
+                border: 1px solid #ececec;
+                border-radius: 8px;
+                padding: 38px 32px;
+                height: 100%;
+                position: relative;
+                transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            }
+            .priority-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 18px 40px rgba(0,0,0,.08);
+                border-color: transparent;
+            }
+            .priority-number {
+                position: absolute;
+                top: 22px;
+                right: 26px;
+                font-size: 54px;
+                line-height: 1;
+                font-weight: 700;
+                color: rgba(0,0,0,.05);
+                font-family: var(--alt-font);
+            }
+            .priority-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: #f4f7f5;
+                margin-bottom: 22px;
+            }
+            .priority-icon i { font-size: 24px; }
+            .priority-card h6 {
+                line-height: 1.3;
+                margin-bottom: 14px;
+            }
+            .priority-card p { margin-bottom: 0; line-height: 1.65; font-size: 15px; }
+            .priority-card ul {
+                list-style: none;
+                padding: 0;
+                margin: 14px 0 0 0;
+            }
+            .priority-card ul li {
+                position: relative;
+                padding: 4px 0 4px 22px;
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+            .priority-card ul li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 14px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--base-color, #b89968);
+            }
+
+            /* dual CTA */
+            .dual-cta { display: flex; flex-wrap: wrap; }
+            .dual-cta .pane {
+                flex: 1 1 50%;
+                padding: 100px 6%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .dual-cta .pane-inner { width: 100%; max-width: 480px; }
+            .dual-cta .pane-head {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                margin-bottom: 28px;
+            }
+            .dual-cta .pane-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 auto;
+            }
+            .dual-cta .pane-icon i { font-size: 24px; }
+            .dual-cta .pane-eyebrow {
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+            .dual-cta .pane h3 { line-height: 1.2; margin-bottom: 18px; }
+            .dual-cta .pane p { margin-bottom: 28px; line-height: 1.7; }
+            .dual-cta .pane .btn { align-self: flex-start; }
+            @media (max-width: 991.98px) {
+                .dual-cta .pane { flex: 1 1 100%; padding: 70px 8%; }
+                .dual-cta .pane-inner { max-width: 100%; }
+            }
+            @media (max-width: 575.98px) {
+                .dual-cta .pane { padding: 50px 28px; }
+                .priority-card { padding: 30px 24px; }
+                .priority-number { font-size: 44px; top: 18px; right: 20px; }
+            }
+
+            /* promise band */
+            .promise-band {
+                background: linear-gradient(135deg, #1f2a26 0%, #2c3a35 100%);
+            }
+            .promise-band .promise-quote {
+                position: relative;
+                padding: 0 30px;
+            }
+            .promise-band .promise-quote::before,
+            .promise-band .promise-quote::after {
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 2px;
+                background: var(--base-color, #b89968);
+                top: 50%;
+            }
+            .promise-band .promise-quote::before { left: -50px; }
+            .promise-band .promise-quote::after { right: -50px; }
+            @media (max-width: 767.98px) {
+                .promise-band .promise-quote::before,
+                .promise-band .promise-quote::after { display: none; }
+            }
+        </style>
+    </head>
+    <body class="overflow-x-hidden" data-mobile-nav-style="classic">
+
+        <!-- start header -->
+        <header>
+  <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
+    <div class="container-fluid">
+      <div class="col-auto col-xl-2 col-lg-1 menu-logo">
+        <div class="d-none d-xl-block">
+          <div class="widget-text fw-600">
+            <i class="bi bi-telephone-outbound text-base-color me-10px"></i>
+            <a href="tel:1800222000">1 800 222 000</a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
+          <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
+        </a>
+      </div>
+      <div class="col-auto col-xl-8 col-lg-10 menu-order">
+        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+          <span class="navbar-toggler-line"></span><span class="navbar-toggler-line"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav navbar-left justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+            <li class="nav-item dropdown dropdown-with-icon">
+              <a href="services.html" class="nav-link">Services</a>
+              <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
+                <li><a href="non-skilled-home-care.html"><div class="submenu-icon-content"><span>Non-skilled home care</span><p>Personal care &amp; companionship</p></div></a></li>
+                <li><a href="pediatric-care.html"><div class="submenu-icon-content"><span>Pediatric care</span><p>Skilled &amp; non-skilled in-home</p></div></a></li>
+                <li><a href="healthcare-staffing.html"><div class="submenu-icon-content"><span>Healthcare staffing</span><p>For hospitals &amp; facilities</p></div></a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right justify-content-start">
+            <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-auto col-xl-2 col-lg-1 text-end">
+        <div class="d-none d-xl-flex align-items-center widget-text fw-600">
+          <i class="bi bi-calendar-check text-base-color me-10px"></i>
+          <a href="request-care.html">Request care</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+        <!-- end header -->
+
+        <!-- start page title / hero -->
+        <section class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin" style="background-image: url('images/trinity/priorities-hero.png')">
+            <div class="opacity-full-dark bg-gradient-dark-transparent"></div>
+            <div class="container position-relative">
+                <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 400, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                    <div class="col-xxl-7 col-lg-6 col-md-10 position-relative page-title-large md-mb-15px xs-mb-5px">
+                        <span class="d-block text-base-color fw-500 mb-15px text-uppercase ls-1px fs-14">Our Priorities</span>
+                        <h1 class="text-white alt-font fw-500 ls-minus-2px mb-25px">Care built around what matters most.</h1>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="request-care.html" class="btn btn-medium btn-base-color btn-rounded btn-box-shadow">Request care <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                            <a href="healthcare-staffing.html" class="btn btn-medium btn-transparent-white-light btn-rounded btn-box-shadow">Request staffing <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
+                        <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">At Trinity Life Care, every decision begins with the patient — and extends to the families, clinicians, and facilities who depend on us.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end page title -->
+
+        <!-- start intro / what drives us -->
+        <section class="background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9 col-md-11" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                        <span class="mb-15px text-base-color fw-500 d-block">What drives us every day</span>
+                        <h2 class="alt-font text-dark-gray ls-minus-2px mb-25px">Priorities that shape who we hire, how we train, and how we show up.</h2>
+                        <p class="fs-18 mb-15px">When healthcare is fragmented, patients fall through the cracks. When staffing is unreliable, facilities struggle to deliver on their mission.</p>
+                        <p class="fs-18">We built Trinity Life Care to fix both problems with one set of unwavering priorities — at every bedside, in every facility, for every family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end intro -->
+
+        <!-- start eight core priorities -->
+        <section class="bg-very-light-gray background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
+            <div class="container">
+                <div class="row justify-content-center mb-6 xs-mb-9">
+                    <div class="col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <span class="mb-15px text-base-color fw-500 d-block">The standard we hold ourselves to</span>
+                        <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Our eight core priorities</h2>
+                        <span class="d-inline-block">Not slogans — operating principles that guide every shift, every visit, every placement.</span>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+                    <!-- 1 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">01</span>
+                            <span class="priority-icon"><i class="bi bi-person-heart text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Patient dignity above all</h6>
+                            <p>Every patient — recovering, chronic, or living with dementia — deserves to be seen, heard, and respected. Dignity is the starting point of every care plan.</p>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 100, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">02</span>
+                            <span class="priority-icon"><i class="bi bi-chat-square-heart-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Clear, continuous family communication</h6>
+                            <p>Families are partners, not bystanders. We keep loved ones informed at every step — from intake to discharge.</p>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">03</span>
+                            <span class="priority-icon"><i class="bi bi-clipboard2-pulse-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Physician &amp; provider collaboration</h6>
+                            <p>Our clinicians coordinate directly with physicians, specialists, and discharge planners — care plans followed accurately and adjusted in real time.</p>
+                        </div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 300, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">04</span>
+                            <span class="priority-icon"><i class="bi bi-diagram-3-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Continuity across every care setting</h6>
+                            <p>Hospital to home. Facility to family. Same team, same plan, same standards across every transition — no gaps where patients lose ground.</p>
+                        </div>
+                    </div>
+                    <!-- 5 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">05</span>
+                            <span class="priority-icon"><i class="bi bi-heart-pulse-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Individualized, compassionate care</h6>
+                            <p>Care must be:</p>
+                            <ul>
+                                <li>Individualized, not standardized</li>
+                                <li>Compassionate, not transactional</li>
+                                <li>Coordinated, not fragmented</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 6 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 100, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">06</span>
+                            <span class="priority-icon"><i class="bi bi-lightning-charge-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Speed when it matters most</h6>
+                            <p>Most home care begins within 24–48 hours. Same-day placements, emergency caregiver replacements, and after-hours support are how we operate — not exceptions.</p>
+                        </div>
+                    </div>
+                    <!-- 7 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">07</span>
+                            <span class="priority-icon"><i class="bi bi-shield-check text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Uncompromising quality &amp; compliance</h6>
+                            <p>Trust is built on rigorous standards:</p>
+                            <ul>
+                                <li>Licensed &amp; insured</li>
+                                <li>HIPAA-compliant coordination</li>
+                                <li>Background-checked caregivers</li>
+                                <li>Ongoing training &amp; certification</li>
+                                <li>Continuous QA monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 8 -->
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 300, "easing": "easeOutQuad" }'>
+                        <div class="priority-card">
+                            <span class="priority-number">08</span>
+                            <span class="priority-icon"><i class="bi bi-people-fill text-base-color"></i></span>
+                            <h6 class="alt-font text-dark-gray fw-500">Workforce excellence</h6>
+                            <p>Reliable staffing directly impacts patient care. Every RN, LPN, CNA, and HHA we place is fully vetted, credentialed, and matched to the culture of the facility they serve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end eight core priorities -->
+
+        <!-- start diversity & community priorities -->
+        <section class="background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
+            <div class="container">
+                <div class="row justify-content-center mb-6 xs-mb-9">
+                    <div class="col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <span class="mb-15px text-base-color fw-500 d-block">Beyond clinical care</span>
+                        <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Diversity &amp; community as priorities</h2>
+                        <span class="d-inline-block">Healthcare should reflect the community it serves — and strengthen it in return.</span>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-2 g-4">
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
+                        <div class="services-box-style-01 hover-box bg-white border-radius-6px h-100 overflow-hidden border border-color-extra-medium-gray">
+                            <div class="position-relative box-image">
+                                <img class="w-100" src="images/trinity/about-diversity.png" alt="Diverse Trinity Life Care team">
+                            </div>
+                            <div class="p-40px md-p-25px last-paragraph-no-margin">
+                                <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray mb-15px">Diversity &amp; inclusion as a priority</span>
+                                <p class="mb-20px">Healthcare should reflect the community it serves. We are committed to:</p>
+                                <ul class="list-style-02 fs-15 mb-20px">
+                                    <li><i class="bi bi-check-circle-fill text-base-color me-10px"></i>Building a diverse clinical and caregiving workforce</li>
+                                    <li><i class="bi bi-check-circle-fill text-base-color me-10px"></i>Delivering culturally competent care</li>
+                                    <li><i class="bi bi-check-circle-fill text-base-color me-10px"></i>Maintaining an environment free from discrimination</li>
+                                </ul>
+                                <p class="text-dark-gray fw-500"><em>Different perspectives strengthen how we serve patients of every background.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
+                        <div class="services-box-style-01 hover-box bg-white border-radius-6px h-100 overflow-hidden border border-color-extra-medium-gray">
+                            <div class="position-relative box-image">
+                                <img class="w-100" src="images/trinity/about-community.png" alt="Trinity Life Care community partnerships">
+                            </div>
+                            <div class="p-40px md-p-25px last-paragraph-no-margin">
+                                <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray mb-15px">Community as a priority</span>
+                                <p class="mb-20px">We are more than a service provider — we are a community partner. Through partnerships with hospitals, rehab centers, assisted living communities, and group homes across:</p>
+                                <ul class="list-style-02 fs-15 mb-20px">
+                                    <li><i class="bi bi-geo-alt-fill text-base-color me-10px"></i>Philadelphia County</li>
+                                    <li><i class="bi bi-geo-alt-fill text-base-color me-10px"></i>Bucks County</li>
+                                    <li><i class="bi bi-geo-alt-fill text-base-color me-10px"></i>Montgomery County</li>
+                                    <li><i class="bi bi-geo-alt-fill text-base-color me-10px"></i>Chester County</li>
+                                </ul>
+                                <p class="text-dark-gray fw-500"><em>We strengthen the regional healthcare ecosystem and invest in workforce development.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end diversity & community -->
+
+        <!-- start our promise -->
+        <section class="promise-band cover-background" style="background-image: url('images/trinity/about-compliance-bg.png'); background-blend-mode: multiply;">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                        <span class="mb-15px text-base-color fw-500 d-block text-uppercase ls-1px fs-14">Our promise</span>
+                        <h3 class="alt-font text-white ls-minus-1px mb-30px promise-quote d-inline-block">When you choose Trinity Life Care, you are choosing an organization where the patient comes first, the family is informed, the clinician is supported, and the facility is never left short-staffed.</h3>
+                        <p class="text-white opacity-8 fs-18 mb-0">That's what our priorities look like in practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end our promise -->
+
+        <!-- start dual CTA -->
+        <section class="p-0">
+            <div class="dual-cta">
+                <!-- For families -->
+                <div class="pane bg-base-color" data-anime='{ "translateX": [-30, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
+                    <div class="pane-inner">
+                        <div class="pane-head">
+                            <span class="pane-icon bg-white"><i class="bi bi-house-heart-fill text-base-color"></i></span>
+                            <span class="pane-eyebrow text-white">For families</span>
+                        </div>
+                        <h3 class="alt-font text-white ls-minus-1px">Experience care built around what matters most.</h3>
+                        <p class="text-white opacity-9">A care coordinator will reach out within the hour to discuss needs, verify coverage, and get care started — most plans begin in 24–48 hours.</p>
+                        <a href="request-care.html" class="btn btn-medium btn-white btn-rounded">Request care now <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                    </div>
+                </div>
+                <!-- For facilities -->
+                <div class="pane bg-dark-gray" data-anime='{ "translateX": [30, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
+                    <div class="pane-inner">
+                        <div class="pane-head">
+                            <span class="pane-icon bg-base-color"><i class="bi bi-hospital-fill text-white"></i></span>
+                            <span class="pane-eyebrow text-base-color">For facilities</span>
+                        </div>
+                        <h3 class="alt-font text-white ls-minus-1px">Partner with a staffing provider whose priorities match yours.</h3>
+                        <p class="text-white opacity-8">Fully vetted RNs, LPNs, CNAs, HHAs, and support staff — deployed rapidly to where you need them most.</p>
+                        <a href="healthcare-staffing.html" class="btn btn-medium btn-base-color btn-rounded">Request staffing <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end dual CTA -->
+
+        <!-- start footer -->
+        <footer class="bg-very-light-gray pb-50px sm-pt-20px xs-pb-30px background-repeat background-position-center sm-background-image-none" style="background-image: url('images/vertical-center-line-bg-dark.svg')">
+            <div class="container">
+                <div class="row overlap-section">
+                    <div class="col-12 text-center">
+                        <img class="rounded-circle" src="images/trinity/about-footer-brand.png" alt="Trinity Life Care" style="width: 140px; height: 140px; object-fit: cover;" />
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-xl-6 col-lg-8 col-md-10 text-center">
+                        <h3 class="text-dark-gray alt-font ls-minus-2px fw-400 mb-40px xs-mb-30px w-80 xs-w-100 mx-auto">Stay informed about home care, staffing, and Trinity updates.</h3>
+                        <div class="d-inline-block w-100 newsletter-style-03 position-relative mb-20px">
+                            <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100">
+                                <input class="input-large bg-white border-color-transparent w-100 border-radius-100px box-shadow-extra-large form-control required" type="email" name="email" placeholder="Enter your email address" />
+                                <input type="hidden" name="redirect" value="">
+                                <button class="btn btn-large text-dark-gray ls-0px left-icon submit text-uppercase fw-700" aria-label="submit"><i class="icon feather icon-feather-mail icon-small text-base-color"></i><span>Subscribe</span></button>
+                                <div class="form-results border-radius-100px pt-10px pb-10px ps-15px pe-15px fs-16 mt-10px w-100 text-center position-absolute d-none"></div>
+                            </form>
+                        </div>
+                        <p class="fs-16">We are committed to protecting your <a href="#" class="text-decoration-line-bottom text-dark-gray">privacy policy.</a></p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-sm-6 text-center text-sm-start last-paragraph-no-margin fs-15 order-3 order-md-1">
+                        <p>&COPY; Copyright 2026 <a href="index.html" class="text-decoration-line-bottom text-dark-gray fw-500">Trinity Life Care</a></p>
+                    </div>
+                    <div class="col-xl-6 text-center lg-mt-10px sm-mt-0 sm-mb-10px order-1 order-xl-2 order-md-3">
+                        <ul class="footer-navbar fs-17 fw-600">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                            <li class="nav-item active"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
+                            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
+                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 position-relative text-center text-sm-end elements-social social-text-style-01 order-2 order-xl-3 xs-mb-10px">
+                        <ul class="fs-16 dark fw-600">
+                            <li><a class="facebook" href="https://www.facebook.com/" target="_blank">Fb.</a></li>
+                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank">Dr.</a></li>
+                            <li><a class="twitter" href="http://www.twitter.com" target="_blank">Tw.</a></li>
+                            <li><a class="behance" href="http://www.behance.com/" target="_blank">Be.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+
+        <div class="scroll-progress d-none d-xxl-block">
+            <a href="#" class="scroll-top" aria-label="scroll">
+                <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+            </a>
+        </div>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/vendors.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
