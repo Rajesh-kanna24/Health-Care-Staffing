@@ -20,7 +20,7 @@
 
   <style>
     :root {
-      --taupe:   #9A856A;
+      --taupe: #ac8d56;
       --taupe-d: #7d6b55;
       --cream-d: #EFDDC5;
       --cream-l: #F0E7DE;
@@ -31,23 +31,14 @@
       --txt:     #2A2420;
       --txtm:    #5a4f47;
       --txtlt:   #8a7d74;
-      --base-color: #9A856A;
+      --base-color: #ac8d56;
     }
     *,*::before,*::after{box-sizing:border-box}
     body{background:var(--white);color:var(--txt);overflow-x:hidden}
     img{max-width:100%;display:block}
     .text-base-color{color:var(--taupe)!important}
 
-    /* NAV */
-    header .navbar{padding:18px 0;transition:padding .3s ease,box-shadow .3s ease;box-shadow:0 18px 45px rgba(15,23,42,.08)}
-    header .navbar-brand{padding:8px 0}
-    header .navbar-brand img{max-height:56px;width:auto;transition:max-height .3s ease}
-    header .navbar-nav .nav-item .nav-link{white-space:nowrap;color:var(--slate);font-weight:500;padding:.8rem .95rem;transition:color .25s}
-    header .navbar-nav .nav-item .nav-link:hover,
-    header .navbar-nav .nav-item .nav-link.active{color:var(--taupe)}
-    header .navbar-toggler{border-color:rgba(74,78,82,.14)}
-    header .navbar-toggler-line{background:var(--taupe);height:2px}
-    @media(max-width:991.98px){header .navbar-brand img{max-height:44px}}
+    /* NAV — using global header rules from style.css for parity with other pages */
 
     /* REVEAL */
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -68,7 +59,7 @@
     .stitle.light em{color:var(--cream-d)}
     .sbody{font-size:.88rem;line-height:1.82;color:var(--txtm);font-weight:300}
 
-    .btn-t{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:pointer;border:1.5px solid transparent}
+    .btn-t{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:pointer;border:1.5px solid transparent}
     .bt-taupe{background:var(--taupe);color:#fff;border-color:var(--taupe)}
     .bt-taupe:hover{background:var(--taupe-d);border-color:var(--taupe-d);color:#fff}
     .bt-slate{background:var(--slate);color:#fff;border-color:var(--slate)}
@@ -78,8 +69,9 @@
 
     /* ===== HERO (bottom-aligned header layout) ===== */
     .hero{position:relative;min-height:75vh;display:grid;align-items:flex-end;overflow:hidden;padding:0}
-    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80') center/cover;z-index:0}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(46,58,66,.92) 0%,rgba(46,58,66,.6) 42%,rgba(46,58,66,.88) 100%);}
+    header .navbar{border-bottom:4px solid #ac8d56}
+    .hero-bg{position:absolute;inset:0;background:url('images/trinity/home-header.png') center/cover;z-index:0}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, #141622 7%, transparent 100%);opacity:.9;}
     .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(280px,1.05fr) minmax(300px,0.95fr);gap:48px;align-items:end;max-width:1280px;margin:0 auto;padding:0 72px 72px;width:100%}
     .hero-copy{display:flex;flex-direction:column;justify-content:flex-end;gap:24px}
     .hero-eyebrow{color:rgba(240,231,222,.82);font-size:.85rem;letter-spacing:.24em;text-transform:uppercase;opacity:1;}
@@ -88,17 +80,18 @@
     .hero-right{display:flex;align-items:flex-end}
     .hero-right .hero-sub{margin:0;font-size:1rem;line-height:1.9;color:rgba(255,255,255,.92);max-width:520px;font-weight:300}
     .hero-badge{display:none}
-    @media(max-width:1024px){
+    @media (max-width:1024px){
       .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 48px 56px}
       .hero-right{align-items:flex-start}
     }
-    @media(max-width:768px){
-      .hero{min-height:72vh}
-      .hero-inner{padding:0 28px 48px}
-      .hero-h1{font-size:2.5rem}
-      .hero-btns{gap:14px}
-    }
-    @media(max-width:576px){
+   @media (max-width: 768px) {
+  .hero-btns .btn-t {
+    width: auto;
+    align-self: flex-start;
+    padding: 11px 22px;
+  }
+}
+    @media (max-width:576px){
       .hero{min-height:65vh}
       .hero-inner{padding:0 20px 40px}
       .hero-h1{font-size:2.1rem}
@@ -116,7 +109,7 @@
     .hero-badge{position:absolute;bottom:28px;right:72px;z-index:3;border-left:3px solid var(--taupe);padding:12px 15px;background:rgba(46,58,66,.78);backdrop-filter:blur(6px);border-radius:0 2px 2px 0;opacity:0;animation:fu .85s ease .85s forwards}
     .hero-badge-lbl{font-size:.58rem;color:rgba(240,231,222,.42);text-transform:uppercase;letter-spacing:.15em;margin-bottom:4px}
     .hero-badge-text{font-size:.75rem;color:var(--cream-l);line-height:1.5}
-    @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes fu {from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
     /* INTRO STRIP */
     .intro-strip{background:var(--cream-d);padding:56px 72px 38px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;width:100%}
@@ -124,7 +117,6 @@
     .intro-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);background:rgba(154,133,106,.12);padding:8px 14px;border-radius:999px;margin-bottom:16px;}
     .intro-h2{font-family:Georgia,serif;font-size:clamp(1.4rem,2.3vw,2.1rem);font-weight:400;color:var(--txt);line-height:1.18;letter-spacing:-.03em;margin:0}
     .intro-h2 em{font-style:italic;color:var(--taupe)}
-    .intro-strip .sbody{}
     .services-sec,.story-sec,.mission-sec,.who-sec,.diff-sec,.testi-sec{max-width:1280px;margin:0 auto;width:100%}
 
     /* ===== GALLERY (modern centered card layout) ===== */
@@ -166,9 +158,9 @@
     .service-card h4{font-family:Georgia,serif;font-size:1.05rem;font-weight:400;color:var(--txt);margin:0 0 10px;line-height:1.25}
     .service-card p{margin:0;color:var(--txtm);line-height:1.8;font-weight:300;font-size:.95rem}
     .services-sec .eyebrow{justify-content:flex-start}
-    @media(max-width:1024px){.services-wrap{gap:32px}.services-cards{padding-right:28px}.services-cards::after{right:10px}}
-    @media(max-width:768px){.services-sec{padding:58px 28px}.services-wrap{gap:28px}.services-cards{padding-right:0}.services-cards::after{display:none}}
-    @media(max-width:576px){.services-sec{padding:44px 18px}.service-card{padding:26px 22px;gap:18px}}
+    @media (max-width:1024px){.services-wrap{gap:32px}.services-cards{padding-right:28px}.services-cards::after{right:10px}}
+    @media (max-width:768px){.services-sec{padding:58px 28px}.services-wrap{gap:28px}.services-cards{padding-right:0}.services-cards::after{display:none}}
+    @media (max-width:576px){.services-sec{padding:44px 18px}.service-card{padding:26px 22px;gap:18px}}
 
     /* ===== STATS GRID with + corners — fully responsive ===== */
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--slate-d);border-top:1px solid rgba(240,231,222,.08)}
@@ -200,7 +192,7 @@
     .who-sec .reveal{max-width:560px}
     .who-visual{position:relative;display:flex;justify-content:center;align-items:center}
     .who-card{width:100%;border-radius:24px;overflow:hidden;position:relative;box-shadow:0 28px 64px rgba(0,0,0,.08)}
-    .who-card-img{height:360px;background:url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80') center/cover;position:relative;border-radius:24px}
+    .who-card-img{height:360px;background:url('images/trinity/whoweare.png') center/cover;position:relative;border-radius:24px}
     .who-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(46,58,66,.78) 100%);border-radius:24px}
     .who-card-txt{position:absolute;bottom:0;left:0;right:0;padding:26px;z-index:2}
     .who-card-num{font-family:Georgia,serif;font-size:3rem;font-weight:700;color:rgba(255,255,255,.18);line-height:1;margin-bottom:6px}
@@ -211,7 +203,8 @@
 
     /* ===== THE TRINITY DIFFERENCE — refined cards ===== */
     .diff-sec{background:var(--white);padding:72px 72px 64px;max-width:1280px;margin:0 auto}
-    .diff-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    /* UPDATED: grid column ratio switched to put image on the left */
+    .diff-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
     .diff-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px}
     .diff-item{display:flex;gap:18px;align-items:flex-start;padding:20px;border-radius:18px;background:rgba(154,133,106,.06);transition:transform .25s}
     .diff-item:hover{transform:translateX(4px)}
@@ -245,7 +238,8 @@
     .cta-fac-bg::after{content:'';position:absolute;inset:0;background:rgba(46,58,66,.86)}
     .cta-p > *:not(.cta-fam-bg):not(.cta-fac-bg){position:relative;z-index:1}
     .cta-label{font-size:.63rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:9px}
-    .cta-fac .cta-label{color:rgba(240,231,222,.42)}
+    /* UPDATED: Changed from faded white to var(--taupe) for consistency */
+    .cta-fac .cta-label{color:var(--taupe)}
     .cta-p h3{font-family:Georgia,serif;font-size:clamp(1.15rem,1.6vw,1.6rem);font-weight:400;color:var(--txt);margin-bottom:9px;line-height:1.25}
     .cta-fac h3{color:var(--cream-l)}
     .cta-p > p{font-size:.82rem;color:var(--txtm);margin-bottom:20px;font-weight:300;line-height:1.7}
@@ -266,50 +260,113 @@
     .mission-card.dark h5{color:#fff}
     .mission-card p{font-size:.9rem;line-height:1.8;color:var(--txtm);margin:0;font-weight:300}
     .mission-card.dark p{color:rgba(240,231,222,.72)}
+    /* ── Service Cards ── */
+.svc-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  height: 100%;
+  border: 1px solid rgba(154,133,106,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all .28s ease;
+}
+.svc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 55px rgba(0,0,0,.09);
+}
+.svc-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(172,141,86,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.svc-icon {
+  font-size: 24px;
+  color: #ac8d56;
+}
+.svc-title {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2A2420;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.svc-body {
+  font-size: .82rem;
+  color: #5a4f47;
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.svc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #ac8d56;
+  text-decoration: none;
+  background: rgba(172,141,86,.1);
+  border: 1.5px solid rgba(172,141,86,.25);
+  border-radius: 100px;
+  padding: 9px 20px;
+  transition: all .25s ease;
+}
+.svc-btn:hover {
+  background: #ac8d56;
+  border-color: #ac8d56;
+  color: #fff;
+}
+.svc-btn i {
+  font-size: 10px;
+  transition: transform .2s ease;
+}
+.svc-btn:hover i {
+  transform: translateX(3px);
+}
 
-    /* FOOTER */
-    .trinity-footer{background:var(--slate-d);padding:48px 72px 28px;color:rgba(240,231,222,.43)}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
-    .footer-logo{font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--cream-l);margin-bottom:10px}
-    .footer-logo span{color:var(--taupe)}
-    .footer-desc{font-size:.78rem;line-height:1.72;margin-bottom:14px}
-    .footer-contact a{display:block;font-size:.76rem;color:var(--cream-d);text-decoration:none;margin-bottom:4px}
-    .footer-col-title{font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:12px}
-    .footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
-    .footer-links a{text-decoration:none;font-size:.78rem;color:rgba(240,231,222,.43);transition:color .2s}
-    .footer-links a:hover{color:var(--cream-l)}
-    .footer-bottom{border-top:1px solid rgba(240,231,222,.08);padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:.7rem;flex-wrap:wrap;gap:9px}
-    .footer-bottom a{color:rgba(240,231,222,.43);text-decoration:none}
+    /* FOOTER styled via global css/style.css .trinity-footer rules for parity with other pages */
 
     /* ===== RESPONSIVE ===== */
-    @media(max-width:1200px){
+    @media (max-width:1200px){
       .hero-inner{padding:48px 56px 60px}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:56px;padding-right:56px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding-left:56px;padding-right:56px}
       .comp-strip{padding-left:56px;padding-right:56px}
       .cta-p{padding:52px 56px}
-      .trinity-footer{padding:44px 56px 24px}
       .gallery-head,.gallery-strip{padding-left:56px;padding-right:56px}
     }
-    @media(max-width:1024px){
+    @media (max-width:1024px){
       .svc-grid{grid-template-columns:1fr 1fr}
       .intro-strip{grid-template-columns:1fr;gap:24px;padding:48px 48px 24px}
       .who-sec{grid-template-columns:1fr;padding:52px 48px}
+      /* UPDATED: Added flex-direction to stack the float nicely underneath on mobile */
+      .who-visual{flex-direction:column}
       .who-card-img{height:300px}
       .who-float{position:static;transform:none;margin-top:18px;right:auto;bottom:auto;width:100%}
       .diff-grid{grid-template-columns:1fr;gap:36px}
       .diff-img-wrap img{height:300px}
       .testi-grid{grid-template-columns:1fr 1fr}
       .cta-p{flex:1 1 100%;padding:52px 48px;min-height:auto}
-      .trinity-footer{padding:40px 48px 20px}
-      .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
       .hero-badge{right:48px}
       .gallery-strip,.gallery-head{padding-left:48px;padding-right:48px}
-      .comp-strip,.services-sec,.diff-sec,.testi-sec{padding-left:48px;padding-right:48px}
+      .comp-strip,.services-sec,.diff-sec,.testi-sec,.story-sec{padding-left:48px;padding-right:48px}
     }
-    @media(max-width:768px){
+    @media (max-width:768px){
       .hero-inner{padding:60px 28px 64px;max-width:100%}
       .hero-badge{display:none}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding:44px 28px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding:44px 28px}
       .intro-strip{gap:28px}
       .gallery-strip{padding-left:28px;padding-right:28px;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
       .gallery-head{padding-left:28px;padding-right:28px}
@@ -317,9 +374,6 @@
       .g-img-w{width:280px}.g-img-m{width:180px}
       .testi-grid{grid-template-columns:1fr}
       .cta-p{padding:44px 28px;min-height:320px}
-      .trinity-footer{padding:36px 28px 18px}
-      .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
-      .footer-bottom{flex-direction:column;text-align:center}
       .who-card-img{height:260px}
       .diff-img-wrap img{height:260px}
       .comp-strip{padding:14px 28px;gap:8px}
@@ -329,26 +383,25 @@
       .stat-block:nth-child(odd){border-right:1px solid rgba(240,231,222,.1)}
       .svc-grid{grid-template-columns:1fr}
     }
-    @media(max-width:576px){
+    @media (max-width:576px){
       .hero-h1{font-size:1.65rem}
       .hero-btns{flex-direction:column}
       .hero-stats{gap:18px}
-      .footer-grid{grid-template-columns:1fr}
       .g-img-w{width:200px}.g-img-m{width:155px}
       .g-img img{height:140px}
       .gallery-strip{gap:8px;padding-left:16px;padding-right:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
       .gallery-head{padding-left:16px;padding-right:16px}
-      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec{padding-left:16px;padding-right:16px}
+      .intro-strip,.services-sec,.who-sec,.diff-sec,.testi-sec,.story-sec{padding-left:16px;padding-right:16px}
       .cta-p{padding:40px 16px}
-      .trinity-footer{padding:32px 16px 16px}
       .comp-strip{padding:12px 16px}
+      .story-stat-box { padding: 16px 0 !important; text-align: center; }
+      .story-stat-box.mid { border-top: 1px solid rgba(0,0,0,.08) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; border-left: none !important; border-right: none !important; }
     }
 
   </style>
 </head>
 <body data-mobile-nav-style="classic">
 
-<!-- HEADER -->
 <header>
   <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
     <div class="container-fluid">
@@ -356,7 +409,7 @@
         <div class="d-none d-xl-block">
           <div class="widget-text fw-600">
             <i class="bi bi-telephone-outbound text-base-color me-10px"></i>
-            <a href="tel:1800222000">1 800 222 000</a>
+            <a href="tel:267-752-0038"> 267-752-0038</a>
           </div>
         </div>
         <a class="navbar-brand" href="index.html">
@@ -395,14 +448,13 @@
       <div class="col-auto col-xl-2 col-lg-1 text-end">
         <div class="d-none d-xl-flex align-items-center widget-text fw-600">
           <i class="bi bi-calendar-check text-base-color me-10px"></i>
-          <a href="request-care.html">Request care</a>
+          <a href="contact.html#contact-form">Request care</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
@@ -420,7 +472,6 @@
   </div>
 </section>
 
-<!-- INTRO STRIP -->
 <div class="intro-strip">
   <div class="reveal">
     <span class="intro-tag">Our philosophy</span>
@@ -431,7 +482,6 @@
   </div>
 </div>
 
-<!-- WHO WE ARE -->
 <section class="who-sec">
   <div class="reveal">
     <div class="eyebrow">Who We Are</div>
@@ -456,7 +506,6 @@
   </div>
 </section>
 
-<!-- OUR STORY -->
 <section class="story-sec background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg')">
   <div class="container">
     <div class="row align-items-center">
@@ -469,27 +518,29 @@
         <p class="mb-20px">Trinity Life Care is a rapidly growing healthcare organization transforming how patients, families, and healthcare facilities experience care.</p>
         <p class="mb-30px">We’re not just one thing—we’re a complete healthcare solutions provider, combining skilled home care, non-skilled support, pediatric services, and healthcare staffing across Philadelphia, Bucks, Montgomery, and Chester counties. <br> Every day, we prove that coordinated care delivered with compassion changes outcomes.
 </p>
-        <div class="row mt-40px pt-30px border-top border-color-extra-medium-gray">
-          <div class="col-4">
-            <div class="story-stat">4</div>
-            <div class="story-stat-label">Counties served</div>
-          </div>
-          <div class="col-4">
-            <div class="story-stat">24-48h</div>
-            <div class="story-stat-label">Care start window</div>
-          </div>
-          <div class="col-4">
-            <div class="story-stat">24/7</div>
-            <div class="story-stat-label">Intake & support</div>
-          </div>
-        </div>
+      <div style="display:flex;flex-wrap:nowrap;gap:0;margin-top:40px;padding-top:30px;border-top:1px solid rgba(0,0,0,.08);align-items:center;">
+
+  <div style="flex:1;padding-right:12px;text-align:center;">
+    <div class="story-stat">4</div>
+    <div class="story-stat-label">Counties served</div>
+  </div>
+
+  <div style="flex:1;padding:0 12px;border-left:1px solid rgba(0,0,0,.08);border-right:1px solid rgba(0,0,0,.08);text-align:center;">
+    <div class="story-stat" style="letter-spacing:-.02em;white-space:nowrap;">24-48h</div>
+    <div class="story-stat-label" style="white-space:nowrap;">Care start window</div>
+  </div>
+
+  <div style="flex:1;padding-left:12px;text-align:center;">
+    <div class="story-stat">24/7</div>
+    <div class="story-stat-label">Intake &amp; support</div>
+  </div>
+
+</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- GALLERY + STATS -->
 <section class="gallery-sec">
   <div class="gallery-head reveal">
     <div class="eyebrow eyebrow-c eyebrow-light">Our Care Environment</div>
@@ -497,104 +548,311 @@
     <p style="text-align:center;color:rgba(240,231,222,.48);font-size:.8rem;font-weight:300;max-width:380px;margin:6px auto 0">Every visit, every placement, every family supported — this is Trinity.</p>
   </div>
 
-  <div class="gallery-strip reveal rv1 justity-items-center align-items-center">
-    <div class="g-img g-img-w">
-      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Home care nurse with patient">
-      <div class="g-cap">Home Care</div>
+  <div class="gallery-carousel-wrap" style="width:100%;overflow:hidden;position:relative;max-width:1400px;margin:0 auto 44px;">
+    <div class="gallery-track" id="galleryTrack" style="display:flex;gap:20px;will-change:transform;padding:8px 0;">
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/home-care.png" alt="Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Skilled Care</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/senior-support.png" alt="Non-Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Support</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Non-Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/pediatric-care.png" alt="Pediatric Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Children</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Pediatric Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/clinical-staffing.png" alt="Healthcare Staffing" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Workforce</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Healthcare Staffing</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','coverage')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/whoweare.png" alt="Payment & Coverage" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Coverage</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Payment &amp; Coverage</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-story.png" alt="Clinical Care Solutions" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Clinical</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Clinical Care Solutions</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-community.png" alt="Community Engagement" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Community</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Community Engagement</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-diversity.png" alt="Strategic Partnerships" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Partnerships</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Strategic Partnerships</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/home-care.png" alt="Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Skilled Care</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/senior-support.png" alt="Non-Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Support</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Non-Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/pediatric-care.png" alt="Pediatric Care" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Children</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Pediatric Care</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/clinical-staffing.png" alt="Healthcare Staffing" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Workforce</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Healthcare Staffing</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','coverage')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/Trinity/whoweare.png" alt="Payment & Coverage" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Coverage</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Payment &amp; Coverage</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','philosophy')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-story.png" alt="Clinical Care Solutions" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Clinical</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Clinical Care Solutions</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-community.png" alt="Community Engagement" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Community</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Community Engagement</div>
+          </div>
+        </div>
+      </a>
+      <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-diversity.png" alt="Strategic Partnerships" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Partnerships</div>
+            <div style="font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em;">Strategic Partnerships</div>
+          </div>
+        </div>
+      </a>
+
     </div>
-    <div class="g-img g-img-m">
-      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Senior care">
-      <div class="g-cap">Senior Support</div>
-    </div>
-    <div class="g-img g-img-m">
-      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Pediatric care">
-      <div class="g-cap">Pediatric Care</div>
-    </div>
-    <div class="g-img g-img-w">
-      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=550&q=80" alt="Healthcare staffing">
-      <div class="g-cap">Clinical Staffing</div>
-    </div>
-    
   </div>
 
-  <!-- 4-block stats with + corners on all four blocks -->
-  <div class="stats-grid reveal">
-    <div class="stat-block">
-      <span class="ptl"></span><span class="ptr"></span>
-      <div class="sbn">248+</div><div class="sbl">Active Patients</div>
-      <span class="pbl"></span><span class="pbr"></span>
-    </div>
-    <div class="stat-block">
-      <span class="ptl"></span><span class="ptr"></span>
-      <div class="sbn">146</div><div class="sbl">Trained Clinicians</div>
-      <span class="pbl"></span><span class="pbr"></span>
-    </div>
-    <div class="stat-block">
-      <span class="ptl"></span><span class="ptr"></span>
-      <div class="sbn">89%</div><div class="sbl">Positive Outcomes</div>
-      <span class="pbl"></span><span class="pbr"></span>
-    </div>
-    <div class="stat-block">
-      <span class="ptl"></span><span class="ptr"></span>
-      <div class="sbn">4</div><div class="sbl">PA Counties</div>
-      <span class="pbl"></span><span class="pbr"></span>
-    </div>
+  <div class="stats-grid reveal" style="width:100%;max-width:1280px;">
+    <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">248+</div><div class="sbl">Active Patients</div><span class="pbl"></span><span class="pbr"></span></div>
+    <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">146</div><div class="sbl">Trained Clinicians</div><span class="pbl"></span><span class="pbr"></span></div>
+    <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">89%</div><div class="sbl">Positive Outcomes</div><span class="pbl"></span><span class="pbr"></span></div>
+    <div class="stat-block"><span class="ptl"></span><span class="ptr"></span><div class="sbn">4</div><div class="sbl">PA Counties</div><span class="pbl"></span><span class="pbr"></span></div>
   </div>
 </section>
 
-<!-- SERVICES — redesigned stacked cards -->
-  <section class="background-position-center background-repeat" style="background-image: url('images/vertical-center-line-bg.svg')">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">Our Services</span>
-                        <h3 class="alt-font text-dark-gray ls-minus-2px mb-25px">What We Do</h3>
-                        <p class="mb-30px">Whether you need advanced clinical care at home, daily living support, pediatric services, or facility staffing — Trinity Life Care delivers compassionate, coordinated solutions designed around you.</p>
-                        <a href="request-care.html" class="btn btn-medium btn-base-color btn-rounded btn-box-shadow">Request care <i class="fa-solid fa-arrow-right ms-10px"></i></a>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
-                                <i class="bi bi-person-heart text-base-color fs-22"></i>
-                            </div>
-                            <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Skilled Home Care</h6>
-                                <p class="fs-15">Physician-coordinated clinical care at home, from post-surgical recovery to chronic disease management. Faster, safer healing where patients feel most comfortable.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
-                                <i class="bi bi-heart-fill text-base-color fs-22"></i>
-                            </div>
-                            <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Non-Skilled Care & Companionship</h6>
-                                <p class="fs-15">Personal care, meal prep, mobility support, dementia care—everything needed to preserve dignity and independence.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
-                                <i class="bi bi-diagram-3-fill text-base-color fs-22"></i>
-                            </div>
-                            <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Healthcare Staffing Solutions</h6>
-                                <p class="fs-15">Fully vetted RNs, LPNs, CNAs, HHAs, and support staff deployed rapidly to hospitals, rehab centers, skilled nursing facilities, and more.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle me-20px flex-shrink-0" style="width:54px;height:54px;">
-                                <i class="bi bi-diagram-3-fill text-base-color fs-22"></i>
-                            </div>
-                            <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Pediatric Care</h6>
-                                <p class="fs-15">Compassionate in-home skilled and non-skilled care for children with medical complexities or developmental needs. (Link to Pediatric page)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg');background-color:#f7f2e8;padding:80px 0;">
+  <div class="container">
 
-<!-- COMPLIANCE -->
+    <div class="row justify-content-center text-center mb-50px" data-anime='{"el":"childs","translateY":[30,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
+      <div class="col-lg-7">
+        <span class="mb-15px text-base-color fw-500 d-block" style="font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;">Our Services</span>
+        <h3 style="font-family:Georgia,serif;font-size:clamp(1.6rem,2.5vw,2.6rem);font-weight:400;color:#2A2420;letter-spacing:-.02em;margin-bottom:16px;">What We Do</h3>
+        <p style="font-size:.9rem;color:#5a4f47;line-height:1.8;max-width:580px;margin:0 auto;">Whether you need advanced clinical care at home, daily living support, pediatric services, or facility staffing — Trinity Life Care delivers compassionate, coordinated solutions designed around you.</p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mb-4"
+         data-anime='{"el":"childs","translateX":[-40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-clipboard2-pulse-fill svc-icon"></i></div>
+          <h6 class="svc-title">Comprehensive Clinical &amp; Supportive Care</h6>
+          <p class="svc-body">An integrated care model combining clinical expertise, compassionate support, and structured oversight for consistent, high-quality service across all care settings.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-heart-pulse-fill svc-icon"></i></div>
+          <h6 class="svc-title">Skilled Home Care Services</h6>
+          <p class="svc-body">Physician-coordinated nursing, wound care, IV therapy, medication management, and post-surgical monitoring — advanced clinical care delivered in the comfort of home.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-person-heart svc-icon"></i></div>
+          <h6 class="svc-title">Non-Skilled Home Care Services</h6>
+          <p class="svc-body">Personal care, bathing, meal prep, companionship, dementia support, and daily living assistance — helping loved ones live safely and independently at home.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mb-4"
+         data-anime='{"el":"childs","translateX":[40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:rgba(70,86,99,.1);"><i class="bi bi-people-fill svc-icon" style="color:#465663;"></i></div>
+          <h6 class="svc-title">Healthcare Staffing &amp; Workforce Solutions</h6>
+          <p class="svc-body">Fully vetted RNs, LPNs, CNAs, and HHAs deployed rapidly to hospitals, SNFs, assisted living, and group homes. Reliable coverage exactly when facilities need it most.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-person-check-fill svc-icon"></i></div>
+          <h6 class="svc-title">Patient-Centered Care Philosophy</h6>
+          <p class="svc-body">Every decision begins with the patient. Care that is individualized, compassionate, and coordinated — tailored to each person's medical, emotional, and personal needs.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','philosophy')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-balloon-heart-fill svc-icon"></i></div>
+          <h6 class="svc-title">Pediatric Care</h6>
+          <p class="svc-body">Compassionate in-home skilled and non-skilled care for children with medical complexities — from chronic condition management to developmental support and family respite.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"
+         data-anime='{"el":"childs","translateX":[-40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:rgba(110,140,122,.12);"><i class="bi bi-globe2 svc-icon" style="color:#6E8C7A;"></i></div>
+          <h6 class="svc-title">Diversity &amp; Inclusion Commitment</h6>
+          <p class="svc-body">A diverse, inclusive workforce delivering culturally competent care. Equal opportunity in hiring, leadership, and service — because different perspectives strengthen how we serve.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:rgba(110,140,122,.12);"><i class="bi bi-buildings-fill svc-icon" style="color:#6E8C7A;"></i></div>
+          <h6 class="svc-title">Community Engagement</h6>
+          <p class="svc-body">More than a provider — a community partner. Supporting local health systems, participating in health education, and investing in workforce development across Southeastern PA.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:rgba(70,86,99,.1);"><i class="bi bi-diagram-3-fill svc-icon" style="color:#465663;"></i></div>
+          <h6 class="svc-title">Strategic Partnerships</h6>
+          <p class="svc-body">Collaborating with hospitals, rehab centers, SNFs, and assisted living communities to ensure seamless care transitions, reliable staffing coverage, and scalable solutions.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row g-4 justify-content-center mt-0"
+         data-anime='{"el":"childs","translateX":[40,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":120,"easing":"easeOutQuad"}'>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><i class="bi bi-credit-card-2-front-fill svc-icon"></i></div>
+          <h6 class="svc-title">Payment &amp; Coverage Options</h6>
+          <p class="svc-body">Private pay, Medicare, Medicaid, commercial insurance, long-term care insurance, and veterans benefits — flexible options to ensure care is never out of reach.</p>
+          <a href="services.html" onclick="sessionStorage.setItem('openService','coverage')" class="svc-btn">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <div class="comp-strip reveal">
   <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="ci-txt">Licensed &amp; Insured</span></div>
   <div class="ci-div"></div>
@@ -608,10 +866,12 @@
 </div>
 
 
-<!-- THE DIFFERENCE -->
 <section class="diff-sec">
   <div class="diff-grid">
-    <div class="reveal">
+    <div class="diff-img-wrap reveal border-radius-8px">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=580&q=80" alt="Compassionate healthcare" style="border-radius: 10px; height:400px; object-fit:cover; object-position:center; width: 100%;">
+    </div>
+    <div class="reveal rv2">
       <div class="eyebrow">The Trinity Difference</div>
       <h2 class="stitle">Why Families &amp; <em>Facilities</em> Trust Us</h2>
       <p class="sbody">We've built Trinity around a simple belief: that seamless, high-quality care shouldn't be hard to find. Our integrated model means everything works together — from first call to lasting relationship.</p>
@@ -632,16 +892,11 @@
           <div class="diff-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <div class="diff-ct"><h5>Family Trust &amp; Matching</h5><p>Caregivers matched for both skill and personality — the right fit makes every day better.</p></div>
         </li>
-       
       </ul>
-    </div>
-    <div class="diff-img-wrap reveal rv2 border-radius-8px">
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=580&q=80" alt="Compassionate healthcare" style="border-radius: 10px; height:400px; object-fit:cover; object-position:center;">
     </div>
   </div>
 </section>
 
-<!-- Staffing -->
 <section class="testi-sec">
   <div class="testi-head reveal">
     <div class="eyebrow eyebrow-c">What People Say</div>
@@ -665,14 +920,13 @@
   </div>
 </section>
 
-<!-- DUAL CTA — both panes with full cover BG images -->
 <div class="dual-cta">
   <div class="cta-p cta-fam reveal">
     <div class="cta-fam-bg"></div>
     <div class="cta-label">For Families &amp; Patients</div>
     <h3>Get Care at Home — Speed, Safety &amp; Heart</h3>
     <p>Whether recovering from surgery, managing a chronic condition, or needing daily support — Trinity brings qualified care to your door, fast. A care coordinator will reach out within the hour.</p>
-    <a href="request-care.html" class="btn-t bt-taupe" style="align-self:flex-start">Request Care Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="contact.html#contact-form" class="btn-t bt-taupe" style="align-self:flex-start">Request Care Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
   <div class="cta-p cta-fac reveal rv2">
     <div class="cta-fac-bg"></div>
@@ -683,18 +937,21 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="trinity-footer">
   <div class="footer-grid">
-    <div>
+
+    <!-- Brand block -->
+    <div class="footer-brand">
       <div class="footer-logo">Trinity <span>Life Care</span></div>
       <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
       <div class="footer-contact">
-        <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>1 800 222 000</a>
-        <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>info@trinitylifecare.com</a>
+        <a href="tel:267-752-0038"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>267-752-0038</a>
+        <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>Trinitylifehomecare@gmail.com</a>
       </div>
     </div>
-    <div>
+
+    <!-- Services -->
+    <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
         <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
@@ -703,7 +960,9 @@
         <li><a href="staffing.html">Healthcare Staffing</a></li>
       </ul>
     </div>
-    <div>
+
+    <!-- Company -->
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
@@ -712,18 +971,21 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-    <div>
+
+    <!-- Information -->
+    <div class="footer-col">
       <div class="footer-col-title">Information</div>
       <ul class="footer-links">
         <li><a href="#">Payment &amp; Coverage</a></li>
         <li><a href="#">Privacy Policy</a></li>
-        <li><a href="request-care.html">Request Care</a></li>
-        <li><a href="healthcare-staffing.html">Request Staffing</a></li>
+        <li><a href="contact.html#contact-form">Request Care</a></li>
+        <li><a href="contact.html#contact-form">Request Staffing</a></li>
       </ul>
     </div>
+
   </div>
   <div class="footer-bottom">
-    <span>&copy; Copyright 2026 <a href="index.html">Trinity Life Care</a></span>
+    <span>Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank">AD Soft Technologies</a></span>
     <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>
@@ -752,6 +1014,38 @@
     entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
   },{threshold:0.1});
   els.forEach(function(e){io.observe(e)})
+})();
+</script>
+<script>
+/* ── Infinite auto-scroll gallery ── */
+(function(){
+  var track = document.getElementById('galleryTrack');
+  if(!track) return;
+  var pos = 0;
+  var speed = 0.6; // px per frame — increase for faster
+  var halfWidth = track.scrollWidth / 2;
+  var paused = false;
+
+  track.addEventListener('mouseenter', function(){ paused = true; });
+  track.addEventListener('mouseleave', function(){ paused = false; });
+
+  function step(){
+    if(!paused){
+      pos += speed;
+      if(pos >= halfWidth) pos = 0; // seamless reset at halfway (duplicated cards)
+      track.style.transform = 'translateX(-' + pos + 'px)';
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+})();
+/* Auto-open service from gallery click */
+(function(){
+  var svc = sessionStorage.getItem('openService');
+  if(svc){
+    sessionStorage.removeItem('openService');
+    setTimeout(function(){ showService(svc); }, 300);
+  }
 })();
 </script>
 </body>
