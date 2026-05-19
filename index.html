@@ -117,6 +117,15 @@
     .gallery-head{padding:0;text-align:center;margin:0 auto 38px;max-width:640px;width:100%}
     .gallery-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;justify-content:center;justify-items:center;align-items:start;max-width:1280px;width:100%;margin:0 auto 44px}
     .gallery-strip::-webkit-scrollbar{display:none}
+    
+    .g-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .g-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4) !important;
+    }
+
     .g-img{width:100%;max-width:360px;border-radius:24px;overflow:hidden;position:relative;min-height:280px;box-shadow:0 28px 60px rgba(0,0,0,.12)}
     .g-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
     .g-img:hover img{transform:scale(1.04)}
@@ -512,7 +521,7 @@
 
 <section class="gallery-sec">
   <div class="gallery-head reveal">
-    <div class="eyebrow eyebrow-c eyebrow-light">Our Care Environment</div>
+    <div class="eyebrow eyebrow-c eyebrow-light">Our Services</div>
     <h2 class="stitle light" style="margin-top:8px;text-align:center">We Love What We <em>Do</em></h2>
     <p class="sbody" style="text-align:center;color:rgba(240,231,222,.48);max-width:380px;margin:6px auto 0">Every visit, every placement, every family supported — this is Trinity.</p>
   </div>
@@ -607,8 +616,100 @@
           </div>
         </div>
       </a>
+      
+      <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/home-care.png" alt="Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Skilled Care</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/senior-support.png" alt="Non-Skilled Home Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Support</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Non-Skilled Home Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/pediatric-care.png" alt="Pediatric Care" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Children</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Pediatric Care</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" style="text-decoration:none;flex:0 0 300px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/clinical-staffing.png" alt="Healthcare Staffing" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Workforce</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Healthcare Staffing</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','coverage')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/whoweare.png" alt="Payment & Coverage" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Coverage</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Payment &amp; Coverage</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" style="text-decoration:none;flex:0 0 260px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-story.png" alt="Clinical Care Solutions" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Clinical</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Clinical Care Solutions</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-community.png" alt="Community Engagement" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Community</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Community Engagement</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="services.html" onclick="sessionStorage.setItem('openService','diversity')" style="text-decoration:none;flex:0 0 280px;">
+        <div class="g-card" style="border-radius:20px;overflow:hidden;position:relative;height:280px;box-shadow:0 20px 50px rgba(0,0,0,.18);cursor:pointer;">
+          <img src="images/trinity/about-diversity.png" alt="Strategic Partnerships" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(46,58,66,.85));"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,221,197,.65);margin-bottom:4px;">Partnerships</div>
+            <div style="font-size:.88rem;font-weight:600;color:#fff;letter-spacing:.04em;">Strategic Partnerships</div>
+          </div>
+        </div>
+      </a>
 
     </div>
+  </div>
+
+  <div class="reveal" style="text-align: center; margin-bottom: 40px;">
+    <a href="services.html" class="btn-t bt-ow">Read More Services <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
 
   <div class="stats-grid reveal" style="width:100%;max-width:1280px;">
@@ -687,22 +788,30 @@
   </div>
 </section>
 
-<div class="dual-cta">
-  <div class="cta-p cta-fam reveal">
-    <div class="cta-fam-bg"></div>
-    <div class="cta-label">For Families &amp; Patients</div>
-    <h3>Get Care at Home — Speed, Safety &amp; Heart</h3>
-    <p>Whether recovering from surgery, managing a chronic condition, or needing daily support — Trinity brings qualified care to your door, fast. A care coordinator will reach out within the hour.</p>
-    <a href="contact.html#contact-form" class="btn-t bt-taupe" style="align-self:flex-start">Request Care Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<section class="solutions-sec" style="padding-top: 72px; padding-bottom: 72px; background: var(--white);">
+  <center>
+  <div class="testi-head reveal visible" style="margin-bottom: 40px;">
+    <div class="eyebrow eyebrow-c">How We Can Help</div>
+    <h2 class="stitle" style="text-align:center;margin-top:8px">Tailored Solutions For <em>Families &amp; Facilities</em></h2>
   </div>
-  <div class="cta-p cta-fac reveal rv2">
-    <div class="cta-fac-bg"></div>
-    <div class="cta-label">For Healthcare Facilities</div>
-    <h3>Never Short-Staffed Again</h3>
-    <p>Fully vetted RNs, LPNs, CNAs, HHAs, and support staff — placed urgently, vetted completely. Partner with Trinity for reliable workforce solutions that match your facility's culture.</p>
-    <a href="contact.html#contact-form" class="btn-t bt-taupe" style="align-self:flex-start">Explore Staffing Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </center>
+  <div class="dual-cta">
+    <div class="cta-p cta-fam reveal">
+      <div class="cta-fam-bg"></div>
+      <div class="cta-label">For Families &amp; Patients</div>
+      <h3>Get Care at Home — Speed, Safety &amp; Heart</h3>
+      <p>Whether recovering from surgery, managing a chronic condition, or needing daily support — Trinity brings qualified care to your door, fast. A care coordinator will reach out within the hour.</p>
+      <a href="contact.html#contact-form" class="btn-t bt-taupe" style="align-self:flex-start">Request Care Now <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="cta-p cta-fac reveal rv2">
+      <div class="cta-fac-bg"></div>
+      <div class="cta-label">For Healthcare Facilities</div>
+      <h3>Never Short-Staffed Again</h3>
+      <p>Fully vetted RNs, LPNs, CNAs, HHAs, and support staff — placed urgently, vetted completely. Partner with Trinity for reliable workforce solutions that match your facility's culture.</p>
+      <a href="contact.html#contact-form" class="btn-t bt-taupe" style="align-self:flex-start">Explore Staffing Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
   </div>
-</div>
+</section>
 
 <footer class="trinity-footer">
   <div class="footer-grid">
@@ -743,7 +852,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank">AD Soft Technologies</a></span>
+    <span> Copyright &copy; 2026 <a href="index.html">Trinity Health Care Staffing</a> Designed by <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
     <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>

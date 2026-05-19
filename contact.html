@@ -7,22 +7,49 @@
         <meta name="author" content="Trinity Life Care">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta name="description" content="Contact Trinity Life Care at 2846 Knights Road, Bensalem, PA 19020. Call 267-752-0038 or email Trinitylifehomecare@gmail.com for skilled home care, pediatric care, and healthcare staffing across Southeastern Pennsylvania.">
-        <!-- favicon icon -->
         <link rel="shortcut icon" href="images/trinity/trinity-logo.png">
         <link rel="apple-touch-icon" href="images/trinity/trinity-logo.png">
-        <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- style sheets and font icons  -->
         <link rel="stylesheet" href="css/vendors.min.css"/>
         <link rel="stylesheet" href="css/icon.min.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/responsive.css"/>
         <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css" />
+        <style>
+            /* Typography & Theme matched exactly with index page */
+            :root {
+              --taupe: #ac8d56;
+              --taupe-d: #7d6b55;
+              --cream-d: #EFDDC5;
+              --cream-l: #F0E7DE;
+              --slate:   #465663;
+              --slate-d: #2e3a42;
+              --sage:    #6E8C7A;
+              --white:   #FDFAF7;
+              --txt:     #2A2420;
+              --txtm:    #5a4f47;
+              --txtlt:   #8a7d74;
+              --base-color: #ac8d56;
+            }
+            *,*::before,*::after{box-sizing:border-box}
+            body{background:var(--white);color:var(--txt);overflow-x:hidden;}
+            img{max-width:100%;display:block}
+
+            /* Shared Typography Classes */
+            .hero-h1 { font-family: Georgia, serif; font-size: clamp(1.7rem, 2.8vw, 2.9rem) !important; font-weight: 400 !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; }
+            .stitle { font-family: Georgia, serif; font-size: clamp(1.4rem, 2.2vw, 2rem) !important; font-weight: 400 !important; line-height: 1.2 !important; letter-spacing: -0.01em !important; color: var(--txt); }
+            .card-title { font-family: Georgia, serif; font-size: 1.1rem !important; font-weight: 400 !important; line-height: 1.25 !important; color: var(--txt); }
+            .sbody { font-size: .88rem !important; line-height: 1.82 !important; font-weight: 300 !important; color: var(--txtm) !important; }
+            .eyebrow { font-size: .72rem !important; font-weight: 600 !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--taupe) !important; }
+            
+            /* Specific overrides for contact page inline styles */
+            .contact-address-text { font-size: .88rem !important; font-weight: 300 !important; line-height: 1.82 !important; color: var(--txt) !important; text-decoration: none; }
+            .contact-address-title { font-size: .72rem !important; font-weight: 600 !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--taupe) !important; display: block; }
+        </style>
     </head>
     <body class="overflow-x-hidden" data-mobile-nav-style="classic">
-        <!-- start header -->
-  <header>
+        <header>
   <nav class="navbar navbar-expand-lg header-light bg-white center-logo header-reverse">
     <div class="container-fluid">
       <div class="col-auto col-xl-2 col-lg-1 menu-logo">
@@ -55,10 +82,10 @@
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')"><div class="submenu-icon-content"><span>Non-Skilled Home Care</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')"><div class="submenu-icon-content"><span>Pediatric Care</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')"><div class="submenu-icon-content"><span>Healthcare Staffing</span></div></a></li>
-  <li><a href="services.html" onclick="sessionStorage.setItem('openService','coverage')"><div class="submenu-icon-content"><span>Payment &amp; Coverage</span></div></a></li>
+  <li><a href="services.html" onclick="sessionStorage.setItem('openService','coverage')"><div class="submenu-icon-content"><span>Payment & Coverage</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')"><div class="submenu-icon-content"><span>Clinical Care Solutions</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','philosophy')"><div class="submenu-icon-content"><span>Patient-Centered Philosophy</span></div></a></li>
-  <li><a href="services.html" onclick="sessionStorage.setItem('openService','diversity')"><div class="submenu-icon-content"><span>Diversity &amp; Inclusion</span></div></a></li>
+  <li><a href="services.html" onclick="sessionStorage.setItem('openService','diversity')"><div class="submenu-icon-content"><span>Diversity & Inclusion</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','diversity')"><div class="submenu-icon-content"><span>Community Engagement</span></div></a></li>
   <li><a href="services.html" onclick="sessionStorage.setItem('openService','diversity')"><div class="submenu-icon-content"><span>Strategic Partnerships</span></div></a></li>
 </ul>
@@ -82,96 +109,82 @@
     </div>
   </nav>
 </header>
-        <!-- end header -->
-        <!-- start page title -->
         <section class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin magic-cursor round-cursor" style="background-image: url(images/trinity/contact.png)">
             <div class="opacity-full-dark bg-gradient-dark-transparent"></div>
             <div class="container position-relative">
                 <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 400, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
                     <div class="col-xxl-7 col-lg-6 col-md-10 position-relative page-title-large md-mb-15px xs-mb-5px">
-                        <h1 class="text-white alt-font fw-500 ls-minus-2px mb-0">Contact</h1>
+                        <h1 class="hero-h1 text-white mb-0">Contact</h1>
                     </div>
                     <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
-                        <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">Reach out to Trinity Life Care for compassionate skilled home care, staffing support, and patient-centered services across Southeastern Pennsylvania.</p>
+                        <p class="sbody text-white opacity-7 md-w-80 sm-w-100">Reach out to Trinity Life Care for compassionate skilled home care, staffing support, and patient-centered services across Southeastern Pennsylvania.</p>
                     </div>
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="default-logo">
-                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="alt-logo">
-                        <img src="images/trinity/trinity-logo.png" alt="Trinity Life Care" class="mobile-logo">
-                    </a>
                 </div>
             </div>
         </section>
-        <!-- end page title --> 
-        <!-- start section --> 
-       <section class="background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg');padding:40px 0;">
+        <section class="background-position-center background-repeat" style="background-image:url('images/vertical-center-line-bg.svg');padding:40px 0;">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-0" data-anime='{"el":"childs","translateX":[30,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":300,"easing":"easeOutQuad"}'>
 
-            <!-- Address -->
             <div class="col sm-mb-20px" style="border-right:1px solid rgba(0,0,0,.08);">
                 <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
                     <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
                         <i class="bi bi-geo-alt-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
                     </div>
-                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Address</span>
-                    <p style="margin:0;font-size:14px;color:#2A2420;line-height:1.6;"><a href="https://www.google.com/maps/dir/?api=1&destination=2846+Knights+Road,+Bensalem,+PA+19020" target="_blank">2846 Knights Road,<br>Bensalem, PA - 19020</a></p>
+                    <span class="contact-address-title mb-6px">Address</span>
+                    <p class="contact-address-text m-0"><a href="https://www.google.com/maps/dir/?api=1&destination=2846+Knights+Road,+Bensalem,+PA+19020" target="_blank" class="contact-address-text">2846 Knights Road,<br>Bensalem, PA - 19020</a></p>
                 </div>
             </div>
 
-            <!-- Email -->
             <div class="col sm-mb-20px" style="border-right:1px solid rgba(0,0,0,.08);">
                 <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
                     <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
                         <i class="bi bi-envelope-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
                     </div>
-                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Email</span>
-                    <a href="mailto:Trinitylifehomecare@gmail.com" style="font-size:14px;color:#2A2420;text-decoration:none;word-break:break-all;">Trinitylifehomecare@gmail.com</a>
+                    <span class="contact-address-title mb-6px">Email</span>
+                    <a href="mailto:Trinitylifehomecare@gmail.com" class="contact-address-text" style="word-break:break-all;">Trinitylifehomecare@gmail.com</a>
                 </div>
             </div>
 
-            <!-- Phone -->
             <div class="col">
                 <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 20px;">
                     <div style="width:52px;height:52px;border-radius:50%;background:rgba(172,141,86,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
                         <i class="bi bi-telephone-fill" style="font-size:22px;color:#ac8d56;line-height:1;"></i>
                     </div>
-                    <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ac8d56;margin-bottom:6px;">Phone</span>
-                    <a href="tel:2677520038" style="font-size:14px;color:#2A2420;text-decoration:none;">267-752-0038</a>
+                    <span class="contact-address-title mb-6px">Phone</span>
+                    <a href="tel:2677520038" class="contact-address-text">267-752-0038</a>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-        <!-- end section --> 
-        <!-- start section -->
         <section id="contact-form" class="background-position-center background-repeat position-relative p-0" style="background-image: url('images/vertical-center-line-bg.svg'); scroll-margin-top:120px;">
             <div class="position-absolute top-0px right-0px w-50 h-100 bg-very-light-gray d-none d-lg-inline-block"></div>
             <div class="container position-relative">
                 <div class="row g-0">
                     <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="d-block text-base-color fw-500 mb-5px">We are here to help</span>
-                        <h4 class="alt-font text-dark-gray ls-minus-2px mb-25px">Have a question about care or staffing?</h4>
+                        <span class="eyebrow d-inline-block mb-10px" style="color:var(--taupe)">We are here to help</span>
+                        <h4 class="stitle mb-25px">Have a question about care or staffing?</h4>
                         <form id="trinity-contact-form" class="contact-form-style-03" onsubmit="return sendTrinityContact(event)" novalidate>
-                            <label for="trinityName" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Enter your name*</label>
+                            <label for="trinityName" class="form-label eyebrow text-dark-gray mb-0">Enter your name*</label>
                             <div class="position-relative form-group mb-20px">
                                 <span class="form-icon"><i class="bi bi-emoji-smile"></i></span>
                                 <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="trinityName" type="text" name="name" placeholder="What's your good name" required />
                             </div>
-                            <label for="trinityEmail" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Email address*</label>
+                            <label for="trinityEmail" class="form-label eyebrow text-dark-gray mb-0">Email address*</label>
                             <div class="position-relative form-group mb-20px">
                                 <span class="form-icon"><i class="bi bi-envelope"></i></span>
                                 <input class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control required" id="trinityEmail" type="email" name="email" placeholder="Enter your email address" required />
                             </div>
-                            <label for="trinityMessage" class="form-label fs-14 text-uppercase text-dark-gray fw-600 mb-0">Your message</label>
+                            <label for="trinityMessage" class="form-label eyebrow text-dark-gray mb-0">Your message</label>
                             <div class="position-relative form-group form-textarea mb-0">
                                 <textarea class="ps-0 border-radius-0px border-color-dark-gray bg-transparent form-control" id="trinityMessage" name="comment" placeholder="Tell us how we can help you" rows="3"></textarea>
                                 <span class="form-icon"><i class="bi bi-chat-square-dots"></i></span>
                             </div>
                             <div class="row mt-25px align-items-center">
                                 <div class="col-xl-7 col-lg-12 col-sm-7 lg-mb-30px md-mb-0">
-                                    <p class="mb-0 fs-14 lh-22 text-center text-sm-start">Your message will open in your email app, addressed to our team.</p>
+                                    <p class="sbody mb-0 text-center text-sm-start">Your message will open in your email app, addressed to our team.</p>
                                 </div>
                                 <div class="col-xl-5 col-lg-12 col-sm-5 text-center text-sm-end text-lg-start text-xl-end xs-mt-25px">
                                     <button class="btn btn-dark-gray btn-small btn-round-edge btn-box-shadow text-uppercase" type="submit">send message</button>
@@ -186,52 +199,43 @@
                             </div>
                             <div class="fw-600 text-dark-gray lh-normal">Trusted by families across Southeastern PA</div>
                         </div>
-                        <span class="fs-16 text-uppercase fw-600 text-dark-gray d-block mb-25px">Join the <span class="text-decoration-line-bottom fw-700">1000+</span> families trusting Trinity Life Care</span>
+                        <span class="eyebrow text-dark-gray d-block mb-25px">Join the <span class="text-decoration-line-bottom fw-700">1000+</span> families trusting Trinity Life Care</span>
                         <div class="row position-relative">
-                            <!-- start testimonial item -->
                             <div class="col-12 z-index-1">
                                 <div class="d-flex flex-column flex-sm-row align-items-center testimonials testimonials-style-07 border-radius-6px ps-40px pe-40px pt-35px pb-35px lg-p-30px bg-white text-center text-sm-start box-shadow-large last-paragraph-no-margin">
                                     <div class="testimonials-author w-110px me-25px xs-me-0 xs-mb-20px flex-shrink-0">
                                         <img class="rounded-circle me-15px xs-me-0" src="images/trinity/Contact-Sarah.png" alt="Sarah J., Trinity Life Care client family member">
                                     </div>
                                     <div class="testimonials-content">
-                                        <p class="fs-17 lh-28">The Trinity caregivers treated my mother with such warmth and skill — true peace of mind for our family.</p>
-                                        <span class="text-dark-gray fw-600 d-block mt-5px fs-17">Sarah J., Bensalem</span>
+                                        <p class="sbody">The Trinity caregivers treated my mother with such warmth and skill — true peace of mind for our family.</p>
+                                        <span class="contact-address-title d-block mt-5px text-dark-gray">Sarah J., Bensalem</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- end testimonial item --> 
-                            <!-- start testimonial item -->
                             <div class="col-12 position-absolute opacity-4 top-40px p-6">
                                 <div class="d-flex flex-column flex-sm-row align-items-center testimonials testimonials-style-07 border-radius-6px ps-40px pe-40px pt-35px pb-35px lg-p-30px bg-white text-center text-sm-start box-shadow-large last-paragraph-no-margin">
                                     <div class="testimonials-author w-110px me-25px xs-me-0 xs-mb-20px flex-shrink-0">
                                         <img class="rounded-circle me-15px xs-me-0" src="images/trinity/Contact-Michael.png" alt="Michael R., Trinity Life Care facility partner">
                                     </div>
                                     <div class="testimonials-content">
-                                        <p class="fs-17 lh-28">Professional, reliable staffing whenever our facility needed it most. Trinity is our go-to partner.</p>
-                                        <span class="text-dark-gray fw-600 d-block mt-5px fs-17">Michael R., Facility Admin</span>
+                                        <p class="sbody">Professional, reliable staffing whenever our facility needed it most. Trinity is our go-to partner.</p>
+                                        <span class="contact-address-title d-block mt-5px text-dark-gray">Michael R., Facility Admin</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="fs-70 xl-fs-50 md-fs-85 fw-700 text-base-color text-center text-lg-start position-absolute left-60px md-left-0px w-100 bottom-minus-15px text-outline text-outline-color-base-color text-outline-width-1px d-none d-md-block">trusted care</div>                    
                     </div>
-                    <div
-                        class="fs-70 xl-fs-50 md-fs-85 fw-700 text-base-color text-center text-lg-start position-absolute left-60px md-left-0px w-100 bottom-minus-15px text-outline text-outline-color-base-color text-outline-width-1px d-none d-md-block">
-                        traveler trusting</div>
                 </div>
             </div>
-        </div>
     </section>
-    <!-- end section -->
-    <!-- start section -->
     <section class="background-position-center background-repeat"
         style="background-image: url('images/vertical-center-line-bg.svg')">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-auto text-center text-md-end sm-mb-20px"
                     data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                    <h5 class="alt-font text-dark-gray fw-500 mb-0">Connect with social media </h5>
+                    <h5 class="card-title mb-0">Connect with social media </h5>
                 </div>
                 <div class="col-2 d-none d-lg-inline-block"
                     data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -255,21 +259,7 @@
             </div>
         </div>
     </section>
-    <!-- end section -->
-    <!-- start section -->
-    <section class="background-position-center background-repeat pt-0 overlap-height"
-        style="background-image: url('images/vertical-center-line-bg.svg')">
-        <div class="container">
-            <div class="row row-cols-1 text-center justify-content-center clients-style-05 mb-6">
-                <div class="col-12">
-                    <div id="map" class="map"
-                        data-map-options='{ "lat": -37.805688, "lng": 144.962312, "style": "Silver", "marker": { "type": "HTML", "color": "#a68655" }, "popup": { "defaultOpen": true, "html": "<div class=infowindow><strong class=\"mb-3 d-inline-block alt-font\">Crafto Resort</strong><p>16122 Collins street, Melbourne, Australia</p></div><div class=\"google-maps-link\"> <a aria-label=\"View larger map\" target=\"_blank\" jstcache=\"31\" href=\"https://maps.google.com/maps?ll=-37.805688,144.962312&amp;z=17&amp;t=m&amp;hl=en-US&amp;gl=IN&amp;mapclient=embed&amp;cid=13153204942596594449\" jsaction=\"mouseup:placeCard.largerMap\">VIEW LARGER MAP</a></div>" } }'>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section --> 
-        <!-- start section --> 
+    
         <section class="background-position-center background-repeat pt-0 overlap-height" style="background-image: url('images/vertical-center-line-bg.svg')">
             <div class="container">
                 <div class="row row-cols-1 text-center justify-content-center clients-style-05 mb-6">
@@ -288,72 +278,66 @@
                 </div>
                 <div class="row align-items-center justify-content-around mb-4 lg-mb-7">
                     <div class="col-md-12 text-center" data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <h6 class="alt-font text-dark-gray fw-500 mb-0">Have any questions or need care?<span class="fs-40 ms-15px text-decoration-line-bottom-medium d-table d-md-inline-block sm-mx-auto sm-mt-15px"><a href="tel:2677520038">267-752-0038</a></span></h6>
+                        <h6 class="card-title mb-0">Have any questions or need care?<span class="stitle ms-15px text-decoration-line-bottom-medium d-table d-md-inline-block sm-mx-auto sm-mt-15px"><a href="tel:2677520038" style="color:inherit;">267-752-0038</a></span></h6>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- end section --> 
-        <!-- start footer -->
         <footer class="trinity-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">Trinity <span>Life Care</span></div>
-      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
-      <div class="footer-contact">
-        <a href="tel:2677520038"><i class="bi bi-telephone-outbound" style="margin-right:7px"></i>267-752-0038</a>
-        <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px"></i>Trinitylifehomecare@gmail.com</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" >Skilled Home Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" >Non-Skilled Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" >Pediatric Care</a></li>
-        <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" >Healthcare Staffing</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="priorities.html">Our Priorities</a></li>
-        <li><a href="Staffing.html">Staffing</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Information</div>
-      <ul class="footer-links">
-        <li><a href="#">Payment &amp; Coverage</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="contact.html#contact-form">Request Care</a></li>
-        <li><a href="contact.html#contact-form">Request Staffing</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span> Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="priorities.html">Our Priorities</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <span>Serving Southeastern Pennsylvania with compassion.</span>
-  </div>
-</footer>
-        <!-- end footer -->
-        <!-- start scroll progress -->
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="footer-logo">Trinity <span>Life Care</span></div>
+              <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+              <div class="footer-contact">
+                <a href="tel:267-752-0038"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>267-752-0038</a>
+                <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>Trinitylifehomecare@gmail.com</a>
+              </div>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">Services</div>
+              <ul class="footer-links">
+                <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')">Skilled Home Care</a></li>
+                <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')">Non-Skilled Care</a></li>
+                <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')">Pediatric Care</a></li>
+                <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')">Healthcare Staffing</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">Company</div>
+              <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="priorities.html">Our Priorities</a></li>
+                <li><a href="Staffing.html">Staffing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">Information</div>
+              <ul class="footer-links">
+                <li><a href="#">Payment &amp; Coverage</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="contact.html#contact-form">Request Care</a></li>
+                <li><a href="contact.html#contact-form">Request Staffing</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+    <span> Copyright &copy; 2026 <a href="index.html">Trinity Health Care Staffing</a> Designed by <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="priorities.html">Our Priorities</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <span>Serving Southeastern Pennsylvania with compassion.</span>
+          </div>
+        </footer>
         <div class="scroll-progress d-none d-xxl-block">
             <a href="#" class="scroll-top" aria-label="scroll">
                 <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
             </a>
         </div>
-        <!-- end scroll progress -->
-        <!-- javascript libraries -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/vendors.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
