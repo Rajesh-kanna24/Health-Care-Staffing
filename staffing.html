@@ -15,11 +15,30 @@
     <link rel="stylesheet" href="demos/hotel-and-resort/hotel-and-resort.css"/>
 
 <style>
-    body {
-        overflow-x: hidden;
-        background-color: #fcfaf7;
-        color: #1f1f1f;
+    :root {
+      --taupe: #ac8d56;
+      --taupe-d: #7d6b55;
+      --cream-d: #EFDDC5;
+      --cream-l: #F0E7DE;
+      --slate:   #465663;
+      --slate-d: #2e3a42;
+      --sage:    #6E8C7A;
+      --white:   #FDFAF7;
+      --txt:     #2A2420;
+      --txtm:    #5a4f47;
+      --txtlt:   #8a7d74;
+      --base-color: #ac8d56;
     }
+
+    *,*::before,*::after{box-sizing:border-box}
+    
+    body{
+        background:var(--white);
+        color:var(--txt);
+        overflow-x:hidden;
+    }
+    
+    img{max-width:100%;display:block}
 
     section {
         background-image: none !important;
@@ -38,17 +57,20 @@
     }
 
     .hero-title {
-        font-size: 80px;
-        line-height: 0.95em;
-        letter-spacing: -4px;
-        color: #1f1f1f;
+        font-family: Georgia, serif;
+        font-size: clamp(1.7rem, 2.8vw, 2.9rem);
+        font-weight: 400;
+        line-height: 1.12;
+        color: var(--txt);
+        letter-spacing: -0.02em;
         margin-bottom: 30px;
     }
 
     .hero-text {
-        font-size: 20px;
-        line-height: 1.7;
-        color: #4b4b4b;
+        font-size: .88rem;
+        line-height: 1.82;
+        color: var(--txtm);
+        font-weight: 300;
         max-width: 560px;
         margin-bottom: 40px;
     }
@@ -70,20 +92,22 @@
 
     /* ───────── SECTION TITLE ───────── */
     .section-subtitle {
-        color: #be9256;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 3px;
+        font-size: .72rem;
+        font-weight: 600;
+        letter-spacing: .22em;
         text-transform: uppercase;
+        color: var(--taupe);
         margin-bottom: 15px;
         display: inline-block;
     }
 
     .section-title {
-        font-size: 56px;
-        line-height: 1.1em;
-        letter-spacing: -2px;
-        color: #1d1d1d;
+        font-family: Georgia, serif;
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--txt);
+        letter-spacing: -0.01em;
     }
 
     /* ───────── STAFF CARDS ───────── */
@@ -127,9 +151,12 @@
     }
 
     .staff-card h5 {
-        font-size: 26px;
-        line-height: 1.3em;
-        color: #1f1f1f;
+        font-family: Georgia, serif;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--txt);
+        line-height: 1.25;
+        margin-bottom: 0;
     }
 
     /* ───────── WHY SECTION ───────── */
@@ -170,16 +197,19 @@
     }
 
     .why-box h6 {
-        font-size: 26px;
-        line-height: 1.3em;
+        font-family: Georgia, serif;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--txt);
+        line-height: 1.25;
         margin-bottom: 15px;
-        color: #1f1f1f;
     }
 
     .why-box p {
-        font-size: 17px;
-        line-height: 1.7em;
-        color: #5b5b5b;
+        font-size: .88rem;
+        line-height: 1.82;
+        color: var(--txtm);
+        font-weight: 300;
     }
 
     /* ───────── CTA SECTION ───────── */
@@ -190,9 +220,19 @@
         box-shadow: 0 15px 40px rgba(190,146,86,.18);
     }
 
-    .cta-section h2,
-    .cta-section h3,
+    .cta-section h2 {
+        font-family: Georgia, serif;
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+    }
+
     .cta-section p {
+        font-size: .88rem;
+        line-height: 1.82;
+        font-weight: 300;
         color: #ffffff;
     }
 
@@ -211,6 +251,15 @@
         transform: translateY(-6px);
         box-shadow: 0 18px 44px rgba(190,146,86,.12);
     }
+    
+    .pediatric-card h4 {
+        font-family: Georgia, serif;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--txt);
+        line-height: 1.25;
+        margin-bottom: 30px;
+    }
 
     .pediatric-card ul {
         padding: 0;
@@ -220,9 +269,10 @@
 
     .pediatric-card li {
         margin-bottom: 18px;
-        font-size: 18px;
-        line-height: 1.7em;
-        color: #4d4d4d;
+        font-size: .88rem;
+        line-height: 1.82;
+        font-weight: 300;
+        color: var(--txtm);
     }
 
     .pediatric-card i {
@@ -287,14 +337,6 @@
             flex-wrap: wrap;
         }
 
-        .hero-title {
-            font-size: 56px;
-        }
-
-        .section-title {
-            font-size: 44px;
-        }
-
         .cta-section {
             padding: 45px;
         }
@@ -304,22 +346,6 @@
 
         .staffing-hero {
             padding: 60px 0 40px;
-        }
-
-        .hero-title {
-            font-size: 40px;
-            letter-spacing: -2px;
-        }
-
-        .section-title {
-            font-size: 34px;
-            letter-spacing: -1px;
-        }
-
-        .hero-text,
-        .why-box p,
-        .pediatric-card li {
-            font-size: 16px;
         }
 
         .hero-btn-wrap .btn {
@@ -334,14 +360,6 @@
         .cta-section {
             padding: 30px 20px;
             border-radius: 16px;
-        }
-
-        .why-box h6 {
-            font-size: 22px;
-        }
-
-        .staff-card h5 {
-            font-size: 22px;
         }
     }
 </style>
@@ -391,8 +409,6 @@
 </ul>
             </li>
           </ul>
-            </li>
-          </ul>
           <ul class="navbar-nav navbar-right justify-content-start">
             <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
             <li class="nav-item"><a href="staffing.html" class="nav-link">Staffing</a></li>
@@ -410,14 +426,13 @@
   </nav>
 </header>
 
-    <!-- HERO SECTION -->
     <section class="staffing-hero top-space-margin border-top border-4 border-color-base-color">
         <div class="container-fluid px-0">
             <div class="row g-0 align-items-center">
 
                 <div class="col-lg-6">
                     <div class="ps-10 pe-10 lg-ps-8 lg-pe-8 md-ps-5 md-pe-5">
-                        <h1 class="hero-title alt-font fw-500 reveal fade-up">
+                        <h1 class="hero-title fw-500 reveal fade-up">
                             Healthcare<br>
                             Staffing Solutions<br>
                             in Pennsylvania
@@ -448,14 +463,13 @@
         </div>
     </section>
 
-    <!-- STAFF CARDS -->
     <section class="pt-5 pb-5">
         <div class="container">
 
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <span class="section-subtitle reveal fade-up">WE STAFF</span>
-                    <h2 class="section-title alt-font fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
+                    <h2 class="section-title fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
                         Healthcare Professionals We Provide
                     </h2>
                 </div>
@@ -467,7 +481,7 @@
                         <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-heart-pulse"></i></div>
-                            <h5 class="alt-font fw-500 mb-0">Registered Nurses (RNs)</h5>
+                            <h5 class="fw-500 mb-0">Registered Nurses (RNs)</h5>
                         </div>
                     </div>
                 </div>
@@ -476,7 +490,7 @@
                         <div class="staff-placeholder"><img src="images/staff/lpns.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-building"></i></div>
-                            <h5 class="alt-font fw-500 mb-0">Licensed Practical Nurses (LPNs)</h5>
+                            <h5 class="fw-500 mb-0">Licensed Practical Nurses (LPNs)</h5>
                         </div>
                     </div>
                 </div>
@@ -485,7 +499,7 @@
                         <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-person-heart"></i></div>
-                            <h5 class="alt-font fw-500 mb-0">Certified Nursing Assistants (CNAs)</h5>
+                            <h5 class="fw-500 mb-0">Certified Nursing Assistants (CNAs)</h5>
                         </div>
                     </div>
                 </div>
@@ -497,7 +511,7 @@
                         <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-house-heart"></i></div>
-                            <h5 class="alt-font fw-500 mb-0">Home Health Aides (HHAs)</h5>
+                            <h5 class="fw-500 mb-0">Home Health Aides (HHAs)</h5>
                         </div>
                     </div>
                 </div>
@@ -506,7 +520,7 @@
                         <div class="staff-placeholder"><img src="images/staff/nurse.png" alt=""></div>
                         <div class="p-35px">
                             <div class="staff-icon"><i class="bi bi-people"></i></div>
-                            <h5 class="alt-font fw-500 mb-0">Support &amp; Administrative Staff</h5>
+                            <h5 class="fw-500 mb-0">Support &amp; Administrative Staff</h5>
                         </div>
                     </div>
                 </div>
@@ -515,14 +529,13 @@
         </div>
     </section>
 
-    <!-- WHY SECTION -->
     <section class="why-section pt-5 pb-5">
         <div class="container">
 
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <span class="section-subtitle reveal fade-up">WHY FACILITIES CHOOSE US</span>
-                    <h2 class="section-title alt-font fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
+                    <h2 class="section-title fw-500 mb-0 reveal fade-up" style="transition-delay:.1s">
                         Reliable staffing. Better outcomes.
                     </h2>
                 </div>
@@ -532,35 +545,35 @@
                 <div class="col-lg col-md-6 reveal fade-up">
                     <div class="why-box">
                         <div class="why-icon"><i class="bi bi-stopwatch"></i></div>
-                        <h6 class="alt-font fw-500">Rapid staffing deployment</h6>
+                        <h6 class="fw-500">Rapid staffing deployment</h6>
                         <p class="mb-0">Quick turnaround staffing support for urgent needs.</p>
                     </div>
                 </div>
                 <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.08s">
                     <div class="why-box">
                         <div class="why-icon"><i class="bi bi-shield-check"></i></div>
-                        <h6 class="alt-font fw-500">Fully vetted professionals</h6>
+                        <h6 class="fw-500">Fully vetted professionals</h6>
                         <p class="mb-0">Credentialed, background-checked professionals.</p>
                     </div>
                 </div>
                 <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.16s">
                     <div class="why-box">
                         <div class="why-icon"><i class="bi bi-clipboard2-pulse"></i></div>
-                        <h6 class="alt-font fw-500">Compliance-ready workforce</h6>
+                        <h6 class="fw-500">Compliance-ready workforce</h6>
                         <p class="mb-0">Professionals trained for healthcare compliance.</p>
                     </div>
                 </div>
                 <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.24s">
                     <div class="why-box">
                         <div class="why-icon"><i class="bi bi-people"></i></div>
-                        <h6 class="alt-font fw-500">Strong candidate matching</h6>
+                        <h6 class="fw-500">Strong candidate matching</h6>
                         <p class="mb-0">Right match for the right role and facility culture.</p>
                     </div>
                 </div>
                 <div class="col-lg col-md-6 reveal fade-up" style="transition-delay:.32s">
                     <div class="why-box">
                         <div class="why-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                        <h6 class="alt-font fw-500">Reduced staffing shortages</h6>
+                        <h6 class="fw-500">Reduced staffing shortages</h6>
                         <p class="mb-0">Consistent workforce support for better patient care.</p>
                     </div>
                 </div>
@@ -569,16 +582,15 @@
         </div>
     </section>
 
-    <!-- CTA SECTION -->
     <section class="pt-5 pb-5">
         <div class="container">
             <div class="cta-section reveal fade-up">
                 <div class="row align-items-center">
                     <div class="col-lg-8 md-mb-30px">
-                        <h2 class="alt-font text-white fw-500 mb-20px">
+                        <h2 class="text-white fw-500 mb-20px">
                             Let's build a stronger care team together.
                         </h2>
-                        <p class="text-white fs-20 opacity-8 mb-0">
+                        <p class="opacity-8 mb-0">
                             Reliable staffing. Better outcomes. Happier patients.
                         </p>
                     </div>
@@ -592,14 +604,13 @@
         </div>
     </section>
 
-    <!-- PEDIATRIC SECTION -->
     <section class="pt-5 pb-5 bg-very-light-gray">
         <div class="container">
 
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 md-mb-40px">
                     <span class="section-subtitle reveal fade-up">PEDIATRIC CARE</span>
-                    <h2 class="section-title alt-font fw-500 mb-25px reveal fade-up" style="transition-delay:.1s">
+                    <h2 class="section-title fw-500 mb-25px reveal fade-up" style="transition-delay:.1s">
                         Pediatric Skilled &amp; Non-Skilled Care
                     </h2>
                     <p class="hero-text mb-0 reveal fade-up" style="transition-delay:.2s">
@@ -616,7 +627,7 @@
             <div class="row g-4">
                 <div class="col-lg-6 reveal fade-up">
                     <div class="pediatric-card">
-                        <h4 class="alt-font fw-500 mb-30px text-dark-gray">Skilled Pediatric Services:</h4>
+                        <h4 class="fw-500 text-dark-gray">Skilled Pediatric Services:</h4>
                         <ul>
                             <li><i class="bi bi-check-circle-fill"></i>Pediatric skilled nursing</li>
                             <li><i class="bi bi-check-circle-fill"></i>Medication administration</li>
@@ -628,7 +639,7 @@
                 </div>
                 <div class="col-lg-6 reveal fade-up" style="transition-delay:.15s">
                     <div class="pediatric-card">
-                        <h4 class="alt-font fw-500 mb-30px text-dark-gray">Non-Skilled Pediatric Care:</h4>
+                        <h4 class="fw-500 text-dark-gray">Non-Skilled Pediatric Care:</h4>
                         <ul>
                             <li><i class="bi bi-check-circle-fill"></i>Personal care assistance</li>
                             <li><i class="bi bi-check-circle-fill"></i>Feeding and mobility support</li>
@@ -642,45 +653,27 @@
 
         </div>
     </section>
- <!-- start footer -->
-        <footer class="trinity-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">Trinity <span>Life Care</span></div>
-      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
-      <div class="footer-contact">
-        <a href="tel:18002220000"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>1 800 222 000</a>
-        <a href="mailto:info@trinitylifecare.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>info@trinitylifecare.com</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
-        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
-        <li><a href="pediatric-care.html">Pediatric Care</a></li>
-        <li><a href="staffing.html">Healthcare Staffing</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="priorities.html">Our Priorities</a></li>
-        <li><a href="Staffing.html">Staffing</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Information</div>
-      <ul class="footer-links">
-        <li><a href="#">Payment &amp; Coverage</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="request-care.html">Request Care</a></li>
-        <li><a href="staffing.html">Request Staffing</a></li>
-      </ul>
+
+    <footer class="trinity-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Trinity <span>Life Care</span></div>
+          <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+          <div class="footer-contact">
+            <a href="tel:267-752-0038"><i class="bi bi-telephone-outbound" style="margin-right:7px;color:var(--taupe)"></i>267-752-0038</a>
+            <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px;color:var(--taupe)"></i>Trinitylifehomecare@gmail.com</a>
+          </div>
         </div>
-        <div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')">Skilled Home Care</a></li>
+            <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')">Non-Skilled Care</a></li>
+            <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')">Pediatric Care</a></li>
+            <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')">Healthcare Staffing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <div class="footer-col-title">Company</div>
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
@@ -689,7 +682,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div>
+        <div class="footer-col">
           <div class="footer-col-title">Information</div>
           <ul class="footer-links">
             <li><a href="#">Payment &amp; Coverage</a></li>
@@ -700,7 +693,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span> Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank"> AD Soft Technologies</a></span>
+        <span>Copyright &copy; 2026 <a href="https://www.adsofttechnologies.com/" target="_blank">AD Soft Technologies</a></span>
         <ul style="list-style:none;padding:0;margin:0;display:flex;gap:14px;flex-wrap:wrap">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About us</a></li>
@@ -711,8 +704,6 @@
         <span>Serving Southeastern Pennsylvania with compassion.</span>
       </div>
     </footer>
-    <!-- end footer -->
-
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
