@@ -73,29 +73,29 @@ body{
 }
 
 .tlc-hero-eyebrow{
-    font-size:11px;
-    letter-spacing:.18em;
+    font-size:.72rem;
+    letter-spacing:.24em;
     text-transform:uppercase;
     color:var(--cream-d);
-    font-weight:500;
+    font-weight:600;
     display:block;
     margin-bottom:16px;
 }
 
 .tlc-hero h1{
     font-family:Georgia,serif;
-    font-size:58px;
+    font-size:clamp(1.7rem,2.8vw,2.9rem);
     font-weight:400;
-    line-height:1.08;
-    letter-spacing:-1.5px;
+    line-height:1.12;
+    letter-spacing:-.02em;
     color:#fff;
 }
 
 .tlc-hero p{
-    font-size:17px;
+    font-size:.88rem;
     font-weight:300;
     opacity:.9;
-    line-height:1.8;
+    line-height:1.82;
     color:rgba(240,231,222,.88)!important;
 }
 
@@ -108,9 +108,11 @@ body{
     color:#fff;
     border:none;
     border-radius:100px;
-    padding:13px 28px;
-    font-size:14px;
-    font-weight:500;
+    padding:13px 30px;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
     cursor:pointer;
     font-family:var(--sans);
     text-decoration:none;
@@ -128,9 +130,11 @@ body{
     color:var(--slate);
     border:1.5px solid rgba(70,86,99,.22);
     border-radius:100px;
-    padding:13px 28px;
-    font-size:14px;
-    font-weight:500;
+    padding:13px 30px;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
     cursor:pointer;
     font-family:var(--sans);
     text-decoration:none;
@@ -157,7 +161,7 @@ body{
 }
 
 .strip-item span{
-    font-size:13px;
+    font-size:.88rem;
     font-weight:500;
     color:var(--txt);
 }
@@ -177,30 +181,53 @@ body{
    ========================================================= */
 
 .eyebrow{
-    font-size:11px;
-    letter-spacing:.18em;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.22em;
     text-transform:uppercase;
     color:var(--taupe);
-    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+}
+.eyebrow::before{
+    content:'';
     display:block;
-    margin-bottom:10px;
+    width:26px;
+    height:1.5px;
+    background:var(--taupe);
+    flex-shrink:0;
+}
+.eyebrow-c{
+    justify-content:center;
+}
+.eyebrow-c::before,.eyebrow-c::after{
+    content:'';
+    display:block;
+    width:22px;
+    height:1.5px;
+    background:var(--taupe);
+    flex-shrink:0;
 }
 
 .section-h2{
     font-family:Georgia,serif;
-    font-size:40px;
+    font-size:clamp(1.4rem,2.2vw,2rem);
     font-weight:400;
     color:var(--txt);
-    line-height:1.15;
-    letter-spacing:-1px;
-    margin-bottom:8px;
+    line-height:1.2;
+    letter-spacing:-.01em;
+    margin-bottom:14px;
 }
 
 .section-sub{
     font-style:italic;
     color:var(--txtlt);
-    font-size:16px;
+    font-size:.88rem;
+    font-weight:300;
     margin-bottom:24px;
+    line-height:1.82;
 }
 
 /* =========================================================
@@ -260,21 +287,23 @@ body{
 
 .gw-card h4{
     font-family:Georgia,serif;
-    font-size:24px;
+    font-size:1.1rem;
     font-weight:400;
     color:var(--txt);
     margin-bottom:12px;
+    line-height:1.25;
 }
 
 .gw-card p{
-    font-size:14px;
+    font-size:.88rem;
     color:var(--txtm);
-    line-height:1.8;
+    line-height:1.82;
+    font-weight:300;
     margin-bottom:20px;
 }
 
 .gw-link{
-    font-size:12px;
+    font-size:.72rem;
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -323,7 +352,7 @@ body{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    font-size:12px;
+    font-size:.72rem;
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -354,7 +383,7 @@ body{
 }
 
 .hl-box strong{
-    font-size:13px;
+    font-size:1rem;
     font-weight:600;
     display:block;
     margin-bottom:5px;
@@ -362,8 +391,9 @@ body{
 }
 
 .hl-box p{
-    font-size:13px;
-    line-height:1.7;
+    font-size:.88rem;
+    line-height:1.82;
+    font-weight:300;
     margin:0;
     color:var(--txtm);
 }
@@ -373,7 +403,7 @@ body{
 }
 
 .pillar-title{
-    font-size:11px;
+    font-size:.72rem;
     font-weight:600;
     letter-spacing:.12em;
     text-transform:uppercase;
@@ -397,7 +427,8 @@ body{
     gap:10px;
     padding:10px 0;
     border-bottom:1px solid rgba(154,133,106,.10);
-    font-size:14px;
+    font-size:.88rem;
+    font-weight:300;
     color:var(--txt);
 }
 
@@ -434,8 +465,9 @@ body{
 }
 
 .svc-intro p{
-    font-size:15px;
-    line-height:1.8;
+    font-size:.88rem;
+    line-height:1.82;
+    font-weight:300;
     color:var(--txtm);
     margin:0;
 }
@@ -450,18 +482,19 @@ body{
 
 .svc-subgroup-title{
     font-family:Georgia,serif;
-    font-size:26px;
-    font-weight:500;
+    font-size:clamp(1.4rem,2.2vw,2rem);
+    font-weight:400;
     color:var(--txt);
     line-height:1.2;
-    margin-bottom:6px;
-    letter-spacing:-.3px;
+    margin-bottom:14px;
+    letter-spacing:-.01em;
 }
 
 .svc-subgroup-sub{
     font-style:italic;
     color:var(--txtlt);
-    font-size:15px;
+    font-size:.88rem;
+    font-weight:300;
     margin-bottom:30px;
 }
 
@@ -510,16 +543,17 @@ body{
 
 .svc-item-body h6{
     font-family:Georgia,serif;
-    font-size:17px;
-    font-weight:500;
+    font-size:1.1rem;
+    font-weight:400;
     color:var(--txt);
     margin:0 0 5px;
-    letter-spacing:-.2px;
+    letter-spacing:0;
 }
 
 .svc-item-body p{
-    font-size:13.5px;
-    line-height:1.65;
+    font-size:.88rem;
+    line-height:1.82;
+    font-weight:300;
     color:var(--txtm);
     margin:0;
 }
@@ -534,8 +568,8 @@ body{
 
 .tag{
     display:inline-block;
-    font-size:12px;
-    font-weight:500;
+    font-size:.72rem;
+    font-weight:600;
     padding:6px 13px;
     border-radius:100px;
     margin:3px;
@@ -573,16 +607,17 @@ body{
 
 .why-card h5{
     font-family:Georgia,serif;
-    font-size:22px;
+    font-size:1.1rem;
     font-weight:400;
     color:#fff;
     margin-bottom:12px;
 }
 
 .why-card p{
-    font-size:14px;
+    font-size:.88rem;
     color:rgba(240,231,222,.75);
-    line-height:1.75;
+    line-height:1.82;
+    font-weight:300;
     margin:0;
 }
 
@@ -621,17 +656,18 @@ body{
 
 .comp-card h6{
     font-family:Georgia,serif;
-    font-size:22px;
-    font-weight:500;
+    font-size:1.1rem;
+    font-weight:400;
     color:var(--txt);
     margin-bottom:10px;
 }
 
 .comp-card p{
-    font-size:14px;
+    font-size:.88rem;
+    line-height:1.82;
+    font-weight:300;
     color:var(--txtm);
     margin:0;
-    line-height:1.65;
 }
 
 /* =========================================================
@@ -647,21 +683,12 @@ body{
    RESPONSIVE
    ========================================================= */
 
-@media(max-width:991px){
-    .tlc-hero h1{ font-size:46px; }
-    .section-h2{ font-size:34px; }
-}
-
 @media(max-width:768px){
-    .tlc-hero h1{ font-size:38px; }
-    .section-h2{ font-size:30px; }
     .gw-card{ padding:30px 24px; }
     .comp-card, .why-card{ padding:24px; }
 }
 
 @media(max-width:576px){
-    .tlc-hero h1{ font-size:32px; line-height:1.15; }
-    .section-h2{ font-size:26px; }
     .btn-teal, .btn-ghost{ width:100%; text-align:center; }
 }
     </style>
@@ -696,17 +723,23 @@ body{
             <li class="nav-item dropdown dropdown-with-icon">
               <a href="services.html" class="nav-link active">Services</a>
               <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a href="skilled-home-care.html"><div class="submenu-icon-content"><span>Skilled home care</span><p>Physician-coordinated nursing</p></div></a></li>
-                <li><a href="non-skilled-home-care.html"><div class="submenu-icon-content"><span>Non-skilled home care</span><p>Personal care &amp; companionship</p></div></a></li>
-                <li><a href="pediatric-care.html"><div class="submenu-icon-content"><span>Pediatric care</span><p>Skilled &amp; non-skilled in-home</p></div></a></li>
-                <li><a href="staffing.html"><div class="submenu-icon-content"><span>Healthcare staffing</span><p>For hospitals &amp; facilities</p></div></a></li>
-              </ul>
+             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-height:360px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ac8d56 transparent;">
+  <li><a href="javascript:void(0);" onclick="showService('skilled')"><div class="submenu-icon-content"><span>Skilled Home Care</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('nonskilled')"><div class="submenu-icon-content"><span>Non-Skilled Home Care</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('pediatric')"><div class="submenu-icon-content"><span>Pediatric Care</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('staffing')"><div class="submenu-icon-content"><span>Healthcare Staffing</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('coverage')"><div class="submenu-icon-content"><span>Payment &amp; Coverage</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('clinical')"><div class="submenu-icon-content"><span>Clinical Care Solutions</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('philosophy')"><div class="submenu-icon-content"><span>Patient-Centered Philosophy</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('diversity')"><div class="submenu-icon-content"><span>Diversity &amp; Inclusion</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('diversity')"><div class="submenu-icon-content"><span>Community Engagement</span></div></a></li>
+  <li><a href="javascript:void(0);" onclick="showService('diversity')"><div class="submenu-icon-content"><span>Strategic Partnerships</span></div></a></li>
+</ul>
             </li>
           </ul>
           <ul class="navbar-nav navbar-right justify-content-start">
             <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
-            <li class="nav-item"><a href="staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </div>
@@ -728,7 +761,7 @@ body{
              data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":500,"delay":0,"staggervalue":180,"easing":"easeOutQuad"}'>
             <div class="col-xxl-6 col-lg-6 col-md-10 page-title-large md-mb-10px">
                 <span class="tlc-hero-eyebrow">Our Services</span>
-                <h1 class="text-white mb-0" style="font-size: 60px;">Comprehensive Clinical &amp;<br>Supportive Care Solutions</h1>
+                <h1 class="text-white mb-0">Comprehensive Clinical &amp;<br>Supportive Care Solutions</h1>
             </div>
             <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
                 <p class="text-white">Our integrated care model combines clinical expertise, compassionate support, and structured oversight to ensure consistent, high-quality service delivery across all care settings.</p>
@@ -797,11 +830,11 @@ body{
         <div class="row align-items-end mb-60px"
              data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":600,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
             <div class="col-lg-6">
-                <span class="eyebrow">Service Divisions</span>
+                <div class="eyebrow">Service Divisions</div>
                 <h2 class="section-h2">Care designed for<br>your unique needs.</h2>
             </div>
             <div class="col-lg-6 text-lg-end">
-                <p style="font-size:15px; color:#777; max-width:400px; margin-left:auto; line-height:1.7;">Choose the clinical or supportive pathway that fits your needs. Every service is tailored, coordinated, and delivered with integrity.</p>
+                <p style="font-size:.88rem; font-weight:300; color:#777; max-width:400px; margin-left:auto; line-height:1.82;">Choose the clinical or supportive pathway that fits your needs. Every service is tailored, coordinated, and delivered with integrity.</p>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4 justify-content-center"
@@ -814,7 +847,7 @@ body{
                     </div>
                     <h4>Skilled Home Care</h4>
                     <p>Physician-coordinated clinical care at home. Our licensed professionals provide advanced medical care supported by strong coordination.</p>
-                    <span class="gw-link">View Details <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link">View Details <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></span>
                 </div>
             </div>
 
@@ -829,7 +862,7 @@ body{
                     </div>
                     <h4>Non-Skilled Home Care</h4>
                     <p>Compassionate support for independent living. Centered on dignity, safety, and personalized daily living assistance.</p>
-                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></span>
                 </div>
             </div>
 
@@ -840,7 +873,7 @@ body{
                     </div>
                     <h4>Pediatric Care</h4>
                     <p>Trinity Life Care provides compassionate in-home care for children with complex medical and developmental needs.</p>
-                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></span>
                 </div>
             </div>
 
@@ -851,7 +884,7 @@ body{
                     </div>
                     <h4>Healthcare Staffing</h4>
                     <p>We provide healthcare facilities with highly qualified clinical and non-clinical professionals for robust workforce solutions.</p>
-                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></span>
                 </div>
             </div>
 
@@ -862,7 +895,7 @@ body{
                     </div>
                     <h4>Payment &amp; Coverage</h4>
                     <p>Trinity Life Care offers flexible payment options tailored to individual needs, eligibility, and the services provided.</p>
-                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="gw-link" style="color:#b89968;">View Details <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></span>
                 </div>
             </div>
 
@@ -874,12 +907,12 @@ body{
     <div class="container">
 
         <button class="svc-back-btn" onclick="hideService('skilled')">
-            <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
+            <i class="fa-solid fa-arrow-left" style="font-size:.72rem;"></i> Back to services
         </button>
 
         <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
-                <span class="eyebrow">Skilled Home Care Services</span>
+                <div class="eyebrow">Skilled Home Care Services</div>
                 <h2 class="section-h2">Physician-Coordinated<br>Clinical Care at Home.</h2>
                 <p class="section-sub">Evidence-based care delivered in the comfort and safety of the patient's home — under physician supervision and coordinated clinical oversight.</p>
             </div>
@@ -971,12 +1004,12 @@ body{
     <div class="container">
 
         <button class="svc-back-btn" onclick="hideService('nonskilled')">
-            <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
+            <i class="fa-solid fa-arrow-left" style="font-size:.72rem;"></i> Back to services
         </button>
 
         <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
-                <span class="eyebrow" style="color:#b89968;">Non-Skilled Home Care Services</span>
+                <div class="eyebrow" style="color:#b89968;">Non-Skilled Home Care Services</div>
                 <h2 class="section-h2">Compassionate Support<br>for Independent Living.</h2>
                 <p class="section-sub">Supportive care centered on compassion, dignity, independence, and safety — with caregivers matched on both capability and compatibility.</p>
             </div>
@@ -1051,12 +1084,12 @@ body{
     <div class="container">
 
         <button class="svc-back-btn" onclick="hideService('pediatric')">
-            <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
+            <i class="fa-solid fa-arrow-left" style="font-size:.72rem;"></i> Back to services
         </button>
 
         <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
-                <span class="eyebrow" style="color:#b89968;">Pediatric Care</span>
+                <div class="eyebrow" style="color:#b89968;">Pediatric Care</div>
                 <h2 class="section-h2">In-Home Care for Children<br>with Complex Needs.</h2>
                 <p class="section-sub">Compassionate in-home pediatric care that emphasizes safety, comfort, family involvement, and personalized support for every developmental stage.</p>
             </div>
@@ -1100,12 +1133,12 @@ body{
     <div class="container">
 
         <button class="svc-back-btn" onclick="hideService('staffing')">
-            <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
+            <i class="fa-solid fa-arrow-left" style="font-size:.72rem;"></i> Back to services
         </button>
 
         <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
-                <span class="eyebrow" style="color:#b89968;">Healthcare Staffing & Workforce Solutions</span>
+                <div class="eyebrow" style="color:#b89968;">Healthcare Staffing & Workforce Solutions</div>
                 <h2 class="section-h2">Qualified Professionals<br>for Your Facility.</h2>
                 <p class="section-sub">Carefully selected clinical and non-clinical professionals — chosen for experience, professionalism, reliability, and character.</p>
             </div>
@@ -1132,7 +1165,7 @@ body{
 
             <div class="col-lg-5">
                 <div style="background:#fff; border:1px solid rgba(154,133,106,.15); border-radius:20px; padding:36px; box-shadow:0 15px 40px rgba(0,0,0,0.05); height:100%; display:flex; flex-direction:column;">
-                    <h4 style="font-family:Georgia,serif; font-size:24px; color:var(--txt); margin-bottom:20px;">Why facilities choose us</h4>
+                    <h4 style="font-family:Georgia,serif; font-size:1.1rem; font-weight:400; color:var(--txt); margin-bottom:20px; line-height:1.25;">Why facilities choose us</h4>
                     <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Rapid staffing deployment</div>
                     <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Fully vetted, credentialed professionals</div>
                     <div class="chk-row"><span class="chk-dot"><i class="fa-solid fa-check"></i></span>Compliance-ready workforce</div>
@@ -1155,12 +1188,12 @@ body{
     <div class="container">
 
         <button class="svc-back-btn" onclick="hideService('coverage')">
-            <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i> Back to services
+            <i class="fa-solid fa-arrow-left" style="font-size:.72rem;"></i> Back to services
         </button>
 
         <div class="row align-items-end mb-40px">
             <div class="col-lg-8">
-                <span class="eyebrow" style="color:#b89968;">Payment &amp; Coverage Options</span>
+                <div class="eyebrow" style="color:#b89968;">Payment &amp; Coverage Options</div>
                 <h2 class="section-h2">Flexible Options Tailored<br>to Your Needs.</h2>
                 <p class="section-sub">Multiple pathways to access the care you need — based on eligibility, care requirements, and service type.</p>
             </div>
@@ -1176,8 +1209,8 @@ body{
                     <div style="width:44px;height:44px;background:#fff3e8;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968;">
                         <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Private Pay</h6>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Private Pay</h6>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>Hourly, overnight, and live-in care</li>
                         <li>Short-term and long-term support</li>
                         <li>Transparent pricing with customized care plans</li>
@@ -1189,15 +1222,15 @@ body{
                     <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-hospital"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Medicare (Eligible Skilled Services)</h6>
-                    <p style="font-size:13px;color:#777;line-height:1.55;margin-bottom:8px;">Coverage may apply when:</p>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0 0 10px 0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Medicare (Eligible Skilled Services)</h6>
+                    <p style="font-size:.88rem;font-weight:300;color:#777;line-height:1.82;margin-bottom:8px;">Coverage may apply when:</p>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0 0 10px 0;">
                         <li>Services are physician-ordered</li>
                         <li>Delivered under an approved care plan</li>
                         <li>Home health eligibility criteria are met</li>
                     </ul>
-                    <p style="font-size:13px;color:#777;line-height:1.55;margin-bottom:8px;">Covered services may include:</p>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <p style="font-size:.88rem;font-weight:300;color:#777;line-height:1.82;margin-bottom:8px;">Covered services may include:</p>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>Skilled nursing</li>
                         <li>Therapy services</li>
                         <li>Post-hospital recovery care</li>
@@ -1209,8 +1242,8 @@ body{
                     <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Commercial Insurance</h6>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Commercial Insurance</h6>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>Coverage varies by plan</li>
                         <li>Prior authorization may be required</li>
                         <li>Insurance verification assistance provided</li>
@@ -1222,8 +1255,8 @@ body{
                     <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-umbrella"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Long-Term Care Insurance</h6>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Long-Term Care Insurance</h6>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>May cover non-skilled services</li>
                         <li>Eligibility based on policy terms</li>
                         <li>Claims and documentation support available</li>
@@ -1235,8 +1268,8 @@ body{
                     <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-hand-holding-heart"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Medicaid Waiver Programs (When Applicable)</h6>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Medicaid Waiver Programs (When Applicable)</h6>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>May cover personal care services</li>
                         <li>Eligibility determined by program guidelines</li>
                         <li>Enrollment assistance provided (when applicable)</li>
@@ -1248,8 +1281,8 @@ body{
                     <div style="width:44px;height:44px;background:#f5efe0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px;color:#b89968">
                         <i class="fa-solid fa-medal"></i>
                     </div>
-                    <h6 style="font-size:16px;font-weight:600;color:var(--txt);margin-bottom:10px;">Veterans Benefits (When Applicable)</h6>
-                    <ul style="padding-left:15px; font-size:13px; color:#777; margin:0;">
+                    <h6 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--txt);margin-bottom:10px;">Veterans Benefits (When Applicable)</h6>
+                    <ul style="padding-left:15px; font-size:.88rem; font-weight:300; line-height:1.82; color:#777; margin:0;">
                         <li>VA Aid & Attendance programs</li>
                         <li>Support for personal care services</li>
                         <li>Guidance on available resources</li>
@@ -1265,15 +1298,15 @@ body{
     <div class="container">
         <div class="row align-items-center" data-anime='{"el":"childs","translateY":[20,0],"opacity":[0,1],"duration":700,"delay":0,"staggervalue":100,"easing":"easeOutQuad"}'>
             <div class="col-lg-6 md-mb-40px">
-                <span class="eyebrow" style="color:var(--taupe);">Our Approach</span>
-                <h2 style="font-family:var(--serif); font-size:40px; font-weight:400; color:#fff; letter-spacing:-1px; margin-bottom:16px;">Patient-Centered<br>Care Philosophy</h2>
-                <p style="color:rgba(255,255,255,0.8); font-size:16px; line-height:1.7;">At Trinity Life Care, every decision begins with the patient. Each care plan is tailored to the patient’s medical, emotional, cultural, and personal needs.</p>
+                <div class="eyebrow" style="color:var(--taupe);">Our Approach</div>
+                <h2 style="font-family:Georgia,serif; font-size:clamp(1.4rem,2.2vw,2rem); font-weight:400; color:#fff; letter-spacing:-.01em; margin-bottom:16px; line-height:1.2;">Patient-Centered<br>Care Philosophy</h2>
+                <p style="color:rgba(255,255,255,0.8); font-size:.88rem; font-weight:300; line-height:1.82;">At Trinity Life Care, every decision begins with the patient. Each care plan is tailored to the patient’s medical, emotional, cultural, and personal needs.</p>
                 <div style="margin-top:30px;">
-                    <p style="color:#fff; font-weight:500; margin-bottom:10px;">We believe care should be:</p>
+                    <p style="color:#fff; font-size:.88rem; font-weight:500; margin-bottom:10px;">We believe care should be:</p>
                     <ul style="list-style:none; padding:0; margin:0;">
-                        <li style="color:rgba(255,255,255,0.9); margin-bottom:10px; font-size:15px;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px;"></i> Individualized, not standardized</li>
-                        <li style="color:rgba(255,255,255,0.9); margin-bottom:10px; font-size:15px;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px;"></i> Compassionate, not transactional</li>
-                        <li style="color:rgba(255,255,255,0.9); margin-bottom:0; font-size:15px;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px;"></i> Coordinated, not fragmented</li>
+                        <li style="color:rgba(255,255,255,0.9); margin-bottom:10px; font-size:.88rem; font-weight:300;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px; font-size:.72rem;"></i> Individualized, not standardized</li>
+                        <li style="color:rgba(255,255,255,0.9); margin-bottom:10px; font-size:.88rem; font-weight:300;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px; font-size:.72rem;"></i> Compassionate, not transactional</li>
+                        <li style="color:rgba(255,255,255,0.9); margin-bottom:0; font-size:.88rem; font-weight:300;"><i class="fa-solid fa-arrow-right" style="color:var(--taupe); margin-right:10px; font-size:.72rem;"></i> Coordinated, not fragmented</li>
                     </ul>
                 </div>
             </div>
@@ -1284,23 +1317,23 @@ body{
                     <div style="display:flex; flex-direction:column; gap:16px;">
                         <div style="display:flex; align-items:flex-start; gap:12px;">
                             <i class="fa-solid fa-check" style="color:var(--taupe); margin-top:4px;"></i>
-                            <span style="color:rgba(255,255,255,0.85); font-size:14px; line-height:1.5;">Preserving dignity and independence</span>
+                            <span style="color:rgba(255,255,255,0.85); font-size:.88rem; font-weight:300; line-height:1.82;">Preserving dignity and independence</span>
                         </div>
                         <div style="display:flex; align-items:flex-start; gap:12px;">
                             <i class="fa-solid fa-check" style="color:var(--taupe); margin-top:4px;"></i>
-                            <span style="color:rgba(255,255,255,0.85); font-size:14px; line-height:1.5;">Maintaining clear communication with families</span>
+                            <span style="color:rgba(255,255,255,0.85); font-size:.88rem; font-weight:300; line-height:1.82;">Maintaining clear communication with families</span>
                         </div>
                         <div style="display:flex; align-items:flex-start; gap:12px;">
                             <i class="fa-solid fa-check" style="color:var(--taupe); margin-top:4px;"></i>
-                            <span style="color:rgba(255,255,255,0.85); font-size:14px; line-height:1.5;">Ensuring physician collaboration and oversight</span>
+                            <span style="color:rgba(255,255,255,0.85); font-size:.88rem; font-weight:300; line-height:1.82;">Ensuring physician collaboration and oversight</span>
                         </div>
                         <div style="display:flex; align-items:flex-start; gap:12px;">
                             <i class="fa-solid fa-check" style="color:var(--taupe); margin-top:4px;"></i>
-                            <span style="color:rgba(255,255,255,0.85); font-size:14px; line-height:1.5;">Delivering continuity across care settings</span>
+                            <span style="color:rgba(255,255,255,0.85); font-size:.88rem; font-weight:300; line-height:1.82;">Delivering continuity across care settings</span>
                         </div>
                     </div>
                     <hr style="border-color:rgba(255,255,255,0.1); margin:24px 0;">
-                    <p style="color:#fff; font-size:16px; font-weight:500; font-style:italic;">"Our goal is simple: improve outcomes while enhancing quality of life."</p>
+                    <p style="color:#fff; font-size:.88rem; font-weight:500; font-style:italic;">"Our goal is simple: improve outcomes while enhancing quality of life."</p>
                 </div>
             </div>
         </div>
@@ -1311,8 +1344,8 @@ body{
     <div class="container">
         <div class="row justify-content-center mb-50px text-center">
             <div class="col-lg-8">
-                <span class="eyebrow">Commitment to Excellence</span>
-                <h2 class="section-h2">Building Stronger Healthcare.</h2>
+                <div class="eyebrow eyebrow-c">Commitment to Excellence</div>
+                <h2 class="section-h2" style="text-align:center;">Building Stronger Healthcare.</h2>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4"
@@ -1323,13 +1356,13 @@ body{
                     <div class="comp-icon mb-4"><i class="fa-solid fa-globe"></i></div>
                     <h6>Diversity & Inclusion Commitment</h6>
                     <p class="mb-3" style="color:var(--txt); font-weight:500;">We believe healthcare should reflect the communities it serves.<br>Our commitment includes:</p>
-                    <ul style="padding-left:18px; font-size:13px; color:var(--txtm); line-height:1.6; margin-bottom:20px;">
+                    <ul style="padding-left:18px; font-size:.88rem; font-weight:300; line-height:1.82; color:var(--txtm); margin-bottom:20px;">
                         <li>Building a diverse and inclusive workforce</li>
                         <li>Promoting equal opportunity in hiring and leadership</li>
                         <li>Delivering culturally competent care</li>
                         <li>Maintaining a discrimination-free environment</li>
                     </ul>
-                    <p style="font-size:13px; font-style:italic; margin-top:auto; color:var(--txtlt);">Diversity strengthens our perspective, improves communication, and builds trust with those we serve.</p>
+                    <p style="font-size:.88rem; font-weight:300; font-style:italic; margin-top:auto; color:var(--txtlt);">Diversity strengthens our perspective, improves communication, and builds trust with those we serve.</p>
                 </div>
             </div>
 
@@ -1338,13 +1371,13 @@ body{
                     <div class="comp-icon mb-4"><i class="fa-solid fa-hands-holding-circle"></i></div>
                     <h6>Community Engagement</h6>
                     <p class="mb-3" style="color:var(--txt); font-weight:500;">We are more than a service provider—we are a community partner.<br>Our efforts focus on:</p>
-                    <ul style="padding-left:18px; font-size:13px; color:var(--txtm); line-height:1.6; margin-bottom:20px;">
+                    <ul style="padding-left:18px; font-size:.88rem; font-weight:300; line-height:1.82; color:var(--txtm); margin-bottom:20px;">
                         <li>Supporting local healthcare systems</li>
                         <li>Collaborating with physicians & care facilities</li>
                         <li>Participating in health education initiatives</li>
                         <li>Contributing to workforce development</li>
                     </ul>
-                    <p style="font-size:13px; font-style:italic; margin-top:auto; color:var(--txtlt);">We aim to strengthen the healthcare infrastructure through responsible growth and meaningful partnerships.</p>
+                    <p style="font-size:.88rem; font-weight:300; font-style:italic; margin-top:auto; color:var(--txtlt);">We aim to strengthen the healthcare infrastructure through responsible growth and meaningful partnerships.</p>
                 </div>
             </div>
 
@@ -1353,14 +1386,14 @@ body{
                     <div class="comp-icon mb-4"><i class="fa-solid fa-handshake"></i></div>
                     <h6>Strategic Partnerships</h6>
                     <p class="mb-3" style="color:var(--txt); font-weight:500;">Effective healthcare requires strong collaboration.<br>We partner with:</p>
-                    <ul style="padding-left:18px; font-size:13px; color:var(--txtm); line-height:1.6; margin-bottom:20px;">
+                    <ul style="padding-left:18px; font-size:.88rem; font-weight:300; line-height:1.82; color:var(--txtm); margin-bottom:20px;">
                         <li>Hospitals and health systems</li>
                         <li>Rehabilitation centers</li>
                         <li>Skilled nursing facilities</li>
                         <li>Assisted living communities</li>
                         <li>Community health organizations</li>
                     </ul>
-                    <p style="font-size:13px; font-style:italic; margin-top:auto; color:var(--txtlt);">Through these partnerships, we ensure:<br>- Seamless care transitions<br>- Reliable staffing coverage<br>- Quality assurance and compliance<br>- Scalable workforce solutions</p>
+                    <p style="font-size:.88rem; font-weight:300; font-style:italic; margin-top:auto; color:var(--txtlt);">Through these partnerships, we ensure:<br>- Seamless care transitions<br>- Reliable staffing coverage<br>- Quality assurance and compliance<br>- Scalable workforce solutions</p>
                 </div>
             </div>
 
@@ -1368,51 +1401,42 @@ body{
     </div>
 </section>
 
-<!-- ═══════════ FOOTER (footer style) ═══════════ -->
-<footer class="bg-very-light-gray pb-50px sm-pt-20px xs-pb-30px background-repeat background-position-center sm-background-image-none" style="background-image:url('images/vertical-center-line-bg-dark.svg')">
-    <div class="container">
-        <div class="row overlap-section">
-            <div class="col-12 text-center">
-                <img class="rounded-circle" src="images/trinity/about-footer-brand.png" alt="Trinity Life Care" style="width:140px; height:140px; object-fit:cover;">
-            </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-            <div class="col-xl-6 col-lg-8 col-md-10 text-center">
-                <h3 class="text-dark-gray alt-font ls-minus-2px fw-400 mb-40px xs-mb-30px w-80 xs-w-100 mx-auto">Stay informed about home care, staffing, and Trinity updates.</h3>
-                <div class="d-inline-block w-100 newsletter-style-03 position-relative mb-20px">
-                    <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100">
-                        <input class="input-large bg-white border-color-transparent w-100 border-radius-100px box-shadow-extra-large form-control required" type="email" name="email" placeholder="Enter your email address">
-                        <input type="hidden" name="redirect" value="">
-                        <button class="btn btn-large text-dark-gray ls-0px left-icon submit text-uppercase fw-700" aria-label="submit"><i class="icon feather icon-feather-mail icon-small text-base-color"></i><span>Subscribe</span></button>
-                        <div class="form-results border-radius-100px pt-10px pb-10px ps-15px pe-15px fs-16 mt-10px w-100 text-center position-absolute d-none"></div>
-                    </form>
-                </div>
-                <p class="fs-16">We are committed to protecting your <a href="#" class="text-decoration-line-bottom text-dark-gray">privacy policy.</a></p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-xl-3 col-sm-6 text-center text-sm-start last-paragraph-no-margin fs-15 order-3 order-md-1">
-                <p>&copy; Copyright 2026 <a href="https://adsofttechnologies.com/" class="text-decoration-line-bottom text-dark-gray fw-500">AD Soft Techlogies</a></p>
-            </div>
-            <div class="col-xl-6 text-center lg-mt-10px sm-mt-0 sm-mb-10px order-1 order-xl-2 order-md-3">
-                <ul class="footer-navbar fs-17 fw-600">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-                    <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#why" class="nav-link">Why Trinity</a></li>
-                    <li class="nav-item"><a href="staffing.html" class="nav-link">Staffing</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-xl-3 col-sm-6 text-center text-sm-end order-2 order-md-2">
-                <ul class="social-icon-style-01 d-inline-flex  gap-3">
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a href="#" aria-label="social"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
+<footer class="trinity-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Trinity <span>Life Care</span></div>
+      <p class="footer-desc">A complete healthcare solutions provider serving Philadelphia, Bucks, Montgomery, and Chester Counties. Skilled care, compassionate support, and workforce solutions under one trusted name.</p>
+      <div class="footer-contact">
+        <a href="tel:267-752-0038"><i class="bi bi-telephone-outbound" style="margin-right:7px"></i>267-752-0038</a>
+        <a href="mailto:Trinitylifehomecare@gmail.com"><i class="bi bi-envelope" style="margin-right:7px"></i>Trinitylifehomecare@gmail.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="javascript:void(0);" onclick="showService('skilled')">Skilled Home Care</a></li>
+        <li><a href="javascript:void(0);" onclick="showService('nonskilled')">Non-Skilled Care</a></li>
+        <li><a href="javascript:void(0);" onclick="showService('pediatric')">Pediatric Care</a></li>
+        <li><a href="javascript:void(0);" onclick="showService('staffing')">Healthcare Staffing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="priorities.html">Our Priorities</a></li>
+        <li><a href="Staffing.html">Staffing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Information</div>
+      <ul class="footer-links">
+        <li><a href="javascript:void(0);" onclick="showService('coverage')">Payment &amp; Coverage</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="contact.html#contact-form">Request Care</a></li>
+        <li><a href="contact.html#contact-form">Request Staffing</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">

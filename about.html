@@ -38,6 +38,26 @@
 }
 
 /* =========================================================
+   STANDARDIZED TYPOGRAPHY (MATCHED WITH HOME PAGE)
+   ========================================================= */
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eyebrow::before{content:'';display:block;width:26px;height:1.5px;background:var(--taupe);flex-shrink:0}
+.eyebrow-c{justify-content:center}
+.eyebrow-c::before,.eyebrow-c::after{content:'';display:block;width:22px;height:1.5px;background:var(--taupe);flex-shrink:0}
+.eyebrow-light{color:var(--cream-dark)}
+.eyebrow-light::before,.eyebrow-light::after{background:var(--cream-dark)}
+
+.stitle{font-family:Georgia,serif;font-size:clamp(1.4rem,2.2vw,2rem);font-weight:400;line-height:1.2;color:var(--text);margin-bottom:14px;letter-spacing:-.01em}
+.stitle em{font-style:italic;color:var(--taupe)}
+.stitle.light{color:var(--white)}
+.stitle.light em{color:var(--cream-dark)}
+
+.sbody{font-size:.88rem;line-height:1.82;color:var(--text-light);font-weight:300}
+
+.card-title{font-family:Georgia,serif;font-size:1.1rem;font-weight:400;color:var(--text);margin-bottom:14px;line-height:1.25}
+.card-title.light{color:#fff}
+
+/* =========================================================
    BODY
    ========================================================= */
 
@@ -49,8 +69,6 @@ body{
 /* =========================================================
    HEADER
    ========================================================= */
-
-/* header styles come from global style.css for parity with priorities page */
 
 .text-base-color{
     color:var(--taupe)!important;
@@ -126,14 +144,6 @@ body{
 
 .border-color-extra-medium-gray{
     border-color:rgba(154,133,106,.18)!important;
-}
-
-h2.fs-50{
-    color:var(--taupe)!important;
-}
-
-.fs-15.fw-500{
-    color:var(--text-light)!important;
 }
 
 /* =========================================================
@@ -393,37 +403,24 @@ img{
    ========================================================= */
 
 @media(max-width:991px){
-
     .page-title-large h1{
         font-size:48px!important;
     }
 }
 
 @media(max-width:767px){
-
     .page-title-large h1{
         font-size:38px!important;
-    }
-
-    h2.alt-font{
-        font-size:34px!important;
-    }
-
-    h3.alt-font{
-        font-size:30px!important;
     }
 }
 
 @media(max-width:575px){
-
     .page-title-large h1{
         font-size:30px!important;
     }
-
     .dual-cta .pane{
         padding:50px 28px!important;
     }
-
     .newsletter-style-03 button{
         position:relative!important;
         width:100%!important;
@@ -432,7 +429,7 @@ img{
 }
 
 /* =========================================================
-   DUAL CTA SECTION FIX
+   DUAL CTA SECTION FIX & STANDARDIZATION
    ========================================================= */
 
 .dual-cta{
@@ -475,20 +472,24 @@ img{
 }
 
 .dual-cta .pane-eyebrow{
-    font-size:15px;
+    font-size:.72rem;
     font-weight:600;
-    letter-spacing:.5px;
+    letter-spacing:.18em;
     text-transform:uppercase;
+    margin-bottom:0;
 }
 
 .dual-cta .pane h3{
-    font-size:44px;
-    line-height:1.15;
+    font-family:Georgia,serif;
+    font-size:clamp(1.4rem,2.2vw,2rem);
+    font-weight:400;
+    line-height:1.25;
     margin-bottom:24px;
 }
 
 .dual-cta .pane p{
-    font-size:17px;
+    font-size:.88rem;
+    font-weight:300;
     line-height:1.8;
     margin-bottom:30px;
 }
@@ -503,7 +504,8 @@ img{
     display:flex;
     align-items:flex-start;
     margin-bottom:18px;
-    font-size:16px;
+    font-size:.88rem;
+    font-weight:300;
     line-height:1.6;
 }
 
@@ -514,7 +516,6 @@ img{
     flex-shrink:0;
 }
 
-/* Button spacing */
 .dual-cta .btn{
     margin-top:10px;
 }
@@ -524,15 +525,10 @@ img{
    ========================================================= */
 
 @media(max-width:991px){
-
     .dual-cta .pane{
         flex:1 1 100%;
         min-height:auto;
         padding:70px 50px;
-    }
-
-    .dual-cta .pane h3{
-        font-size:36px;
     }
 }
 
@@ -541,36 +537,21 @@ img{
    ========================================================= */
 
 @media(max-width:767px){
-
     .dual-cta .pane{
         padding:55px 28px;
     }
-
     .dual-cta .pane-head{
         flex-direction:column;
         align-items:flex-start;
     }
-
     .dual-cta .pane-icon{
         margin-right:0;
         margin-bottom:18px;
     }
-
     .dual-cta .pane h3{
-        font-size:30px;
-        line-height:1.25;
-    }
-
-    .dual-cta .pane p{
-        font-size:15px;
-    }
-
-    .dual-cta .pane-list li{
-        font-size:14px;
+        font-size:1.65rem;
     }
 }
-
-/* Footer styled via global css/style.css .trinity-footer rules for parity across pages */
      </style>
     </head>
     <body class="overflow-x-hidden" data-mobile-nav-style="classic">
@@ -617,11 +598,9 @@ img{
 </ul>
             </li>
           </ul>
-            </li>
-          </ul>
           <ul class="navbar-nav navbar-right justify-content-start">
             <li class="nav-item"><a href="priorities.html" class="nav-link">Our Priorities</a></li>
-            <li class="nav-item"><a href="staffing.html" class="nav-link">Staffing</a></li>
+            <li class="nav-item"><a href="Staffing.html" class="nav-link">Staffing</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </div>
@@ -640,10 +619,10 @@ img{
             <div class="container position-relative">
                 <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 400, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
                     <div class="col-xxl-7 col-lg-6 col-md-10 position-relative page-title-large md-mb-15px xs-mb-5px">
-                        <h1 class="text-white alt-font fw-500 ls-minus-2px mb-0">About Trinity Life Care</h1>
+                        <h1 class="text-white fw-500 ls-minus-2px mb-0" style="font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:400;letter-spacing:-0.02em;">About Trinity Life Care</h1>
                     </div>
                     <div class="col-xxl-5 col-lg-6 col-md-10 last-paragraph-no-margin">
-                        <p class="fs-20 text-white opacity-7 md-w-80 sm-w-100">Skilled home care, compassionate support, and dependable healthcare staffing across Philadelphia, Bucks, Montgomery, and Chester counties.</p>
+                        <p class="sbody text-white opacity-7 md-w-80 sm-w-100">Skilled home care, compassionate support, and dependable healthcare staffing across Philadelphia, Bucks, Montgomery, and Chester counties.</p>
                     </div>
                 </div>
             </div>
@@ -655,22 +634,22 @@ img{
                         <img src="images/trinity/about-story.png" alt="Trinity Life Care nurse with patient at home" class="border-radius-6px w-100"/>
                     </div>
                     <div class="col-lg-5 offset-lg-1" data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">Our story</span>
-                        <h3 class="alt-font text-dark-gray ls-minus-2px mb-25px">Two urgent needs. One unified solution.</h3>
-                        <p class="mb-20px">Trinity Life Care was founded to bridge two urgent needs — patients deserved better, more connected care at home, and healthcare facilities needed a trustworthy workforce partner.</p>
-                        <p class="mb-30px">We built a model that does both: licensed clinical services, compassionate non-skilled support, and rigorous staffing solutions delivered as one unified organization. Today we serve four counties across Southeastern PA, growing with purpose and integrity every day.</p>
+                        <div class="eyebrow mb-15px">Our story</div>
+                        <h3 class="stitle mb-25px">Two urgent needs. One unified solution.</h3>
+                        <p class="sbody mb-20px">Trinity Life Care was founded to bridge two urgent needs — patients deserved better, more connected care at home, and healthcare facilities needed a trustworthy workforce partner.</p>
+                        <p class="sbody mb-30px">We built a model that does both: licensed clinical services, compassionate non-skilled support, and rigorous staffing solutions delivered as one unified organization. Today we serve four counties across Southeastern PA, growing with purpose and integrity every day.</p>
                         <div class="row mt-40px pt-30px border-top border-color-extra-medium-gray" style="gap:0;">
     <div class="col-4" style="padding-right:12px;">
-        <h2 class="fs-50 text-dark-gray fw-700 mb-0 alt-font">4</h2>
-        <span class="fs-15 fw-500 text-dark-gray d-block" style="white-space:nowrap;">Counties served</span>
+        <h2 class="text-dark-gray fw-700 mb-0" style="font-family:Georgia,serif;font-size:2rem;line-height:1;">4</h2>
+        <span class="text-dark-gray d-block" style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;">Counties served</span>
     </div>
     <div class="col-4" style="padding-left:12px;padding-right:12px;border-left:1px solid rgba(0,0,0,.08);border-right:1px solid rgba(0,0,0,.08);">
-        <h2 class="fs-50 text-dark-gray fw-700 mb-0 alt-font" style="font-size:clamp(1rem,2vw,2rem)!important;white-space:nowrap;letter-spacing:-.02em;">24-48h</h2>
-        <span class="fs-15 fw-500 text-dark-gray d-block" style="white-space:nowrap;font-size:clamp(.55rem,.7vw,.75rem)!important;">Care start window</span>
+        <h2 class="text-dark-gray fw-700 mb-0" style="font-family:Georgia,serif;font-size:2rem;line-height:1;letter-spacing:-.02em;white-space:nowrap;">24-48h</h2>
+        <span class="text-dark-gray d-block" style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;">Care start window</span>
     </div>
     <div class="col-4" style="padding-left:20px;">
-        <h2 class="fs-50 text-dark-gray fw-700 mb-0 alt-font">24/7</h2>
-        <span class="fs-15 fw-500 text-dark-gray d-block" style="white-space:nowrap;">Intake &amp; support</span>
+        <h2 class="text-dark-gray fw-700 mb-0" style="font-family:Georgia,serif;font-size:2rem;line-height:1;">24/7</h2>
+        <span class="text-dark-gray d-block" style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;">Intake &amp; support</span>
     </div>
 </div>
                         </div>
@@ -682,9 +661,9 @@ img{
             <div class="container">
                 <div class="row justify-content-center mb-6 xs-mb-9">
                     <div class="col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">What drives us</span>
-                        <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Mission &amp; vision</h2>
-                        <span class="d-inline-block">The principles behind every care plan and every placement.</span>
+                        <div class="eyebrow eyebrow-c mb-15px">What drives us</div>
+                        <h2 class="stitle mb-15px" style="text-align:center;">Mission &amp; vision</h2>
+                        <span class="sbody d-inline-block">The principles behind every care plan and every placement.</span>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-lg-2 g-4">
@@ -693,8 +672,8 @@ img{
                             <div class="d-inline-flex align-items-center justify-content-center bg-base-color rounded-circle mb-25px" style="width:64px;height:64px;">
                                 <i class="bi bi-bullseye text-white fs-26"></i>
                             </div>
-                            <h5 class="alt-font text-dark-gray ls-minus-1px mb-15px">Our mission</h5>
-                            <p>To deliver exceptional skilled and non-skilled home care services, alongside reliable clinical and non-clinical staffing solutions, that enhance patient outcomes, support healthcare providers, and strengthen the regional healthcare system.</p>
+                            <h5 class="card-title text-dark-gray ls-minus-1px mb-15px">Our mission</h5>
+                            <p class="sbody mb-0">To deliver exceptional skilled and non-skilled home care services, alongside reliable clinical and non-clinical staffing solutions, that enhance patient outcomes, support healthcare providers, and strengthen the regional healthcare system.</p>
                         </div>
                     </div>
                     <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
@@ -702,8 +681,8 @@ img{
                             <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-25px" style="width:64px;height:64px;">
                                 <i class="bi bi-eye-fill text-base-color fs-26"></i>
                             </div>
-                            <h5 class="alt-font text-white ls-minus-1px mb-15px">Our vision</h5>
-                            <p class="text-white opacity-9">To become a transformative force in healthcare — where compassionate home care meets a strong, dependable workforce network. A healthcare ecosystem families trust, professionals are proud to join, and facilities confidently rely upon.</p>
+                            <h5 class="card-title light ls-minus-1px mb-15px">Our vision</h5>
+                            <p class="sbody text-white opacity-9 mb-0">To become a transformative force in healthcare — where compassionate home care meets a strong, dependable workforce network. A healthcare ecosystem families trust, professionals are proud to join, and facilities confidently rely upon.</p>
                         </div>
                     </div>
                 </div>
@@ -713,11 +692,11 @@ img{
             <div class="container">
                 <div class="row justify-content-center mb-6 xs-mb-9">
                     <div class="col-lg-10 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">What We Do</span>
-                        <h2 class="alt-font mb-25px text-dark-gray ls-minus-2px">Coordinated Healthcare &amp; Workforce Solutions</h2>
-                        <p class="mb-20px">At Trinity Life Care, we provide coordinated healthcare and workforce solutions designed to meet individuals and organizations where they are—with compassion, professionalism, integrity, and a strong commitment to quality care. Our services are built around the belief that every individual deserves personalized attention, dependable support, and care that respects their dignity, comfort, and unique circumstances.</p>
-                        <p class="mb-20px">We work closely with patients, families, physicians, healthcare facilities, and community partners to deliver services that are compassionate, reliable, and outcome-focused. Whether supporting individuals in the comfort of their homes or helping healthcare organizations maintain strong staffing support, our goal is to create meaningful care experiences that improve quality of life and strengthen continuity of care.</p>
-                        <p class="mb-0">At Trinity Life Care, we understand that healthcare needs can vary greatly from person to person. That is why we take a thoughtful and individualized approach to every service we provide, ensuring each client receives the right level of care, attention, and professional support tailored to their situation. Through coordinated communication, experienced professionals, and patient-centered service, we strive to build trust and long-term relationships with those we serve.</p>
+                        <div class="eyebrow eyebrow-c mb-15px">What We Do</div>
+                        <h2 class="stitle mb-25px" style="text-align:center;">Coordinated Healthcare &amp; Workforce Solutions</h2>
+                        <p class="sbody mb-20px">At Trinity Life Care, we provide coordinated healthcare and workforce solutions designed to meet individuals and organizations where they are—with compassion, professionalism, integrity, and a strong commitment to quality care. Our services are built around the belief that every individual deserves personalized attention, dependable support, and care that respects their dignity, comfort, and unique circumstances.</p>
+                        <p class="sbody mb-20px">We work closely with patients, families, physicians, healthcare facilities, and community partners to deliver services that are compassionate, reliable, and outcome-focused. Whether supporting individuals in the comfort of their homes or helping healthcare organizations maintain strong staffing support, our goal is to create meaningful care experiences that improve quality of life and strengthen continuity of care.</p>
+                        <p class="sbody mb-0">At Trinity Life Care, we understand that healthcare needs can vary greatly from person to person. That is why we take a thoughtful and individualized approach to every service we provide, ensuring each client receives the right level of care, attention, and professional support tailored to their situation. Through coordinated communication, experienced professionals, and patient-centered service, we strive to build trust and long-term relationships with those we serve.</p>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-lg-2 g-4">
@@ -726,11 +705,11 @@ img{
                             <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-25px" style="width:64px;height:64px;">
                                 <i class="bi bi-bandaid text-base-color fs-26"></i>
                             </div>
-                            <h5 class="alt-font text-dark-gray ls-minus-1px mb-20px">Skilled Home Care Services</h5>
-                            <p class="mb-20px">We deliver licensed clinical care in the comfort of the patient’s home, working closely with physicians, healthcare providers, and care teams to ensure safety, continuity, and personalized treatment planning. Our skilled home care services are designed to support recovery, manage chronic conditions, reduce unnecessary hospitalizations, and improve overall health outcomes while allowing patients to remain in a familiar and comfortable environment.</p>
-                            <p class="mb-20px">Our licensed healthcare professionals provide compassionate and evidence-based care tailored to each patient’s medical condition, treatment goals, and individual needs. By coordinating closely with physicians and family members, we help ensure that care plans are implemented effectively and monitored consistently.</p>
-                            <p class="mb-20px">We understand that recovering at home can promote emotional comfort, confidence, and a greater sense of independence. For this reason, our skilled care services focus not only on medical support but also on improving overall well-being and quality of life. From post-surgical recovery and medication management to chronic disease monitoring and ongoing clinical oversight, we are committed to delivering dependable care with professionalism and compassion.</p>
-                            <p class="text-dark-gray fw-500">Our focus is to help patients recover, heal, regain stability, and thrive safely in their home environment while maintaining the highest standards of clinical care and communication.</p>
+                            <h5 class="card-title text-dark-gray ls-minus-1px mb-20px">Skilled Home Care Services</h5>
+                            <p class="sbody mb-20px">We deliver licensed clinical care in the comfort of the patient’s home, working closely with physicians, healthcare providers, and care teams to ensure safety, continuity, and personalized treatment planning. Our skilled home care services are designed to support recovery, manage chronic conditions, reduce unnecessary hospitalizations, and improve overall health outcomes while allowing patients to remain in a familiar and comfortable environment.</p>
+                            <p class="sbody mb-20px">Our licensed healthcare professionals provide compassionate and evidence-based care tailored to each patient’s medical condition, treatment goals, and individual needs. By coordinating closely with physicians and family members, we help ensure that care plans are implemented effectively and monitored consistently.</p>
+                            <p class="sbody mb-20px">We understand that recovering at home can promote emotional comfort, confidence, and a greater sense of independence. For this reason, our skilled care services focus not only on medical support but also on improving overall well-being and quality of life. From post-surgical recovery and medication management to chronic disease monitoring and ongoing clinical oversight, we are committed to delivering dependable care with professionalism and compassion.</p>
+                            <p class="sbody text-dark-gray fw-500 mb-0">Our focus is to help patients recover, heal, regain stability, and thrive safely in their home environment while maintaining the highest standards of clinical care and communication.</p>
                         </div>
                     </div>
                     <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
@@ -738,11 +717,11 @@ img{
                             <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-25px" style="width:64px;height:64px;">
                                 <i class="bi bi-heart-pulse text-base-color fs-26"></i>
                             </div>
-                            <h5 class="alt-font text-dark-gray ls-minus-1px mb-20px">Non-Skilled Home Care Services</h5>
-                            <p class="mb-20px">Our non-clinical services provide essential daily living support while promoting dignity, independence, comfort, and emotional well-being. We recognize that many individuals require assistance with everyday activities in order to remain safely and comfortably at home, and our caregivers are dedicated to providing that support with patience, respect, and compassion.</p>
-                            <p class="mb-20px">We believe care is deeply personal, which is why our caregivers are carefully matched to each individual’s needs, preferences, routines, and personality. Our approach emphasizes companionship, trust, and meaningful human connection while ensuring clients receive dependable assistance with daily activities and supportive care.</p>
-                            <p class="mb-20px">Our non-skilled home care services are designed to help individuals maintain independence and improve their overall quality of life while reducing stress for families and loved ones. Whether providing personal care assistance, companionship, mobility support, meal preparation, or supervision for safety and wellness, our caregivers strive to create a supportive and comfortable environment where clients feel respected and valued.</p>
-                            <p class="text-dark-gray fw-500">At Trinity Life Care, we understand the importance of emotional support in addition to physical assistance. Our caregivers provide encouragement, companionship, and attentive care that helps reduce isolation, promote confidence, and support overall well-being. Through compassionate service and personalized attention, we help individuals continue living with dignity and comfort in the place they call home.</p>
+                            <h5 class="card-title text-dark-gray ls-minus-1px mb-20px">Non-Skilled Home Care Services</h5>
+                            <p class="sbody mb-20px">Our non-clinical services provide essential daily living support while promoting dignity, independence, comfort, and emotional well-being. We recognize that many individuals require assistance with everyday activities in order to remain safely and comfortably at home, and our caregivers are dedicated to providing that support with patience, respect, and compassion.</p>
+                            <p class="sbody mb-20px">We believe care is deeply personal, which is why our caregivers are carefully matched to each individual’s needs, preferences, routines, and personality. Our approach emphasizes companionship, trust, and meaningful human connection while ensuring clients receive dependable assistance with daily activities and supportive care.</p>
+                            <p class="sbody mb-20px">Our non-skilled home care services are designed to help individuals maintain independence and improve their overall quality of life while reducing stress for families and loved ones. Whether providing personal care assistance, companionship, mobility support, meal preparation, or supervision for safety and wellness, our caregivers strive to create a supportive and comfortable environment where clients feel respected and valued.</p>
+                            <p class="sbody text-dark-gray fw-500 mb-0">At Trinity Life Care, we understand the importance of emotional support in addition to physical assistance. Our caregivers provide encouragement, companionship, and attentive care that helps reduce isolation, promote confidence, and support overall well-being. Through compassionate service and personalized attention, we help individuals continue living with dignity and comfort in the place they call home.</p>
                         </div>
                     </div>
                 </div>
@@ -752,9 +731,9 @@ img{
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "translateX": [-50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">Care philosophy</span>
-                        <h3 class="alt-font text-dark-gray ls-minus-2px mb-25px">Every decision begins with the patient.</h3>
-                        <p class="mb-30px">Our priorities: preserving dignity, maintaining clear family communication, ensuring physician collaboration, and delivering continuity across every care setting.</p>
+                        <div class="eyebrow mb-15px">Care philosophy</div>
+                        <h3 class="stitle mb-25px">Every decision begins with the patient.</h3>
+                        <p class="sbody mb-30px">Our priorities: preserving dignity, maintaining clear family communication, ensuring physician collaboration, and delivering continuity across every care setting.</p>
                         <a href="contact.html#contact-form" class="btn btn-medium btn-base-color btn-rounded btn-box-shadow">Request care <i class="fa-solid fa-arrow-right ms-10px"></i></a>
                     </div>
                     <div class="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -763,8 +742,8 @@ img{
                                 <i class="bi bi-person-heart text-base-color fs-22"></i>
                             </div>
                             <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Individualized, not standardized</h6>
-                                <p class="fs-15">Care plans built around the person — their condition, home, family, and goals.</p>
+                                <h6 class="card-title text-dark-gray fw-500 mb-5px">Individualized, not standardized</h6>
+                                <p class="sbody mb-0">Care plans built around the person — their condition, home, family, and goals.</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px mb-20px">
@@ -772,8 +751,8 @@ img{
                                 <i class="bi bi-heart-fill text-base-color fs-22"></i>
                             </div>
                             <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Compassionate, not transactional</h6>
-                                <p class="fs-15">Caregivers matched for skill and personality — people who treat patients like family.</p>
+                                <h6 class="card-title text-dark-gray fw-500 mb-5px">Compassionate, not transactional</h6>
+                                <p class="sbody mb-0">Caregivers matched for skill and personality — people who treat patients like family.</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start bg-very-light-gray border-radius-6px p-30px">
@@ -781,8 +760,8 @@ img{
                                 <i class="bi bi-diagram-3-fill text-base-color fs-22"></i>
                             </div>
                             <div class="last-paragraph-no-margin">
-                                <h6 class="alt-font text-dark-gray fw-500 mb-5px fs-19">Coordinated, not fragmented</h6>
-                                <p class="fs-15">Physicians, families, and clinicians stay aligned through every transition of care.</p>
+                                <h6 class="card-title text-dark-gray fw-500 mb-5px">Coordinated, not fragmented</h6>
+                                <p class="sbody mb-0">Physicians, families, and clinicians stay aligned through every transition of care.</p>
                             </div>
                         </div>
                     </div>
@@ -793,9 +772,9 @@ img{
             <div class="container">
                 <div class="row justify-content-center mb-6 xs-mb-9">
                     <div class="col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">Beyond clinical care</span>
-                        <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Diversity &amp; community</h2>
-                        <span class="d-inline-block">Healthcare should reflect the community it serves — and strengthen it in return.</span>
+                        <div class="eyebrow eyebrow-c mb-15px">Beyond clinical care</div>
+                        <h2 class="stitle mb-15px" style="text-align:center;">Diversity &amp; community</h2>
+                        <span class="sbody d-inline-block">Healthcare should reflect the community it serves — and strengthen it in return.</span>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-lg-2 g-4">
@@ -805,9 +784,9 @@ img{
                                 <img class="w-100" src="images/trinity/about-diversity.png" alt="Diverse Trinity Life Care team">
                             </div>
                             <div class="p-40px md-p-25px last-paragraph-no-margin">
-                                <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray mb-15px">Diversity &amp; inclusion commitment</span>
-                                <p class="mb-15px">We are committed to building a diverse workforce, delivering culturally competent care, and maintaining an environment free from discrimination.</p>
-                                <p class="text-dark-gray fw-500"><em>Different perspectives strengthen how we serve.</em></p>
+                                <span class="card-title d-inline-block text-dark-gray ls-minus-05px mb-15px">Diversity &amp; inclusion commitment</span>
+                                <p class="sbody mb-15px">We are committed to building a diverse workforce, delivering culturally competent care, and maintaining an environment free from discrimination.</p>
+                                <p class="sbody text-dark-gray fw-500 mb-0"><em>Different perspectives strengthen how we serve.</em></p>
                             </div>
                         </div>
                     </div>
@@ -817,9 +796,9 @@ img{
                                 <img class="w-100" src="images/trinity/about-community.png" alt="Trinity Life Care community partnerships">
                             </div>
                             <div class="p-40px md-p-25px last-paragraph-no-margin">
-                                <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray mb-15px">Community engagement &amp; partnerships</span>
-                                <p class="mb-15px">We're more than a provider — we're a community partner. We support local health systems, collaborate with physicians and facilities, participate in health education, and invest in workforce development.</p>
-                                <p class="text-dark-gray fw-500"><em>Strong partnerships ensure seamless transitions and reliable coverage.</em></p>
+                                <span class="card-title d-inline-block text-dark-gray ls-minus-05px mb-15px">Community engagement &amp; partnerships</span>
+                                <p class="sbody mb-15px">We're more than a provider — we're a community partner. We support local health systems, collaborate with physicians and facilities, participate in health education, and invest in workforce development.</p>
+                                <p class="sbody text-dark-gray fw-500 mb-0"><em>Strong partnerships ensure seamless transitions and reliable coverage.</em></p>
                             </div>
                         </div>
                     </div>
@@ -830,45 +809,45 @@ img{
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 md-mb-40px" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 800, "easing": "easeOutQuad" }'>
-                        <span class="mb-15px text-base-color fw-500 d-block">Trust standards</span>
-                        <h3 class="alt-font text-white ls-minus-1px mb-0">Compliance &amp; quality assurance.</h3>
+                        <div class="eyebrow eyebrow-light mb-15px">Trust standards</div>
+                        <h3 class="stitle light mb-0">Compliance &amp; quality assurance.</h3>
                     </div>
                     <div class="col-lg-8" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 800, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         <div class="row g-3">
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-shield-check text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">Licensed &amp; insured</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">Licensed &amp; insured</span>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-lock-fill text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">HIPAA-compliant</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">HIPAA-compliant</span>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-person-check-fill text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">Background-checked</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">Background-checked</span>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-mortarboard-fill text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">Ongoing training</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">Ongoing training</span>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-clipboard2-pulse-fill text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">Clinical oversight</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">Clinical oversight</span>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4">
                                 <div class="d-flex align-items-center p-20px border-radius-6px h-100" style="background: rgba(255,255,255,0.06);">
                                     <i class="bi bi-stars text-base-color fs-26 me-15px"></i>
-                                    <span class="text-white fs-14 fw-500">Continuous QA</span>
+                                    <span class="text-white fw-500" style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;">Continuous QA</span>
                                 </div>
                             </div>
                         </div>
@@ -884,7 +863,7 @@ img{
                             <span class="pane-icon bg-white"><i class="bi bi-house-heart-fill text-base-color"></i></span>
                             <span class="pane-eyebrow text-white">For families</span>
                         </div>
-                        <h3 class="alt-font text-white ls-minus-1px">Get care at home — fast, safe, and heartfelt.</h3>
+                        <h3 class="text-white">Get care at home — fast, safe, and heartfelt.</h3>
                         <p class="text-white opacity-9">Most home care starts in 24–48 hours. A care coordinator will call you within the hour to discuss needs and verify coverage.</p>
                         <ul class="pane-list">
                             <li class="text-white"><i class="bi bi-check-circle-fill"></i><span>Same-day &amp; 24–48h care starts available</span></li>
@@ -900,14 +879,14 @@ img{
                             <span class="pane-icon bg-base-color"><i class="bi bi-hospital-fill text-white"></i></span>
                             <span class="pane-eyebrow text-base-color">For facilities</span>
                         </div>
-                        <h3 class="alt-font text-white ls-minus-1px">Never short-staffed again.</h3>
+                        <h3 class="text-white">Never short-staffed again.</h3>
                         <p class="text-white opacity-8">Fully vetted RNs, LPNs, CNAs, HHAs, and support staff — deployed rapidly to where you need them most.</p>
                         <ul class="pane-list">
                             <li class="text-white opacity-9"><i class="bi bi-check-circle-fill text-base-color"></i><span>Rapid deployment for urgent staffing gaps</span></li>
                             <li class="text-white opacity-9"><i class="bi bi-check-circle-fill text-base-color"></i><span>Background-checked &amp; credentialed pros</span></li>
                             <li class="text-white opacity-9"><i class="bi bi-check-circle-fill text-base-color"></i><span>Long-term partnership &amp; coverage model</span></li>
                         </ul>
-                        <a href="staffing.html" class="btn btn-medium btn-base-color btn-rounded">Explore staffing <i class="fa-solid fa-arrow-right ms-10px"></i></a>
+                        <a href="contact.html#contact-form" class="btn btn-medium btn-base-color btn-rounded">Explore staffing <i class="fa-solid fa-arrow-right ms-10px"></i></a>
                     </div>
                 </div>
             </div>
@@ -925,10 +904,10 @@ img{
     <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
-        <li><a href="skilled-home-care.html">Skilled Home Care</a></li>
-        <li><a href="non-skilled-home-care.html">Non-Skilled Care</a></li>
-        <li><a href="pediatric-care.html">Pediatric Care</a></li>
-        <li><a href="staffing.html">Healthcare Staffing</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','skilled')" >Skilled Home Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','nonskilled')" >Non-Skilled Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','pediatric')" >Pediatric Care</a></li>
+        <li><a href="services.html" onclick="sessionStorage.setItem('openService','staffing')" >Healthcare Staffing</a></li>
       </ul>
     </div>
     <div>
@@ -936,7 +915,7 @@ img{
       <ul class="footer-links">
         <li><a href="about.html">About Us</a></li>
         <li><a href="priorities.html">Our Priorities</a></li>
-        <li><a href="staffing.html">staffing</a></li>
+        <li><a href="Staffing.html">Staffing</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -945,8 +924,8 @@ img{
       <ul class="footer-links">
         <li><a href="#">Payment &amp; Coverage</a></li>
         <li><a href="#">Privacy Policy</a></li>
-        <li><a href="request-care.html">Request Care</a></li>
-        <li><a href="staffing.html">Request Staffing</a></li>
+        <li><a href="contact.html#contact-form">Request Care</a></li>
+        <li><a href="contact.html#contact-form">Request Staffing</a></li>
       </ul>
     </div>
   </div>
