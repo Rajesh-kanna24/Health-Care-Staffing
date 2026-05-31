@@ -344,29 +344,75 @@ body{
    DUAL CTA
    ========================================================= */
 
-.dual-cta .pane.bg-dark-gray{
-    background-color:#000!important;
+.dual-cta{display:flex;flex-wrap:wrap;width:100%;}
+
+.dual-cta .pane{
+    flex:1 1 50%;
+    position:relative;
+    overflow:hidden;
+    padding:90px 70px;
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    background-color:#000; /* was in .pane.bg-dark-gray override */
 }
 
+.dual-cta .pane.bg-dark-gray{background-color:#000!important;}
+
 .dual-cta .pane h3{
+    font-family:Georgia,serif;
+    font-size:clamp(1.4rem,2.2vw,2rem);
+    font-weight:400;
+    line-height:1.25;
+    margin-bottom:24px;
     color:#fff!important;
 }
 
 .dual-cta .pane p{
+    font-size:.88rem;
+    font-weight:300;
+    line-height:1.8;
+    margin-bottom:30px;
     color:rgba(255,255,255,.88)!important;
 }
 
+.dual-cta .pane-inner{width:100%;max-width:560px;}
+
+.dual-cta .pane-head{display:flex;align-items:center;margin-bottom:28px;}
+
+.dual-cta .pane-icon{
+    width:72px;height:72px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-right:18px;
+    flex-shrink:0;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.dual-cta .pane-eyebrow{
+    font-size:.72rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;margin-bottom:0;
+}
+
+.dual-cta .pane-list{list-style:none;padding:0;margin:0 0 35px 0;}
+
 .dual-cta .pane-list li{
+    display:flex;align-items:flex-start;
+    margin-bottom:18px;
+    font-size:.88rem;font-weight:300;line-height:1.6;
     color:#fff!important;
 }
 
 .dual-cta .pane-list li i{
+    margin-right:12px;margin-top:4px;
+    font-size:18px;flex-shrink:0;
     color:var(--cream-dark)!important;
 }
 
-.dual-cta .pane-icon{
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+.dual-cta .btn{margin-top:10px;}
 
 /* =========================================================
    BUTTONS
@@ -814,9 +860,9 @@ img{
                     </div>
                     <div class="col" data-anime='{ "translateY": [40, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
                         <div class="bg-very-light-gray border-radius-6px p-50px md-p-30px h-100 last-paragraph-no-margin border border-color-extra-medium-gray">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-25px;height:64px;">
-                                <i class="bi bi-heart-pulse text-base-color fs-26"></i>
-                            </div>
+<!-- CORRECT — matches Skilled card exactly -->
+<div style="width:64px;height:64px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 25px rgba(0,0,0,.05);flex-shrink:0;">
+<i class="bi bi-heart-pulse text-base-color" style="font-size:26px;line-height:1;margin-top:4px;"></i>                            </div>
                             <h5 class="card-title text-dark-gray ls-minus-1px mb-20px">Non-Skilled Home Care Services</h5>
                             <p class="sbody mb-20px">Our non-clinical services provide essential daily living support while promoting dignity, independence, comfort, and emotional well-being. We recognize that many individuals require assistance with everyday activities in order to remain safely and comfortably at home, and our caregivers are dedicated to providing that support with patience, respect, and compassion.</p>
                             <p class="sbody mb-20px">We believe care is deeply personal, which is why our caregivers are carefully matched to each individual’s needs, preferences, routines, and personality. Our approach emphasizes companionship, trust, and meaningful human connection while ensuring clients receive dependable assistance with daily activities and supportive care.</p>
