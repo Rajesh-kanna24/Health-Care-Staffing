@@ -525,7 +525,8 @@
       <div class="col-auto col-xl-2 col-lg-1 text-end">
         <div class="d-none d-xl-flex align-items-center widget-text fw-600">
           <i class="bi bi-calendar-check text-base-color me-10px"></i>
-          <a href="contact.html#contact-form">Request Care</a>
+          <!-- Added alert class here -->
+          <a href="contact.html#contact-form" class="alert-working-on-it">Request Care</a>
         </div>
       </div>
     </div>
@@ -547,11 +548,13 @@
                             We provide reliable clinical and non-clinical staffing solutions to healthcare facilities across the region.
                         </p>
                         <div class="hero-btn-wrap reveal fade-up" style="transition-delay:.3s">
-                            <a href="#" class="btn btn-extra-large btn-base-color btn-rounded">
+                            <!-- Added alert class here -->
+                            <a href="#" class="btn btn-extra-large btn-base-color btn-rounded alert-working-on-it">
                                 Request Staffing
                                 <i class="fa-solid fa-arrow-right ms-10px"></i>
                             </a>
-                            <a href="#" class="btn btn-extra-large btn-transparent-light-gray border-color-extra-medium-gray btn-rounded">
+                            <!-- Added alert class here -->
+                            <a href="#" class="btn btn-extra-large btn-transparent-light-gray border-color-extra-medium-gray btn-rounded alert-working-on-it">
                                 Schedule Partnership Call
                                 <i class="bi bi-calendar-check ms-10px"></i>
                             </a>
@@ -703,7 +706,8 @@
                         </p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a href="#" class="btn btn-extra-large btn-white btn-rounded" style="transition: transform .3s ease, box-shadow .3s ease;">
+                        <!-- Added alert class here -->
+                        <a href="#" class="btn btn-extra-large btn-white btn-rounded alert-working-on-it" style="transition: transform .3s ease, box-shadow .3s ease;">
                             Schedule Partnership Call
                         </a>
                     </div>
@@ -795,8 +799,10 @@
           <ul class="footer-links">
             <li><a href="#">Payment &amp; Coverage</a></li>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="contact.html#contact-form">Request Care</a></li>
-            <li><a href="contact.html#contact-form">Request Staffing</a></li>
+            <!-- Added alert class here -->
+            <li><a href="contact.html#contact-form" class="alert-working-on-it">Request Care</a></li>
+            <!-- Added alert class here -->
+            <li><a href="contact.html#contact-form" class="alert-working-on-it">Request Staffing</a></li>
           </ul>
         </div>
       </div>
@@ -818,6 +824,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // --- Scroll Reveal Animation ---
             var reveals = document.querySelectorAll('.reveal');
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
@@ -828,6 +835,23 @@
                 });
             }, { threshold: 0.15 });
             reveals.forEach(function (el) { observer.observe(el); });
+
+            // --- "We are working on it" Alert Feature ---
+            // Targets links specifically tagged for the "we are working on it" alert as well as empty placeholder links
+            var alertLinks = document.querySelectorAll('.alert-working-on-it, a[href="#"]:not(.alert-working-on-it)');
+            alertLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevents the page from jumping or redirecting
+                    
+                    if (this.classList.contains('alert-working-on-it')) {
+                        // Exact match message requested by user for the specific buttons
+                        alert("We are working on it");
+                    } else {
+                        // Fallback message for other placeholder tags 
+                        alert("We are currently working on this feature. Please check back later!");
+                    }
+                });
+            });
         });
     </script>
 
