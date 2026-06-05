@@ -454,6 +454,12 @@
                     alert('Please enter your name and email address.');
                     return false;
                 }
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    document.getElementById('trinityEmail').focus();
+                    return false;
+                }
                 var subject = encodeURIComponent('Contact inquiry from ' + name + ' — Trinity Life Care website');
                 var bodyLines = [
                     'Name: ' + name,
@@ -464,7 +470,7 @@
                 ];
                 var body = encodeURIComponent(bodyLines.join('\n'));
                 var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
-                    + '&to=Trinitylifehomecare@gmail.com'
+                    + '&to=trinitylifehecare@gmail.com'
                     + '&su=' + subject
                     + '&body=' + body;
                 window.open(gmailUrl, '_blank', 'noopener,noreferrer');
