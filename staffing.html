@@ -408,6 +408,53 @@
         color: #1f1f1f;
     }
 
+    /* ───────── "WORKING ON IT" MODAL ───────── */
+    .tlc-modal-overlay{
+        position:fixed;inset:0;z-index:9999;
+        display:flex;align-items:center;justify-content:center;padding:20px;
+        background:rgba(31,31,31,.55);
+        -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+        opacity:0;visibility:hidden;
+        transition:opacity .3s ease,visibility .3s ease;
+    }
+    .tlc-modal-overlay.is-open{opacity:1;visibility:visible}
+    .tlc-modal{
+        position:relative;width:100%;max-width:430px;
+        background:#fff;border-radius:16px;
+        padding:46px 38px 36px;text-align:center;
+        box-shadow:0 30px 70px rgba(0,0,0,.25);
+        transform:translateY(22px) scale(.96);
+        transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    }
+    .tlc-modal-overlay.is-open .tlc-modal{transform:translateY(0) scale(1)}
+    .tlc-modal-close{
+        position:absolute;top:14px;right:18px;
+        background:none;border:none;font-size:26px;line-height:1;
+        color:var(--txtlt);cursor:pointer;transition:color .2s ease;
+    }
+    .tlc-modal-close:hover{color:var(--txt)}
+    .tlc-modal-icon{
+        width:76px;height:76px;border-radius:50%;margin:0 auto 22px;
+        display:flex;align-items:center;justify-content:center;
+        background:linear-gradient(135deg,#f3e9d6,#e9d8bb);
+        color:var(--taupe);font-size:32px;
+    }
+    .tlc-modal-title{
+        font-family:Georgia,serif;font-weight:400;
+        font-size:1.5rem;color:var(--txt);margin:0 0 12px;
+    }
+    .tlc-modal-text{
+        font-size:.92rem;line-height:1.7;color:var(--txtm);
+        font-weight:300;margin:0 0 28px;
+    }
+    .tlc-modal-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .tlc-modal-actions .btn{min-width:150px}
+    @media (max-width:480px){
+        .tlc-modal{padding:38px 24px 30px}
+        .tlc-modal-actions{flex-direction:column}
+        .tlc-modal-actions .btn{width:100%}
+    }
+
     /* ───────── SCROLL ANIMATION ───────── */
     .reveal {
         opacity: 0;
@@ -798,7 +845,7 @@
           <div class="footer-col-title">Information</div>
           <ul class="footer-links">
             <li><a href="#">Payment &amp; Coverage</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
             <!-- Added alert class here -->
             <li><a href="contact.html#contact-form" class="alert-working-on-it">Request Care</a></li>
             <!-- Added alert class here -->
@@ -838,22 +885,53 @@
 
             // --- "We are working on it" Alert Feature ---
             // Targets links specifically tagged for the "we are working on it" alert as well as empty placeholder links
+            var workingModal = document.getElementById('workingModal');
+            function openWorkingModal() {
+                if (!workingModal) return;
+                workingModal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeWorkingModal() {
+                if (!workingModal) return;
+                workingModal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+            if (workingModal) {
+                // Close on backdrop click, close (×) button, and "Got it"
+                workingModal.addEventListener('click', function(e) {
+                    if (e.target === workingModal) closeWorkingModal();
+                });
+                workingModal.querySelectorAll('.tlc-modal-close, .tlc-modal-dismiss').forEach(function(btn) {
+                    btn.addEventListener('click', closeWorkingModal);
+                });
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeWorkingModal();
+                });
+            }
+
             var alertLinks = document.querySelectorAll('.alert-working-on-it, a[href="#"]:not(.alert-working-on-it)');
             alertLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault(); // Prevents the page from jumping or redirecting
-                    
-                    if (this.classList.contains('alert-working-on-it')) {
-                        // Exact match message requested by user for the specific buttons
-                        alert("We are working on it");
-                    } else {
-                        // Fallback message for other placeholder tags 
-                        alert("We are currently working on this feature. Please check back later!");
-                    }
+                    openWorkingModal();
                 });
             });
         });
     </script>
+
+    <!-- ───────── "Working on it" Modal ───────── -->
+    <div class="tlc-modal-overlay" id="workingModal" role="dialog" aria-modal="true" aria-labelledby="workingModalTitle">
+        <div class="tlc-modal">
+            <button class="tlc-modal-close" type="button" aria-label="Close">&times;</button>
+            <div class="tlc-modal-icon"><i class="bi bi-tools"></i></div>
+            <h3 class="tlc-modal-title" id="workingModalTitle">We&rsquo;re working on it</h3>
+            <p class="tlc-modal-text">This feature will be available soon. In the meantime, reach our team directly and we&rsquo;ll help you right away.</p>
+            <div class="tlc-modal-actions">
+                <a href="contact.html#contact-form" class="btn btn-base-color btn-rounded">Contact Us</a>
+                <button type="button" class="btn btn-transparent-light-gray border-color-extra-medium-gray btn-rounded tlc-modal-dismiss">Got it</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
