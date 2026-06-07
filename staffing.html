@@ -387,15 +387,19 @@
     }
 
     /* ───────── BUTTONS ───────── */
-    .btn-base-color {
+    .btn-base-color,
+    .btn-base-color:link,
+    .btn-base-color:visited {
         background: linear-gradient(135deg, #c89b4f, #b88949);
         border: none;
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
-    .btn-base-color:hover {
+    .btn-base-color:hover,
+    .btn-base-color:focus,
+    .btn-base-color:active {
         background: linear-gradient(135deg, #b88949, #a87738);
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
     .btn-white {
@@ -573,7 +577,7 @@
         <div class="d-none d-xl-flex align-items-center widget-text fw-600">
           <i class="bi bi-calendar-check text-base-color me-10px"></i>
           <!-- Added alert class here -->
-          <a href="contact.html#contact-form" class="alert-working-on-it">Request Care</a>
+          <a href="contact.html#contact-form">Request Care</a>
         </div>
       </div>
     </div>
@@ -596,7 +600,7 @@
                         </p>
                         <div class="hero-btn-wrap reveal fade-up" style="transition-delay:.3s">
                             <!-- Added alert class here -->
-                            <a href="#" class="btn btn-extra-large btn-base-color btn-rounded alert-working-on-it">
+                            <a href="contact.html#contact-form" class="btn btn-extra-large btn-base-color btn-rounded">
                                 Request Staffing
                                 <i class="fa-solid fa-arrow-right ms-10px"></i>
                             </a>
@@ -845,11 +849,11 @@
           <div class="footer-col-title">Information</div>
           <ul class="footer-links">
             <li><a href="#">Payment &amp; Coverage</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Privacy Policy &amp; HIPAA Guidelines</a></li>
             <!-- Added alert class here -->
-            <li><a href="contact.html#contact-form" class="alert-working-on-it">Request Care</a></li>
+            <li><a href="contact.html#contact-form">Request Care</a></li>
             <!-- Added alert class here -->
-            <li><a href="contact.html#contact-form" class="alert-working-on-it">Request Staffing</a></li>
+            <li><a href="contact.html#contact-form">Request Staffing</a></li>
           </ul>
         </div>
       </div>
