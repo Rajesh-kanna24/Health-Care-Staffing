@@ -19682,7 +19682,7 @@ header .navbar .navbar-nav .dropdown.dropdown-with-icon .dropdown-menu li a p {
   margin: 0 auto;
   padding: 0 60px 70px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 70px;
   position: relative;
   z-index: 2;
